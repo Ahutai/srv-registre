@@ -1,8 +1,6 @@
-const path = require("path");
-
 module.exports = {
   dbUrl:
-    "mongodb+srv://Allen:C3EjU2rnNUfbPO@cluster0.lg23k.mongodb.net/nodeTest?retryWrites=true&w=majority&appName=Cluster0",
-  cert: path.join(__dirname, "../ssl/local.crt"),
-  key: path.join(__dirname, "../ssl/local.key"),
+    "mongodb+srv://alex:qwe@cluster0-l4izx.gcp.mongodb.net/twitter?retryWrites=true",
+  cert: "/etc/letsencrypt/live/www.brown-allen.com/fullchain.pem",
+  key: "/etc/letsencrypt/live/www.brown-allen.com/privkey.pem",
 };
