@@ -1,6 +1,6 @@
 module.exports = {
   dbUrl:
-    "mongodb+srv://alex:qwe@cluster0-l4izx.gcp.mongodb.net/twitter?retryWrites=true",
+    "mongodb+srv://Allen:C3EjU2rnNUfbPO@cluster0.lg23k.mongodb.net/nodeTest?retryWrites=true&w=majority&appName=Cluster0",
   cert: "/etc/letsencrypt/live/www.brown-allen.com/fullchain.pem",
   key: "/etc/letsencrypt/live/www.brown-allen.com/privkey.pem",
 };
