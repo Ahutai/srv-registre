@@ -1,0 +1,81 @@
+const {
+  getPosts,
+  getPost,
+  createPost,
+  deletePost,
+  updatePost,
+} = require("../queries/posts.queries");
+
+exports.postList = async (req, res, next) => {
+  try {
+    const postes = await getPosts();
+    res.render("posts/post", {
+      postes,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.postNew = (req, res, next) => {
+  res.render("posts/post-form", { post: {} });
+};
+
+exports.postCreate = async (req, res, next) => {
+  try {
+    const body = req.body;
+    await createPost({ ...body, author: req.user._id });
+    setTimeout(add, 2000);
+    function add() {
+      res.redirect("/posts");
+    }
+  } catch (e) {
+    const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
+    res.status(400).render("posts/post-form", { errors });
+  }
+};
+
+exports.postDelete = async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    await deletePost(postId);
+    const postes = await getPosts();
+    res.render("posts/post-list", { postes });
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.postMod = async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    const post = await getPost(postId);
+    res.render("posts/post-formm", {
+      post,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.postUpdate = async (req, res, next) => {
+  const postId = req.params.postId;
+  try {
+    const body = req.body;
+    await updatePost(postId, body);
+    res.redirect("/posts");
+  } catch (e) {
+    const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
+    const post = await getPost(postId);
+    res.status(400).render("posts/post-form", {
+      errors,
+      post,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  }
+};

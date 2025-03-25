@@ -1,0 +1,25 @@
+extends ../layout.pug 
+
+block content
+  script(src="/javascripts/posts/cs.js")
+  div(class="divmform")
+    //- div(class="divc1form")
+    //-   include ../includes/connexion
+    div(class="divc1form")
+      img(class="infotech" src="/images/infotechh.png")
+    //-   h1(class="h1f") I N F O&ensp;
+    //-   h1(class="h1ff") T E C H
+    div(class="divc2formc")
+      form(class="formmc" method="post" action="/auth/signin")
+        div(class="divc3formc") 
+          div(class="divc4formc")
+            input(class="inputemail" type="email" name="email" placeholder="Email")
+          div(class="divc4formc")
+            input(class="inputpassword" type="password" name="password" placeholder="Password")
+          div(class="divc5formc") 
+            input(type="submit" value="Valider" class="inputmformuser") 
+            div(class="loaderrrs")
+            if errors
+              ul(class="ulerrorform")
+                each error in errors
+                  li(class="lierrorform")= error
