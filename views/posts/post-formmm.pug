@@ -1,0 +1,21 @@
+extends ../layouti.pug 
+
+block content 
+  div(class="divmform")
+    div(class="divc1form")
+      include ../includes/create
+    div(class="divc2formuser")
+      form(class="formmuser" method="post" action=postt._id ? "/posts/updatee/" + postt._id : "/posts")
+        div(class="divc3formuser") 
+          div(class="divc4formuser")
+            input(class="inputusername" type="text" name="name" placeholder="Name")
+          div(class="divc4formuser")
+            input(class="inputemail" type="text" name="adresseip" placeholder="Adresse IP")
+          div(class="divc4formuser")
+            input(class="inputpassword" type="text" name="redirect" placeholder="Redirection")
+          div(class="divc5form") 
+            input(type="submit" value="Valider" class="inputmformuser")
+            if errors 
+              ul(class="ulerrorform")
+                each error in errors 
+                  li(class="lierrorform")= error

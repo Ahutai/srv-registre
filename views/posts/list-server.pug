@@ -1,0 +1,9 @@
+if postess
+  each postt in postess
+    div(class="divlist3")
+      div(class="divlist4")
+        a(class="divlist5" href="/posts/mod/" + postt._id)= postt.content
+      div(class="divbutton")
+        a(class="buttonmod")
+          p ajouter
+        button(class="buttonmlist" postid=postt._id) delete

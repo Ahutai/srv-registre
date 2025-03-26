@@ -6,6 +6,9 @@ const {
   postDelete,
   postMod,
   postUpdate,
+  postModd,
+  addfile,
+  postUpdatee,
 } = require("../controllers/posts.controller");
 
 router.get("/new", postNew);
@@ -16,7 +19,11 @@ router.post("/", postCreate);
 
 router.get("/mod/:postId", postMod);
 
+router.get("/modd/:postId", postModd);
+
 router.post("/update/:postId", postUpdate);
+
+router.post("/updatee/:postId", postUpdatee);
 
 router.delete("/:postId", postDelete);
 

@@ -17,10 +17,20 @@ exports.getPost = (postId) => {
   return Post.findOne({ _id: postId }).exec();
 };
 
+exports.getPostt = (postId) => {
+  return Post.findOne({ _id: postId }).exec();
+};
+
 exports.updatePost = (postId, post) => {
   return Post.findByIdAndUpdate(
     postId,
     { $set: post },
     { runValidators: true }
   );
+};
+
+exports.addToFolder = (postId, postt) => {
+  return Post.findByIdAndUpdate(postId, {
+    $set: postt,
+  });
 };
