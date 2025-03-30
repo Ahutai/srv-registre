@@ -1,9 +1,8 @@
-if postess
-  each postt in postess
-    div(class="divlist3")
+if find
+  each post in find
+    div(class="divlist3s")
       div(class="divlist4")
-        a(class="divlist5" href="/posts/mod/" + postt._id)= postt.content
+        a(class="divlist5")= post.name
       div(class="divbutton")
-        a(class="buttonmod")
-          p ajouter
-        button(class="buttonmlist" postid=postt._id) delete
+        button(class="buttonmod" posted=post._id postt=post.author) modifier
+        button(class="buttonmlistt" postid=post._id postidd=post.author) delete

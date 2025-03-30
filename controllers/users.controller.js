@@ -14,7 +14,6 @@ exports.signup = async (req, res, next) => {
     const user = await createUser(body);
     res.redirect("/");
   } catch (e) {
-    console.log(e);
     res.render("users/user-form", {
       errors: ["champs requis"],
       isAuthenticated: req.isAuthenticated(),

@@ -5,7 +5,8 @@
 }
 
 body {
-  background-color: rgb(50, 50, 50);
+  background-color: rgb(74, 74, 74);
+  background-color: #494949;
 }
 
 .nav {
@@ -14,10 +15,10 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  background-color: rgb(91, 91, 91);
+  background-color: rgb(50, 50, 50);
   width: 100%;
-  border-bottom: 2px solid rgb(153, 153, 153);
-  box-shadow: 0px 0px 5px black;
+  border-bottom: 2px solid rgb(111, 111, 111);
+  /* box-shadow: 0px 0px 5px black; */
 }
 
 .ul {
@@ -96,25 +97,29 @@ body {
   flex-direction: column;
   align-items: center;
   /* height: 65vh; */
+  transition: all 0.2s;
+  animation-name: fadeIn;
 }
 
 .divc1form {
-  background-color: rgb(81, 81, 81);
+  background-color: rgb(50, 50, 50);
   width: 550px;
   text-align: center;
   padding: 15px 0px;
   margin: 30px 0px 20px 0px;
   border-radius: 5px;
-  border: 2px solid rgb(202, 202, 202);
+  border: 2px solid rgb(114, 114, 114);
+
   box-shadow: 0px 0px 5px black;
 }
 
 .divc2form {
-  background-color: rgb(81, 81, 81);
+  background-color: rgb(50, 50, 50);
+  box-shadow: 0px 0px 5px black;
   height: 150px;
   width: 550px;
   border-radius: 5px;
-  border: 2px solid rgb(202, 202, 202);
+  border: 2px solid rgb(114, 114, 114);
 }
 
 .formm {
@@ -139,8 +144,8 @@ body {
   font-size: 18px;
   width: 425px;
   border-radius: 2.5px;
-  border: 2px solid rgb(255, 255, 255);
-  height: 30px;
+  /* border: 2px solid rgb(192, 192, 192); */
+  height: 35px;
   padding: 0px 10px;
 }
 
@@ -171,16 +176,51 @@ body {
 /* divlist */
 /* divlist */
 
-.divlist3 {
-  width: 90%;
-  background-color: rgb(103, 102, 102);
+.divlist3s {
+  width: 95%;
+  background-color: rgb(80, 80, 80);
+
   margin: 10px 0px;
   min-height: 40px;
   max-height: 40px;
   display: flex;
   align-items: center;
   justify-content: cente;
-  border: 2px solid rgb(201, 201, 201);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  transition: all 0.2s;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  opacity: 1;
+}
+
+.divlist3s.active {
+  width: 95%;
+  background-color: rgb(80, 80, 80);
+
+  margin: 10px 0px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: cente;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  transition: all 0.2s;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  opacity: 1;
+}
+
+.divlist3 {
+  width: 90%;
+  background-color: rgb(80, 80, 80);
+
+  margin: 10px 0px;
+  min-height: 40px;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: cente;
   border-radius: 5px;
   box-shadow: 0px 0px 5px black;
   transition: all 0.2s;
@@ -191,13 +231,13 @@ body {
 
 .divlist3.active {
   width: 90%;
-  background-color: rgb(103, 102, 102);
+  background-color: rgb(80, 80, 80);
+
   margin: 10px 0px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: cente;
-  border: 2px solid rgb(201, 201, 201);
   border-radius: 5px;
   box-shadow: 0px 0px 5px black;
   transition: all 0.2s;
@@ -250,10 +290,9 @@ body {
   padding: 10px 0px;
   border-radius: 5px;
   width: 100%;
-  border: 2px solid rgb(153, 153, 153);
   /* background-color: rgb(107, 107, 107); */
-  background-color: rgb(81, 81, 81);
-  /* box-shadow: 0px 0px 5px black; */
+  background-color: rgb(50, 50, 50);
+  box-shadow: inset 0px 0px 5px black;
   margin-right: 50px;
 }
 
@@ -266,8 +305,7 @@ body {
   width: 85%;
   padding: 10px 0px;
   border-radius: 5px;
-  border: 2px solid rgb(153, 153, 153);
-  background-color: rgb(81, 81, 81);
+  background-color: rgb(50, 50, 50);
   /* background-color: rgb(107, 107, 107); */
   box-shadow: inset 0px 0px 5px black;
   max-height: 630px;
@@ -287,8 +325,7 @@ body {
   width: 100%;
   padding: 10px 0px;
   border-radius: 5px;
-  border: 2px solid rgb(153, 153, 153);
-  background-color: rgb(81, 81, 81);
+  background-color: rgb(50, 50, 50);
   /* background-color: rgb(107, 107, 107); */
   box-shadow: inset 0px 0px 5px black;
   min-height: 630px;
@@ -310,6 +347,26 @@ body {
   cursor: pointer;
   transition: all 120ms;
   font-size: 12px;
+}
+
+.buttonmlistt {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 20px;
+  width: 60px;
+  background-color: rgb(205, 37, 37);
+  border-radius: 5px;
+  border: 0px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  /* flex: 1; */
+  cursor: pointer;
+  transition: all 120ms;
+  font-size: 12px;
+}
+
+.buttonmlistt:hover {
+  background-color: rgba(199, 3, 3, 0.646);
 }
 
 .buttonmlist:hover {
@@ -340,6 +397,9 @@ body {
   display: flex;
   font-size: 14px;
   padding: 12px 0px 0px 12px;
+  background-color: rgb(114, 114, 114);
+  border: 0px;
+  color: white;
 }
 
 .buttonmod {
@@ -354,11 +414,16 @@ body {
   cursor: pointer;
   transition: all 120ms;
   text-decoration: none;
+  border: 0px;
+  font-size: 12.5px;
+  color: rgb(255, 255, 255);
+  border: 0px;
 }
 
 .buttonmod p {
   font-size: 12.5px;
   color: rgb(255, 255, 255);
+  border: 0px;
 }
 
 .divbutton {
@@ -397,9 +462,11 @@ body {
   font-size: 18px;
   width: 425px;
   border-radius: 2.5px;
-  border: 2px solid rgb(255, 255, 255);
-  height: 30px;
+  height: 35px;
   padding: 0px 10px;
+  border: 0px;
+  color: white;
+  background-color: rgb(114, 114, 114);
 }
 
 .inputemail {
@@ -412,9 +479,22 @@ body {
   font-size: 18px;
   width: 425px;
   border-radius: 2.5px;
-  border: 2px solid rgb(255, 255, 255);
-  height: 30px;
+  height: 35px;
   padding: 0px 10px;
+  background-color: rgb(114, 114, 114);
+  color: white;
+  border: 0px;
+}
+
+.containere {
+  height: 94vh;
+  max-height: 94vh;
+  width: 100%;
+  background-image: url(../images/info.png);
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .inputpassword {
@@ -426,9 +506,11 @@ body {
   font-size: 18px;
   width: 425px;
   border-radius: 2.5px;
-  border: 2px solid rgb(255, 255, 255);
-  height: 30px;
+  height: 35px;
   padding: 0px 10px;
+  background-color: rgb(114, 114, 114);
+  color: white;
+  border: 0px;
 }
 
 .divc2formuser {
@@ -436,11 +518,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(81, 81, 81);
+  background-color: rgb(50, 50, 50);
   height: 250px;
   width: 550px;
   border-radius: 5px;
-  border: 2px solid rgb(202, 202, 202);
+  border: 2px solid rgb(120, 120, 120);
   box-shadow: 0px 0px 5px black;
 }
 
@@ -464,7 +546,8 @@ body {
   font-size: 15px;
   padding: 5px 10px;
   border-radius: 5px;
-  border: 2px solid white;
+  border: 2px solid rgb(228, 228, 228);
+
   background-color: rgb(0, 172, 37);
   color: white;
   cursor: pointer;
@@ -523,11 +606,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(81, 81, 81);
+  background-color: rgb(50, 50, 50);
+
   height: 220px;
   width: 550px;
   border-radius: 5px;
-  border: 2px solid rgb(202, 202, 202);
+  border: 2px solid rgb(112, 112, 112);
   box-shadow: 0px 0px 5px black;
 }
 
@@ -535,9 +619,9 @@ body {
   font-size: 18px;
   width: 425px;
   border-radius: 2.5px;
-  border: 2px solid rgb(255, 255, 255);
-  height: 30px;
+  height: 35px;
   padding: 0px 10px;
+  border: 0px;
 }
 
 .divc5formc {
@@ -718,9 +802,10 @@ body {
   padding: 10px 0px;
   border-radius: 5px;
   width: 85%;
-  border: 2px solid rgb(153, 153, 153);
+  box-shadow: inset 0px 0px 5px black;
   /* background-color: rgb(107, 107, 107); */
-  background-color: rgb(81, 81, 81);
+  background-color: rgb(50, 50, 50);
+
   /* box-shadow: 0px 0px 5px black; */
   margin-right: 25px;
   max-height: 19px;

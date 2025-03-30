@@ -1,15 +1,13 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
-const postSchema = schema({
-  content: {
-    type: String,
-    maxlength: [30, "trop long"],
-    required: [true, "champ requis"],
-  },
+const posttSchema = schema({
+  name: { type: String, require: [true, "renseigner les champs"] },
+  adresseip: { type: String, require: [true, "renseigner les champs"] },
+  redirect: { type: String, require: [true, "renseigner les champs"] },
   author: { type: schema.Types.ObjectId, ref: "user", required: true },
 });
 
-const post = mongoose.model("post", postSchema);
+const postt = mongoose.model("postt", posttSchema);
 
-module.exports = post;
+module.exports = postt;
