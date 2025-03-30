@@ -1,8 +1,11 @@
-if find
+if find 
   each post in find
     div(class="divlist3s")
       div(class="divlist4")
         a(class="divlist5")= post.name
+      div(class="divlist4")
+        a(class="divlist54")
       div(class="divbutton")
         button(class="buttonmod" posted=post._id postt=post.author) modifier
         button(class="buttonmlistt" postid=post._id postidd=post.author) delete
+

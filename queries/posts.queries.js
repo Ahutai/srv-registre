@@ -13,6 +13,15 @@ exports.getPostedd = (postId) => {
   return file.find({ author: postId }).exec();
 };
 
+exports.getposted = (postId) => {
+  return Post.find(
+    { _id: postId },
+    {
+      content: 1,
+    }
+  ).exec();
+};
+
 exports.awaitedd = (postId) => {
   return file
     .findOne(

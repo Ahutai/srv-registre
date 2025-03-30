@@ -13,6 +13,7 @@ const {
   getPostedd,
   getPosted,
   awaitedd,
+  getposted,
 } = require("../queries/posts.queries");
 
 // exports.postListt = async (req, res, next) => {
@@ -55,8 +56,10 @@ exports.postFind = async (req, res, next) => {
   try {
     const postId = req.params.postId;
     const postes = await getPosts();
+    const content = await getposted(postId);
     const find = await getPostedd(postId);
     res.render("posts/post", {
+      content,
       find,
       postes,
       isAuthenticated: req.isAuthenticated(),

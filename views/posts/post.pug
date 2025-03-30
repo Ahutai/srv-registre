@@ -1,12 +1,14 @@
 extends ../layoutc.pug
 
 block content
-  script(src="/javascripts/posts/post.js")
   div(class="divlist1")
     div(class="divlistm1")
       div(class="folder-container")
-        include ../includes/folder.pug
-        div(class="loader")
+        if content 
+          each post in content     
+            a(class='content')= post.content
+            div(class='loadered')
+              div(class='loader')
       div(class="divlist2 text" id="postlistcontainer") 
         include post-list.pug 
     div(class="divlistm2")
@@ -14,6 +16,4 @@ block content
         include ../includes/name.pug
       div(class="divlist2v2 text" id="postlistcontainerr")
         include list-server.pug 
-   
         //- include post-list.pug 
-      

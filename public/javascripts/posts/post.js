@@ -18,7 +18,7 @@ function bindPosttt() {
       loaderr.classList.add("active");
       $event.target.classList.add("active");
       const postIdd = $event.target.getAttribute("posted");
-      const postIddd = $event.target.getAttribute("postt");
+      // const postIddd = $event.target.getAttribute("postt");
 
       axios
         .get("/posts/moded/" + postIdd)

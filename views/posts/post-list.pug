@@ -1,9 +1,9 @@
 if postes
   each post in postes
     div(class="divlist3")
-      div(class="divlist4")
+      div(class="divlist4" id="tested")
         a(class="divlist5" href="/posts/finded/" + post._id)= post.content
       div(class="divbutton")
-        a(class="buttonmod" href="/posts/neww/" + post._id)
+        a(class="buttonmodd" href="/posts/neww/" + post._id)
           p ajouter
         button(class="buttonmlist" postid=post._id) delete
