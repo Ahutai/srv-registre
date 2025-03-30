@@ -106,10 +106,7 @@ exports.postCreate = async (req, res, next) => {
   try {
     const body = req.body;
     await createPost({ ...body, author: req.user._id });
-    setTimeout(add, 100);
-    function add() {
-      res.redirect("/posts");
-    }
+    res.redirect("/posts");
   } catch (e) {
     const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
     res.status(400).render("posts/post-form", { errors });
@@ -120,10 +117,7 @@ exports.postModd = async (req, res, next) => {
   try {
     const body = req.body;
     await createPostt({ ...body, author: req.params.postId });
-    setTimeout(add, 100);
-    function add() {
-      res.redirect("/posts/finded/" + req.params.postId);
-    }
+    res.redirect("/posts/finded/" + req.params.postId);
   } catch (e) {
     const errorss = Object.keys(e.errors).map((key) => e.errors[key].message);
     res.status(400).render("posts/post-form", { errorss });
