@@ -220,14 +220,13 @@ exports.postUpdatee = async (req, res, next) => {
     await addToFolder(postIded, body);
     res.redirect("/posts/finded/" + postId);
   } catch (e) {
-    next(e);
-    // const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
-    // const find = await getPosted(postIded);
-    // res.status(400).render("posts/post-formmm", {
-    //   errors,
-    //   find,
-    //   isAuthenticated: req.isAuthenticated(),
-    //   currentUser: req.user,
-    // });
+    const errorsss = Object.keys(e.errors).map((key) => e.errors[key].message);
+    const find = await getPosted(postIded);
+    res.status(400).render("posts/post-change", {
+      errorsss,
+      find,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
   }
 };

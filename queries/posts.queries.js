@@ -10,7 +10,7 @@ exports.getPostsss = () => {
 };
 
 exports.getPostedd = (postId) => {
-  return file.find({ author: postId }).exec();
+  return file.find({ author: postId }).sort({ updown: -1 }).exec();
 };
 
 exports.getposted = (postId) => {
