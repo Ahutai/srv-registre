@@ -1,7 +1,10 @@
 if find 
   each post in find
     div(class="divlist3s")
-      div(class="up-down")
+      if post.updown === "UP"
+        div(class="up-down active")
+      else 
+        div(class="up-down")
       div(class="divlist4")
         a(class="divlist5")= post.name
       div(class="divlist4")

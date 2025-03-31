@@ -919,6 +919,16 @@ body {
 .up-down {
   height: 15px;
   min-width: 15px;
+  background-color: #ea0d0d;
+  border-radius: 100%;
+  border: 2px solid white;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.up-down.active {
+  height: 15px;
+  min-width: 15px;
   background-color: #0dea0d;
   border-radius: 100%;
   border: 2px solid white;
