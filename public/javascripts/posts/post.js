@@ -10,6 +10,7 @@ function bindPosttt() {
   const elementsss = document.querySelectorAll(".buttonmod");
   const loaderr = document.querySelector(".loader");
   const postContainerrr = document.querySelector("#postlistcontainerr");
+  // const inputname = document.querySelectorAll(".inputusername");
 
   const listan = document.querySelectorAll(".divlist3");
 
@@ -18,12 +19,13 @@ function bindPosttt() {
       loaderr.classList.add("active");
       $event.target.classList.add("active");
       const postIdd = $event.target.getAttribute("posted");
-      // const postIddd = $event.target.getAttribute("postt");
+      // const postname = $event.target.getAttribute("postt");
 
       axios
         .get("/posts/moded/" + postIdd)
         .then(function (response) {
           postContainerrr.innerHTML = response.data;
+          // inputname.value = postname;
           loaderr.classList.remove("active");
           bindPosttt();
         })

@@ -1,11 +1,14 @@
 if find 
   each post in find
     div(class="divlist3s")
+      div(class="up-down")
       div(class="divlist4")
         a(class="divlist5")= post.name
       div(class="divlist4")
-        a(class="divlist54")
+        a(class="divlist54")= post.updown
+      div(class="divlist4")
+        a(class="divlist54")= post.adresseip
       div(class="divbutton")
-        button(class="buttonmod" posted=post._id postt=post.author) modifier
+        button(class="buttonmod" posted=post._id postt=post.name) modifier
         button(class="buttonmlistt" postid=post._id postidd=post.author) delete
 

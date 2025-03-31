@@ -33,6 +33,17 @@ exports.awaitedd = (postId) => {
     .exec();
 };
 
+exports.getUpdown = (postId) => {
+  return file
+    .findOne(
+      { _id: postId },
+      {
+        updown: 1,
+      }
+    )
+    .exec();
+};
+
 exports.getPostss = () => {
   return Post.findOne(
     {},

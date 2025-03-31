@@ -14,6 +14,7 @@ const {
   getPosted,
   awaitedd,
   getposted,
+  getUpdown,
 } = require("../queries/posts.queries");
 
 // exports.postListt = async (req, res, next) => {
@@ -58,7 +59,10 @@ exports.postFind = async (req, res, next) => {
     const postes = await getPosts();
     const content = await getposted(postId);
     const find = await getPostedd(postId);
+    const updown = await getUpdown(postId);
+
     res.render("posts/post", {
+      updown,
       content,
       find,
       postes,
