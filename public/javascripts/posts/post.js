@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
   bindPostt();
   bindPost();
   bindPosttt();
+  deletesfile();
   // bindPosttt();
 });
 
@@ -72,6 +73,7 @@ function bindPost() {
   const elements = document.querySelectorAll(".buttonmlist");
   const loader = document.querySelector(".loader");
   const postContainer = document.querySelector("#postlistcontainer");
+  const postContainerr = document.querySelector("#postlistcontainerr");
 
   const listan = document.querySelectorAll(".divlist3");
 
@@ -85,12 +87,46 @@ function bindPost() {
         .delete("/posts/" + postId)
         .then(function (response) {
           postContainer.innerHTML = response.data;
+          // postContainerr.innerHTML = response.data;
+          console.log(response);
           loader.classList.remove("active");
           bindPost();
         })
         .catch(function (err) {
           console.log(err);
         });
+    });
+  });
+}
+
+function deletesfile() {
+  const sfile = document.querySelectorAll(".deletesfile");
+  const loading = document.querySelector(".loader");
+  const postC = document.querySelector("#postlistcontainerr");
+
+  const listan = document.querySelectorAll(".divlist3");
+
+  sfile.forEach((e) => {
+    e.addEventListener("click", ($event) => {
+      loading.classList.add("active");
+      $event.target.classList.add("active");
+      const postSfile = $event.target.getAttribute("postid");
+      const postsfile = $event.target.getAttribute("postidd");
+
+      axios
+        .delete("/posts/deletesfile/" + postSfile)
+        .then(function (response) {
+          postC.innerHTML = response.data;
+          loading.classList.remove("active");
+          deletesfile();
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+      axios.get("/posts/sfiledel/" + postsfile).then((response) => {
+        postC.innerHTML = response.data;
+        deletesfile();
+      });
     });
   });
 }

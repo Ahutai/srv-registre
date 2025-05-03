@@ -4,11 +4,19 @@ block content
   div(class="divlist1")
     div(class="divlistm1")
       div(class="folder-container")
-        if content 
-          each post in content     
+        if content
+          each post in content   
             a(class='content')= post.content
             div(class='loadered')
               div(class='loader')
+        if content
+          each post in content   
+            a(class='content' href="/posts/finded/" + post.author)= post.name
+        if postId
+          a(href="/posts/spost/" + postId class="aded")
+            img(src="/images/add2d.svg", alt="" class="addd")
+          img(src="/images/chevrons.svg", alt="" class="chevron-left")
+          img(src="/images/chevron.svg", alt="" class="chevron-right")
       div(class="divlist2 text" id="postlistcontainer") 
         include post-list.pug 
     div(class="divlistm2")
@@ -16,4 +24,4 @@ block content
         include ../includes/name.pug
       div(class="divlist2v2 text" id="postlistcontainerr")
         include list-server.pug 
-        //- include post-list.pug 
+        include listserverII.pug

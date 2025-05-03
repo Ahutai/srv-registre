@@ -7,10 +7,12 @@ html(lang='en')
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(rel="stylesheet" href="/css/main.css")
         script(src="https://unpkg.com/axios/dist/axios.min.js")
-        title nodeTest
-    body  
+        title REGISTRE
+    body
+        include includes/modal.pug
         include includes/topbarc.pug
         .container-fluid
-            block content
+            block content         
         script(src="/javascripts/posts/post.js")
         script(src="/javascripts/posts/pointe.js")
+        script(src="/javascripts/posts/chevron.js")

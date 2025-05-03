@@ -1,0 +1,19 @@
+if findd || sfilefind 
+  each post in findd
+    div(class="divlist3s")
+      //- if post.updown === "UP"
+      img(src="/images/filed.svg", alt="" class="folder")
+      //- else 
+      //-   div(class="up-down")
+      div(class="divlist4")
+        a(class="divlist5" href="/posts/modal/" + post._id)= post.name
+      div(class="divlist4")
+        a(class="divlist54")= post.size 
+      div(class="divlist4")
+        a(class="divlist55" href=`/upload/${post.addfile}` download)= post.addfile
+      div(class="divbutton")
+        a(href="/posts/spost/" + post._id) 
+          img(src="/images/add2d.svg", alt="" class="add")
+        img(src="/images/troisd.svg", alt="" class="trois" posted=post._id postt=post.name)
+        img(src="/images/deleted.svg", alt="" class="deletesfile" postid=post._id postidd=post.author)
+

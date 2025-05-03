@@ -1,0 +1,21 @@
+div(class="modalform")
+  div(class="formmodal")
+    include ../includes/create
+  div(class="formmodalI")
+    form(class="formmuser" method="post" action= "/posts/modded/" + post._id) 
+      div(class="divc3formuser") 
+        div(class="divc4formuser")
+          input(class="inputusername" type="text" name="name" placeholder="Name")
+        div(class="divc4formuser")
+          input(class="inputemail" type="text" name="adresseip" placeholder="Liens vers")
+        div(class="divc4formuser")
+          input(class="inputpassword" type="text" name="redirect" placeholder="Redirection")
+        div(class="divc4formuser")
+          input(class="inputupdown" type="text" name="updown" placeholder="Up Down")
+        div(class="divc5form") 
+          input(type="submit" value="Valider" class="inputmform")
+          div(class="loaderr")
+          if errorss
+            ul(class="ulerrorform")
+              each error in errorss 
+                li(class="lierrorform")= error
