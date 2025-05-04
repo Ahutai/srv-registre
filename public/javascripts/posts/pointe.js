@@ -1,8 +1,9 @@
 const dive = document.querySelectorAll(".divlist5");
+const loaded = document.querySelector(".loader");
 
 dive.forEach((e) => {
   e.addEventListener("click", async ($event) => {
-    e.classList.add("activ");
+    loaded.classList.add("active");
   });
 });
 

@@ -507,12 +507,23 @@ body {
   background-color: rgba(132, 132, 132, 0.646);
 }
 
+.buttonmods:hover {
+  background-color: rgba(132, 132, 132, 0.646);
+}
+
 .buttonmod:hover {
   background-color: rgba(132, 132, 132, 0.646);
 }
 
 .buttonmodd:hover {
   background-color: rgba(151, 151, 151, 0.646);
+}
+
+.divlist5s {
+  margin-left: 10px;
+  list-style: none;
+  text-decoration: none;
+  color: white;
 }
 
 .divlist5 {
@@ -604,6 +615,22 @@ body {
   cursor: pointer;
   transition: all 120ms;
   font-size: 12px;
+}
+
+.buttonmods {
+  height: 22px;
+  width: 25px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 120ms;
+  text-decoration: none;
+  border: 0px;
+  font-size: 12.5px;
+  color: rgb(255, 255, 255);
+  border: 0px;
+  font-weight: bold;
+  padding: 2px 0px;
 }
 
 .buttonmod {
@@ -1078,7 +1105,7 @@ body {
   mask-composite: subtract;
   animation: l3 1s infinite linear;
   visibility: hidden;
-  transition: all 0.2s;
+  /* transition: all 0.2s; */
   opacity: 0;
 }
 
