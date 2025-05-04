@@ -6,5 +6,6 @@ if postes
       div(class="divbutton")
         a(href="/posts/neww/" + post._id) 
           img(src="/images/add2d.svg", alt="" class="buttonmodd")
-        img(src="/images/troisd.svg", alt="" class="buttonmod" posted=post._id postt=post.name)
+        a(href="/posts/listpost/" + post._id) 
+          img(src="/images/troisd.svg", alt="" class="buttonmod")
         img(src="/images/deleted.svg", alt="" class="buttonmlist" postid=post._id)

@@ -10,7 +10,6 @@ const {
   postModd,
   addfile,
   postUpdatee,
-  postListt,
   postNeww,
   postDeletee,
   postFind,
@@ -24,6 +23,10 @@ const {
   AddFile,
   modal,
   fed,
+  msFile,
+  sUpdate,
+  postedList,
+  findposted,
 } = require("../controllers/posts.controller");
 
 router.get("/new", postNew);
@@ -48,6 +51,8 @@ router.get("/modal/:postId", modal);
 
 router.get("/moded/:postId", postModed);
 
+router.get("/msfile/:postId", msFile);
+
 router.get("/finded/:postId", postFind);
 
 router.get("/findeddd/:postId", sfiles);
@@ -64,7 +69,13 @@ router.post("/spostmod/:postId", findSpost);
 
 router.post("/update/:postId", postUpdate);
 
+router.post("/postedfile/:postId", findposted);
+
 router.post("/updatee/:postId", postUpdatee);
+
+router.get("/listpost/:postId", postedList);
+
+router.post("/supdate/:postId", sUpdate);
 
 router.delete("/:postId", postDelete);
 

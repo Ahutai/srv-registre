@@ -75,6 +75,37 @@ exports.getsfile = (postId) => {
     .exec();
 };
 
+exports.updatess = (postId) => {
+  return sfile
+    .findOne(
+      { _id: postId },
+      {
+        name: 1,
+      }
+    )
+    .exec();
+};
+
+exports.PostedFile = (postId) => {
+  return Post.findOne(
+    { _id: postId },
+    {
+      author: 1,
+    }
+  ).exec();
+};
+
+exports.updates = (postId) => {
+  return sfile
+    .findOne(
+      { _id: postId },
+      {
+        author: 1,
+      }
+    )
+    .exec();
+};
+
 exports.awaitedd = (postId) => {
   return file
     .findOne(
@@ -149,11 +180,39 @@ exports.getPosted = (postId) => {
   return file.findOne({ _id: postId }).exec();
 };
 
+exports.PostList = (postId) => {
+  return Post.findOne({ _id: postId }).exec();
+};
+
+exports.MsFile = (postId) => {
+  return sfile.findOne({ _id: postId }).exec();
+};
+
 exports.updatePost = (postId, post) => {
   return Post.findByIdAndUpdate(
     postId,
     {
       $set: post,
+    },
+    { runValidators: true }
+  );
+};
+
+exports.updatesSfile = (postIded, postIdd) => {
+  return sfile.findByIdAndUpdate(
+    postIded,
+    {
+      $set: postIdd,
+    },
+    { runValidators: true }
+  );
+};
+
+exports.addedToFile = (postIded, postIdd) => {
+  return Post.findByIdAndUpdate(
+    postIded,
+    {
+      $set: postIdd,
     },
     { runValidators: true }
   );

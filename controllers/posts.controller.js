@@ -27,6 +27,13 @@ const {
   findmodal,
   fedd,
   getauthor,
+  MsFile,
+  updates,
+  updatesSfile,
+  updatess,
+  PostList,
+  PostedFile,
+  addedToFile,
 } = require("../queries/posts.queries");
 
 const Sfile = require("../database/models/sfile");
@@ -304,6 +311,34 @@ exports.postMod = async (req, res, next) => {
   }
 };
 
+exports.postedList = async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    const postfile = await PostList(postId);
+    res.render("posts/postl", {
+      postfile,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.msFile = async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    const modifii = await MsFile(postId);
+    res.render("posts/sfilemodifi", {
+      modifii,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
 exports.postModed = async (req, res, next) => {
   try {
     const postId = req.params.postId;
@@ -344,6 +379,50 @@ exports.postUpdate = async (req, res, next) => {
     res.status(400).render("posts/post-form", {
       errors,
       post,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  }
+};
+
+exports.sUpdate = async (req, res, next) => {
+  const postIded = req.params.postId;
+  try {
+    const awai = [];
+    const awaited = await updates(postIded);
+    awai.push(awaited.author);
+    const postId = awai.toString();
+    const postIdd = req.body;
+    await updatesSfile(postIded, postIdd);
+    res.redirect("/posts/findeddd/" + postId);
+  } catch (e) {
+    const errorsss = Object.keys(e.errors).map((key) => e.errors[key].message);
+    const find = await getPosted(postIded);
+    res.status(400).render("posts/sfilemodifi", {
+      errorsss,
+      find,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  }
+};
+
+exports.findposted = async (req, res, next) => {
+  const postIded = req.params.postId;
+  try {
+    const awai = [];
+    const awaited = await PostedFile(postIded);
+    awai.push(awaited.author);
+    const postId = awai.toString();
+    const postIdd = req.body;
+    await addedToFile(postIded, postIdd);
+    res.redirect("/");
+  } catch (e) {
+    const errorsss = Object.keys(e.errors).map((key) => e.errors[key].message);
+    const find = await getPosted(postIded);
+    res.status(400).render("posts/post-change", {
+      errorsss,
+      find,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
     });

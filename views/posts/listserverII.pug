@@ -1,4 +1,4 @@
-if findd || sfilefind 
+if findd 
   each post in findd
     div(class="divlist3s")
       //- if post.updown === "UP"
@@ -13,7 +13,8 @@ if findd || sfilefind
         a(class="divlist55" href=`/upload/${post.addfile}` download)= post.addfile
       div(class="divbutton")
         a(href="/posts/spost/" + post._id) 
-          img(src="/images/add2d.svg", alt="" class="add")
-        img(src="/images/troisd.svg", alt="" class="trois" posted=post._id postt=post.name)
+          a(href="#" class="adddd") 
+        a(href="/posts/msfile/" + post._id) 
+          img(src="/images/troisd.svg", alt="" class="trois")
         img(src="/images/deleted.svg", alt="" class="deletesfile" postid=post._id postidd=post.author)
 

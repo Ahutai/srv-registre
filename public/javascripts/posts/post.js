@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
   bindPost();
   bindPosttt();
   deletesfile();
+  msfile();
   // bindPosttt();
 });
 
