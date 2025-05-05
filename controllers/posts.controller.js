@@ -485,7 +485,16 @@ exports.AddFile = [
       const saveUser = await newUser.save();
       res.redirect("/posts/findeddd/" + req.params.postId);
     } catch (e) {
-      next(e);
+      const errorsss = Object.keys(e.errors).map(
+        (key) => e.errors[key].message
+      );
+      const find = await getPosted(postIded);
+      res.status(400).render("posts/findeddd/" + req.params.postId, {
+        errorsss,
+        find,
+        isAuthenticated: req.isAuthenticated(),
+        currentUser: req.user,
+      });
     }
   },
 ];
