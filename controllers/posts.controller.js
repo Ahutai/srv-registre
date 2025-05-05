@@ -1,4 +1,16 @@
-const { errorMonitor } = require("connect-mongo");
+const path = require("path");
+const multer = require("multer");
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, path.join(__dirname, "../public/upload"));
+    },
+    filename: (req, file, cb) => {
+      cb(null, file.originalname);
+    },
+  }),
+});
+
 const {
   getPosts,
   getFolderByUser,
@@ -37,22 +49,7 @@ const {
   addedToFile,
 } = require("../queries/posts.queries");
 
-const Sfile = require("../database/models/sfile");
-
-const path = require("path");
-const multer = require("multer");
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, path.join(__dirname, "../public/upload"));
-    },
-    filename: (req, file, cb) => {
-      cb(null, file.originalname);
-    },
-  }),
-});
-
-const util = require("util");
+// const Sfile = require("../database/models/sfile");
 
 // exports.postListt = async (req, res, next) => {
 //   try {
@@ -462,11 +459,11 @@ exports.AddFile = [
   upload.single("addfile"),
   async (req, res, next) => {
     try {
+      const postId = req.params.postId;
       const ko = " Ko";
       const mo = " Mo";
       const go = " Go";
-      let octetr = null;
-      let octet = null;
+      let octetr, octet;
       const octets = req.file.size / 1000;
       if (octets < 1000) {
         octet = octets + ko;
@@ -476,25 +473,22 @@ exports.AddFile = [
         octet = octets / 1000;
         octetr = octet.toFixed(1) + mo;
       }
-      const newUser = new Sfile({
+      await createsPost({
         name: req.body.name,
         addfile: req.file.filename,
         size: octetr,
         author: req.params.postId,
       });
-      const saveUser = await newUser.save();
-      res.redirect("/posts/findeddd/" + req.params.postId);
+      // const newUser = new Sfile({
+      // name: req.body.name,
+      // addfile: req.file.filename,
+      // size: octetr,
+      // author: req.params.postId,
+      // });
+      // const saveUser = await newUser.save();
+      res.redirect("/posts/findeddd/" + postId);
     } catch (e) {
-      const errorsss = Object.keys(e.errors).map(
-        (key) => e.errors[key].message
-      );
-      const find = await getPosted(postIded);
-      res.status(400).render("posts/findeddd/" + req.params.postId, {
-        errorsss,
-        find,
-        isAuthenticated: req.isAuthenticated(),
-        currentUser: req.user,
-      });
+      next(e);
     }
   },
 ];
