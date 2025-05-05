@@ -462,14 +462,6 @@ exports.AddFile = [
   upload.single("addfile"),
   async (req, res, next) => {
     try {
-      console.log(
-        util.inspect(req.file, {
-          compact: false,
-          depth: 5,
-          breakLength: 80,
-          color: true,
-        })
-      );
       const ko = " Ko";
       const mo = " Mo";
       const go = " Go";
