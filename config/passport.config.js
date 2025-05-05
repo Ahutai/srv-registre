@@ -25,11 +25,11 @@ passport.use(
   "local",
   new LocalStrategy(
     {
-      usernameField: "email",
+      usernameField: "username",
     },
-    async (email, password, done) => {
+    async (username, password, done) => {
       try {
-        const user = await findUserPerEmail(email);
+        const user = await findUserPerEmail(username);
         if (user) {
           const match = await user.comparePassword(password);
           if (match) {

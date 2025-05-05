@@ -36,6 +36,13 @@ body {
   cursor: pointer;
 }
 
+.ulp {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .am1 {
   display: flex;
   justify-content: center;
@@ -533,6 +540,15 @@ body {
   color: white;
 }
 
+.contentt {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  position: fixed;
+  list-style: none;
+  text-decoration: none;
+}
+
 .content {
   color: #ffffff;
   font-size: 16px;
@@ -599,6 +615,26 @@ body {
   background-color: rgb(114, 114, 114);
   border: 0px;
   color: white;
+}
+
+.astorage {
+  cursor: default;
+}
+
+.storage {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 22.5px;
+  width: 25px;
+  padding: 2px 0px;
+  border-radius: 5px;
+  border: 0px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  /* flex: 1; */
+  cursor: default;
+  transition: all 120ms;
+  font-size: 12px;
 }
 
 .buttonmodd {
@@ -1091,6 +1127,23 @@ body {
   width: 100%;
 }
 
+.loadereded {
+  height: 22px;
+  width: 22px;
+  padding: 6.5px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #60959b;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+  /* transition: all 0.2s; */
+  margin-bottom: 130px;
+}
+
 .loader {
   height: 12px;
   width: 12px;
@@ -1324,4 +1377,46 @@ body {
 
 .chevron-left:hover {
   background-color: #5e5e5efb;
+}
+
+.partage {
+  background: #6c6c6c;
+  padding: 2px 10px;
+  border-radius: 5px;
+  transition: all 120ms;
+  margin-left: 20px;
+}
+
+.partage p {
+  color: white;
+}
+
+.partage:hover {
+  background-color: #5c5c5c;
+}
+
+.partagea {
+  list-style: none;
+  text-decoration: none;
+}
+
+.reload {
+  position: absolute;
+  height: 75vh;
+  width: 64%;
+  background-color: rgb(50, 50, 50);
+  display: FLEX;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 120ms;
+}
+
+.reload.active {
+  visibility: visible;
+  opacity: 1;
+  transition: all 120ms;
 }

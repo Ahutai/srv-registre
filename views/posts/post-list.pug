@@ -3,9 +3,15 @@ if postes
     div(class="divlist3")
       div(class="divlist4" id="tested")
         a(class="divlist5" href="/posts/finded/" + post._id)= post.content
-      div(class="divbutton")
-        a(href="/posts/neww/" + post._id) 
-          img(src="/images/add2d.svg", alt="" class="buttonmodd")
-        a(href="/posts/listpost/" + post._id) 
-          img(src="/images/troisd.svg", alt="" class="buttonmods")
-        img(src="/images/deleted.svg", alt="" class="buttonmlist" postid=post._id)
+      if editable && post.author._id.toString() === currentUser._id.toString()
+        div(class="divbutton")
+          a(href="/posts/neww/" + post._id) 
+            img(src="/images/add2d.svg", alt="" class="buttonmodd")
+          a(href="/posts/listpost/" + post._id) 
+            img(src="/images/troisd.svg", alt="" class="buttonmods")
+          img(src="/images/deleted.svg", alt="" class="buttonmlist" postid=post._id)
+      if editable === false 
+        div(class="divbutton")
+          a(href="#" class="astorage") 
+            img(src="/images/bdd.svg", alt="" class="storage")
+            

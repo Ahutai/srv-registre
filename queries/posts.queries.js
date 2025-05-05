@@ -6,6 +6,16 @@ exports.getPosts = () => {
   return Post.find({}).exec();
 };
 
+exports.getFolderByUser = (user) => {
+  return Post.find({ author: { $in: [...user.author, user._id] } })
+    .populate("author")
+    .exec();
+};
+
+exports.getFolderToUser = (authorId) => {
+  return Post.find({ author: authorId }).populate("author").exec();
+};
+
 exports.getPostsss = () => {
   return file.find({}).exec();
 };

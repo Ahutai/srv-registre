@@ -1,4 +1,5 @@
-const { createUser } = require("../queries/users.queries");
+const { createUser, getUserByUsername } = require("../queries/users.queries");
+const { getFolderToUser } = require("../queries/posts.queries");
 
 exports.signupForm = (req, res, next) => {
   res.render("users/user-form", {
@@ -19,5 +20,23 @@ exports.signup = async (req, res, next) => {
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
     });
+  }
+};
+
+exports.userProfile = async (req, res, next) => {
+  try {
+    // const username = req.params.username;
+    const username = "admin";
+    const user = await getUserByUsername(username);
+    const postes = await getFolderToUser(user._id);
+    res.render("posts/post", {
+      postes,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+      user,
+      editable: false,
+    });
+  } catch (e) {
+    next(e);
   }
 };

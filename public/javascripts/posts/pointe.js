@@ -1,5 +1,5 @@
 const dive = document.querySelectorAll(".divlist5");
-const loaded = document.querySelector(".loader");
+const loaded = document.querySelector(".reload");
 
 dive.forEach((e) => {
   e.addEventListener("click", async ($event) => {

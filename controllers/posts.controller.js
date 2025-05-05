@@ -1,6 +1,7 @@
 const { errorMonitor } = require("connect-mongo");
 const {
   getPosts,
+  getFolderByUser,
   getPostsss,
   getPost,
   createPost,
@@ -92,7 +93,7 @@ const util = require("util");
 exports.postFind = async (req, res, next) => {
   try {
     const postId = req.params.postId;
-    const postes = await getPosts();
+    const postes = await getFolderByUser(req.user);
     const content = await getposted(postId);
     const find = await getPostedd(postId);
     const updown = await getUpdown(postId);
@@ -104,6 +105,8 @@ exports.postFind = async (req, res, next) => {
       postes,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
+      user: req.user,
+      editable: true,
     });
   } catch (e) {
     next(e);
@@ -127,7 +130,7 @@ exports.fed = async (req, res, next) => {
 exports.sfiles = async (req, res, next) => {
   try {
     const postId = req.params.postId;
-    const postes = await getPosts();
+    const postes = await getFolderByUser(req.user);
     const content = await getfilee(postId);
     const findd = await sfile(postId);
     const authorget = await getauthor(postId);
@@ -270,8 +273,12 @@ exports.postDelete = async (req, res, next) => {
     const postId = req.params.postId;
     await deletePost(postId);
     await deleteAll(postId);
-    const postes = await getPosts();
-    res.render("posts/post-list", { postes });
+    const postes = await getFolderByUser(req.user);
+    res.render("posts/post-list", {
+      postes,
+      currentUser: req.user,
+      editable: true,
+    });
   } catch (e) {
     next(e);
   }

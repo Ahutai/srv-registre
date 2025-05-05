@@ -11,7 +11,7 @@ block content
               div(class='loader')
         if content
           each post in content   
-            a(class='content' href="/posts/finded/" + post.author)= post.name
+            a(class='contentt' href="/posts/finded/" + post.author)= post.name
         if postId
           a(href="/posts/spost/" + postId class="aded")
             img(src="/images/add2d.svg", alt="" class="addd")
@@ -25,3 +25,5 @@ block content
       div(class="divlist2v2 text" id="postlistcontainerr")
         include list-server.pug 
         include listserverII.pug
+        div(class="reload")
+          div(class="loadereded")
