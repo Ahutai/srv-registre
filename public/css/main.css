@@ -442,6 +442,18 @@ body {
   cursor: default;
 }
 
+.reloader {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 22.5px;
+  width: 25px;
+  padding: 2px 0px;
+  border-radius: 5px;
+  /* flex: 1; */
+  font-size: 12px;
+  cursor: default;
+}
+
 .add {
   margin-left: 10px;
   margin-right: 10px;

@@ -29,6 +29,8 @@ const {
   findposted,
 } = require("../controllers/posts.controller");
 
+router.post("/addfile/:postId", AddFile);
+
 router.get("/new", postNew);
 
 router.get("/neww/:postId", postNeww);
@@ -37,13 +39,7 @@ router.get("/spost/:postId", spost);
 
 router.get("/", postFind);
 
-// router.get("/listt", postListt);
-
-router.post("/", postCreate);
-
-router.post("/addfile/:postId", AddFile);
-
-// router.get("/listt/:postId", postListt);
+router.get("/listpost/:postId", postedList);
 
 router.get("/mod/:postId", postMod);
 
@@ -63,6 +59,8 @@ router.get("/sfiledel/:postId", sfiledel);
 
 router.get("/findedd/:postId", postFindd);
 
+router.post("/", postCreate);
+
 router.post("/modded/:postId", postModd);
 
 router.post("/spostmod/:postId", findSpost);
@@ -72,8 +70,6 @@ router.post("/update/:postId", postUpdate);
 router.post("/postedfile/:postId", findposted);
 
 router.post("/updatee/:postId", postUpdatee);
-
-router.get("/listpost/:postId", postedList);
 
 router.post("/supdate/:postId", sUpdate);
 

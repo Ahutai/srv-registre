@@ -87,6 +87,37 @@ const {
 //   }
 // };
 
+exports.AddFile = [
+  upload.single("addfile"),
+  async (req, res, next) => {
+    try {
+      const postId = req.params.postId;
+      const ko = " Ko";
+      const mo = " Mo";
+      const go = " Go";
+      let octetr, octet;
+      const octets = req.file.size / 1000;
+      if (octets < 1000) {
+        octet = octets + ko;
+        octetr = octets.toFixed() + ko;
+      }
+      if (octets > 1000) {
+        octet = octets / 1000;
+        octetr = octet.toFixed(1) + mo;
+      }
+      await createsPost({
+        name: req.body.name,
+        addfile: req.file.filename,
+        size: octetr,
+        author: req.params.postId,
+      });
+      res.redirect("/posts/findeddd/" + postId);
+    } catch (e) {
+      next(e);
+    }
+  },
+];
+
 exports.postFind = async (req, res, next) => {
   try {
     const postId = req.params.postId;
@@ -454,44 +485,6 @@ exports.postUpdatee = async (req, res, next) => {
     });
   }
 };
-
-exports.AddFile = [
-  upload.single("addfile"),
-  async (req, res, next) => {
-    try {
-      const postId = req.params.postId;
-      const ko = " Ko";
-      const mo = " Mo";
-      const go = " Go";
-      let octetr, octet;
-      const octets = req.file.size / 1000;
-      if (octets < 1000) {
-        octet = octets + ko;
-        octetr = octets.toFixed() + ko;
-      }
-      if (octets > 1000) {
-        octet = octets / 1000;
-        octetr = octet.toFixed(1) + mo;
-      }
-      await createsPost({
-        name: req.body.name,
-        addfile: req.file.filename,
-        size: octetr,
-        author: req.params.postId,
-      });
-      // const newUser = new Sfile({
-      // name: req.body.name,
-      // addfile: req.file.filename,
-      // size: octetr,
-      // author: req.params.postId,
-      // });
-      // const saveUser = await newUser.save();
-      res.redirect("/posts/findeddd/" + postId);
-    } catch (e) {
-      next(e);
-    }
-  },
-];
 
 exports.modal = async (req, res, next) => {
   try {
