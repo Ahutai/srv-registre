@@ -4,6 +4,7 @@ const files = require("../database/models/filess");
 const sfile = require("../database/models/sfile");
 const foldernivii = require("../database/models/foldernivii");
 const folderniviii = require("../database/models/folderniviii");
+const fileniviii = require("../database/models/fileniviii");
 
 exports.getPosts = () => {
   return Post.find({}).exec();
@@ -79,6 +80,10 @@ exports.listfolderniviii = (postId) => {
 
 exports.findfoldernivII = (postId) => {
   return foldernivii.find({ author: postId }).sort({ updown: -1 }).exec();
+};
+
+exports.findfileniviii = (postId) => {
+  return fileniviii.find({ author: postId }).sort({ updown: -1 }).exec();
 };
 
 exports.sfile = (postId) => {
@@ -162,6 +167,7 @@ exports.getposted = (postId) => {
     {
       _id: 1,
       content: 1,
+      niv: 1,
     }
   ).exec();
 };
@@ -174,6 +180,7 @@ exports.getfilee = (postId) => {
         _id: 1,
         name: 1,
         author: 1,
+        niv: 1,
       }
     )
     .exec();
@@ -187,6 +194,7 @@ exports.getContentFoldernivII = (postId) => {
         _id: 1,
         name: 1,
         author: 1,
+        niv: 1,
       }
     )
     .exec();
@@ -198,6 +206,7 @@ exports.getsfile = (postId) => {
       { _id: postId },
       {
         content: 1,
+        niv: 1,
       }
     )
     .exec();
@@ -256,6 +265,17 @@ exports.upDatess = (postId) => {
     .exec();
 };
 
+exports.updateFileNivIII = (postId) => {
+  return fileniviii
+    .findOne(
+      { _id: postId },
+      {
+        author: 1,
+      }
+    )
+    .exec();
+};
+
 exports.awaitedd = (postId) => {
   return file
     .findOne(
@@ -302,6 +322,11 @@ exports.createFileForPostList = (post) => {
   return newFilePostList.save();
 };
 
+exports.createFileNivIII = (post) => {
+  const newfileniviii = new fileniviii(post);
+  return newfileniviii.save();
+};
+
 exports.createPostt = (post) => {
   const newPost = new file(post);
   return newPost.save();
@@ -325,6 +350,10 @@ exports.deletePostt = (postId) => {
   return file.findByIdAndDelete(postId).exec();
 };
 
+exports.deletefoldernivII = (postId) => {
+  return foldernivii.findByIdAndDelete(postId).exec();
+};
+
 exports.sfileDelete = (postId) => {
   return sfile.findByIdAndDelete(postId).exec();
 };
@@ -333,12 +362,20 @@ exports.sfileDeletes = (postId) => {
   return files.findByIdAndDelete(postId).exec();
 };
 
+exports.delFileNivIII = (postId) => {
+  return fileniviii.findByIdAndDelete(postId).exec();
+};
+
 exports.deleteAll = (postId) => {
   return file.deleteMany({ author: postId }).exec();
 };
 
 exports.getPost = (postId) => {
   return Post.findOne({ _id: postId }).exec();
+};
+
+exports.getIdNivII = (postId) => {
+  return foldernivii.findOne({ _id: postId }).exec();
 };
 
 exports.getidlistserver = (postId) => {
@@ -367,6 +404,10 @@ exports.MsFile = (postId) => {
 
 exports.MsFiles = (postId) => {
   return files.findOne({ _id: postId }).exec();
+};
+
+exports.modFilesNivIII = (postId) => {
+  return fileniviii.findOne({ _id: postId }).exec();
 };
 
 exports.modFoldernivii = (postId) => {
@@ -413,6 +454,16 @@ exports.updatesSfiles = (postIded, postIdd) => {
   );
 };
 
+exports.updatesFileNivIII = (postIded, postIdd) => {
+  return fileniviii.findByIdAndUpdate(
+    postIded,
+    {
+      $set: postIdd,
+    },
+    { runValidators: true }
+  );
+};
+
 exports.addedToFile = (postIded, postIdd) => {
   return Post.findByIdAndUpdate(
     postIded,
@@ -439,6 +490,18 @@ exports.findmodal = (postId) => {
       { _id: postId },
       {
         addfile: 1,
+        type: 1,
+      }
+    )
+    .exec();
+};
+
+exports.findmodalll = (postId) => {
+  return fileniviii
+    .find(
+      { _id: postId },
+      {
+        addfiless: 1,
         type: 1,
       }
     )

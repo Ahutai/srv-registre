@@ -126,6 +126,7 @@ exports.userToFind = async (req, res, next) => {
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
       editables: false,
+      users: true,
     });
   } catch (e) {
     next(e);

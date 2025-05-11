@@ -9,6 +9,7 @@ const fileSchema = schema({
   date: { type: String, required: true },
   type: { type: String, required: true },
   sort: { type: String, required: true },
+  niv: { type: String, required: true },
 });
 
 const filepostlist = mongoose.model("filepostlist", fileSchema);

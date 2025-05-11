@@ -1,5 +1,5 @@
-const che = document.querySelector(".chevron-left");
-const chee = document.querySelector(".chevron-right");
+const che = document.querySelector(".cotei");
+const chee = document.querySelector(".coteii");
 
 che.addEventListener("click", (e) => {
   window.history.back();

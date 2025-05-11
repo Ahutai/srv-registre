@@ -59,6 +59,15 @@ const {
   createFolderListnivIII,
   getContentFoldernivII,
   listfolderniviii,
+  getIdNivII,
+  findfileniviii,
+  createFileNivIII,
+  findmodalll,
+  deletefoldernivII,
+  delFileNivIII,
+  modFilesNivIII,
+  updateFileNivIII,
+  updatesFileNivIII,
 } = require("../queries/posts.queries");
 
 const util = require("util");
@@ -115,6 +124,53 @@ const upload = multer({
 //   }
 // };
 
+exports.createFileNivIII = [
+  upload.single("addfiless"),
+  async (req, res, next) => {
+    try {
+      const postId = req.params.postId;
+      const dates = new Date();
+      const datenow = dates.toDateString();
+      const ko = " Ko";
+      const mo = " Mo";
+      const go = " Go";
+      let octetr, octet, formats;
+      const format = req.file.mimetype;
+      const sizing = req.file.size;
+      const octets = sizing / 1000;
+      if (octets < 1000) {
+        octet = octets + ko;
+        octetr = octets.toFixed() + ko;
+      }
+      if (octets > 1000) {
+        octet = octets / 1000;
+        octetr = octet.toFixed(1) + mo;
+      }
+      if (format === "application/pdf") {
+        formats = "a";
+      } else {
+        formats = "b";
+      }
+      await createFileNivIII({
+        name: req.body.name,
+        addfiless: req.file.filename,
+        size: octetr,
+        author: req.params.postId,
+        date: datenow,
+        type: req.file.mimetype,
+        sort: formats,
+        niv: "4",
+      });
+      res.redirect("/posts/listfolderiii/" + postId);
+    } catch (e) {
+      const postId = req.params.postId;
+      const post = await sposts(postId);
+      const errored = Object.keys(e.errors).map((key) => e.errors[key].message);
+      res.render("posts/spost", { errored, post });
+    }
+  },
+];
+
 exports.addToPostList = [
   upload.single("addfiles"),
   async (req, res, next) => {
@@ -150,6 +206,7 @@ exports.addToPostList = [
         date: datenow,
         type: req.file.mimetype,
         sort: formats,
+        niv: "2",
       });
       res.redirect("/posts/finded/" + postId);
     } catch (e) {
@@ -196,6 +253,7 @@ exports.AddFile = [
         date: datenow,
         type: req.file.mimetype,
         sort: formats,
+        niv: "3",
       });
       res.redirect("/posts/findeddd/" + postId);
     } catch (e) {
@@ -206,6 +264,22 @@ exports.AddFile = [
     }
   },
 ];
+
+exports.folderfind = async (req, res, next) => {
+  try {
+    const postes = await getFolderByUser(req.user);
+    res.render("posts/post", {
+      postes,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+      user: req.user,
+      editable: true,
+      folder: true,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
 
 exports.postFind = async (req, res, next) => {
   try {
@@ -282,13 +356,13 @@ exports.listFolderNivIII = async (req, res, next) => {
     const listfolderiii = await listfolderniviii(postId);
     const authorget = await getauthor(postId);
     const updown = await getUpdown(postId);
-    // const finddss = await findfoldernivII(postId);
+    const fileniviii = await findfileniviii(postId);
     res.render("posts/post", {
       authorget,
       updown,
       content,
       listfolderiii,
-      // finddss,
+      fileniviii,
       postes,
       postId,
       isAuthenticated: req.isAuthenticated(),
@@ -348,6 +422,33 @@ exports.sfiledel = async (req, res, next) => {
   }
 };
 
+exports.getDelFileNivIII = async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    const postes = await getFolderByUser(req.user);
+    const content = await getContentFoldernivII(postId);
+    const listfolderiii = await listfolderniviii(postId);
+    const authorget = await getauthor(postId);
+    const updown = await getUpdown(postId);
+    const fileniviii = await findfileniviii(postId);
+    res.render("posts/listserverIII", {
+      authorget,
+      updown,
+      content,
+      listfolderiii,
+      fileniviii,
+      postes,
+      postId,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+      user: req.user,
+      editable: true,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
 exports.sfiledell = async (req, res, next) => {
   try {
     const postId = req.params.postId;
@@ -361,6 +462,30 @@ exports.sfiledell = async (req, res, next) => {
       content,
       find,
       findds,
+      postes,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.ListdelFolderNivII = async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    const postes = await getFolderByUser(req.user);
+    const content = await getfilee(postId);
+    const findd = await sfile(postId);
+    const authorget = await getauthor(postId);
+    const updown = await getUpdown(postId);
+    const finddss = await findfoldernivII(postId);
+    res.render("posts/listserverII", {
+      updown,
+      content,
+      findd,
+      finddss,
+      authorget,
       postes,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
@@ -422,6 +547,16 @@ exports.postListFile = async (req, res, next) => {
   });
 };
 
+exports.fileniviii = async (req, res, next) => {
+  const postId = req.params.postId;
+  const post = await getIdNivII(postId);
+  res.render("posts/modalfileniviii", {
+    post,
+    isAuthenticated: req.isAuthenticated(),
+    currentUser: req.user,
+  });
+};
+
 exports.createListNivIII = async (req, res, next) => {
   const postId = req.params.postId;
   const post = await idListPostNivII(postId);
@@ -453,6 +588,7 @@ exports.postCreate = async (req, res, next) => {
       ...body,
       author: req.user._id,
       username: req.user.username,
+      niv: "1",
     });
     res.redirect("/posts");
   } catch (e) {
@@ -497,6 +633,7 @@ exports.addFolderNivII = async (req, res, next) => {
       authors: authors,
       username: usered,
       date: datered,
+      niv: "3",
     });
     res.redirect("/posts/findeddd/" + req.params.postId);
   } catch (e) {
@@ -530,6 +667,7 @@ exports.createfolderListNivIII = async (req, res, next) => {
       authors: authors,
       username: usered,
       date: datered,
+      niv: "4",
     });
     res.redirect("/posts/listfolderiii/" + req.params.postId);
   } catch (e) {
@@ -563,6 +701,7 @@ exports.postModd = async (req, res, next) => {
       authors: authors,
       username: usered,
       date: datered,
+      niv: "2",
     });
     res.redirect("/posts/finded/" + req.params.postId);
   } catch (e) {
@@ -597,11 +736,31 @@ exports.postDeletee = async (req, res, next) => {
   }
 };
 
+exports.delfoldernivII = async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    await deletefoldernivII(postId);
+    res.render("posts/listserverII");
+  } catch (e) {
+    next(e);
+  }
+};
+
 exports.deleteFilePostList = async (req, res, next) => {
   try {
     const postId = req.params.postId;
     await sfileDeletes(postId);
     res.render("posts/list-server");
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.deleteFilesNivIII = async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    await delFileNivIII(postId);
+    res.render("posts/listserverIII");
   } catch (e) {
     next(e);
   }
@@ -679,6 +838,20 @@ exports.modForFilePostList = async (req, res, next) => {
     const modifiii = await MsFiles(postId);
     res.render("posts/modforfilepostlist", {
       modifiii,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.modFileNivIII = async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    const modfileniviii = await modFilesNivIII(postId);
+    res.render("posts/modfilesniviii", {
+      modfileniviii,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
     });
@@ -799,6 +972,28 @@ exports.filepostlistupdate = async (req, res, next) => {
   }
 };
 
+exports.fileniviiiupdate = async (req, res, next) => {
+  const postIded = req.params.postId;
+  try {
+    const awaii = [];
+    const awaitedd = await updateFileNivIII(postIded);
+    awaii.push(awaitedd.author);
+    const postId = awaii.toString();
+    const postIdd = req.body;
+    await updatesFileNivIII(postIded, postIdd);
+    res.redirect("/posts/listfolderiii/" + postId);
+  } catch (e) {
+    const errorsss = Object.keys(e.errors).map((key) => e.errors[key].message);
+    const find = await getPosted(postIded);
+    res.status(400).render("posts/modforfilepostlist", {
+      errorsss,
+      find,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  }
+};
+
 exports.findposted = async (req, res, next) => {
   const postIded = req.params.postId;
   try {
@@ -871,6 +1066,24 @@ exports.modall = async (req, res, next) => {
     // const updown = await getUpdown(postId);
     res.render("posts/post", {
       modalFindd,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.modalll = async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    const modalFinddd = await findmodalll(postId);
+    // const postes = await getPosts();
+    // const content = await getfile(postId);
+    // const findd = await sfile(postId);
+    // const updown = await getUpdown(postId);
+    res.render("posts/post", {
+      modalFinddd,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
     });

@@ -4,6 +4,7 @@ const MongoStore = require("connect-mongo");
 const mongoose = require("mongoose");
 const dbString =
   "mongodb+srv://Allen:C3EjU2rnNUfbPO@cluster0.lg23k.mongodb.net/nodeTest?retryWrites=true&w=majority&appName=Cluster0";
+
 const connection = mongoose.createConnection(dbString);
 
 const sessionStore = MongoStore.create({

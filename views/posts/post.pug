@@ -5,19 +5,34 @@ block content
     div(class="divlistm1")
       div(class="folder-container")
         if content && find && findds
-          each post in content   
+          each post in content    
             a(class='content')= post.content
             div(class='loadered')
               div(class='loader')
+            div(class="divniv")
+              p(class="nivp")= post.niv 
             a(href="/posts/neww/" + post._id class="filed")
               img(src="/images/folderd.svg", alt="" class="addded")
             a(href="/posts/showmodal/" + post._id class="filed") 
               img(src="/images/filed.svg", alt="" class="addd")
+        if folder 
+          h3(class='content') D O S S I E R
+          div(class='loadered')
+            div(class='loader')
+          a(href="/posts/new/" class="foldera")
+            img(src="/images/folderd.svg", alt="" class="adddedd")
+        if users 
+          h4(class='content') P A R T A G E
+          div(class='loadered')
+            div(class='loader')
+          img(src="/images/foldershared.svg", alt="" class="adddeddd")
         if content && editable === true && findd
           each post in content   
             a(class='contentt' href="/posts/finded/" + post.author)= post.name
             div(class='loadered')
               div(class='loader')
+            div(class="divniv")
+              p(class="nivp")= post.niv 
             a(href="/posts/foldernivii/" + post._id class="filed")
               img(src="/images/folderd.svg", alt="" class="addded")
             a(href="/posts/spost/" + post._id class="filed") 
@@ -27,15 +42,19 @@ block content
             a(class='contentt' href="/posts/findeddd/" + post.author)= post.name
             div(class='loadered')
               div(class='loader')
+            div(class="divniv")
+              p(class="nivp")= post.niv 
             a( href="/posts/createlistniviii/" + post._id class="filed") 
               img(src="/images/folderd.svg", alt="" class="addded")
-            a(href="/posts/spost/" + post._id class="filed") 
+            a(href="/posts/createfileniviii/" + post._id class="filed") 
               img(src="/images/filed.svg", alt="" class="addd")
         if content && editable === false
-          each post in content   
+          each post in content 
             a(class='contentt' href="/users/spost/" + post.author)= post.name
             div(class='loadered')
               div(class='loader')
+            div(class="divniv")
+              p(class="nivp")= post.niv 
             a(href="/posts/foldernivii/" + post._id class="filed")
               img(src="/images/folderd.svg", alt="" class="addded")
             a(href="/posts/spost/" + postId class="aded")

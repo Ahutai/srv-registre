@@ -8,6 +8,7 @@ const postSchema = schema({
   },
   author: { type: schema.Types.ObjectId, ref: "user", required: true },
   username: { type: String, required: true },
+  niv: { type: String, required: true },
 });
 
 const post = mongoose.model("post", postSchema);

@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
-const spostSchema = schema({
+const fileniviiiSchema = schema({
   name: { type: String, required: [true, "renseigner le champ name"] },
-  addfile: { type: String, required: [true, "choisir un fichier"] },
+  addfiless: { type: String, required: [true, "choisir un fichier"] },
   size: { type: String, required: [true, "choisir un fichier"] },
   author: { type: schema.Types.ObjectId, ref: "user", required: true },
   date: { type: String, required: true },
@@ -12,6 +12,6 @@ const spostSchema = schema({
   niv: { type: String, required: true },
 });
 
-const spost = mongoose.model("spost", spostSchema);
+const fileniviii = mongoose.model("fileniviii", fileniviiiSchema);
 
-module.exports = spost;
+module.exports = fileniviii;

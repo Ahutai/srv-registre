@@ -44,11 +44,27 @@ const {
   listFolderNivIII,
   createListNivIII,
   createfolderListNivIII,
+  fileniviii,
+  createFileNivIII,
+  modalll,
+  delfoldernivII,
+  ListdelFolderNivII,
+  deleteFilesNivIII,
+  getDelFileNivIII,
+  modFileNivIII,
+  fileniviiiupdate,
+  folderfind,
 } = require("../controllers/posts.controller");
 
 router.post("/addfile/:postId", ensureAuthenticated, AddFile);
 
 router.post("/addfiles/:postId", ensureAuthenticated, addToPostList);
+
+router.post(
+  "/createfileforniviii/:postId",
+  ensureAuthenticated,
+  createFileNivIII
+);
 
 router.get("/new", postNew);
 
@@ -58,11 +74,13 @@ router.get("/foldernivii/:postId", folderNivII);
 
 router.get("/showmodal/:postId", postListFile);
 
+router.get("/createfileniviii/:postId", fileniviii);
+
 router.get("/spost/:postId", spost);
 
 router.get("/createlistniviii/:postId", createListNivIII);
 
-router.get("/", postFind);
+router.get("/", folderfind);
 
 router.get("/listpost/:postId", postedList);
 
@@ -72,6 +90,8 @@ router.get("/modal/:postId", modal);
 
 router.get("/modall/:postId", modall);
 
+router.get("/modalll/:postId", modalll);
+
 router.get("/moded/:postId", postModed);
 
 router.get("/msfile/:postId", msFile);
@@ -79,6 +99,8 @@ router.get("/msfile/:postId", msFile);
 router.get("/modfoldernivii/:postId", modFolderNivII);
 
 router.get("/msfiles/:postId", modForFilePostList);
+
+router.get("/mfileniviii/:postId", modFileNivIII);
 
 router.get("/finded/:postId", postFind);
 
@@ -95,6 +117,10 @@ router.get("/showmodalfilefolderpostlist/:postId", showmodalfilefolderpostlist);
 router.get("/sfiledel/:postId", sfiledel);
 
 router.get("/sfiledell/:postId", sfiledell);
+
+router.get("/getfilesniviii/:postId", getDelFileNivIII);
+
+router.get("/delfoldernivii/:postId", ListdelFolderNivII);
 
 router.get("/findedd/:postId", postFindd);
 
@@ -120,12 +146,18 @@ router.post("/supdate/:postId", sUpdate);
 
 router.post("/supdates/:postId", filepostlistupdate);
 
+router.post("/updatefilesniviii/:postId", fileniviiiupdate);
+
 router.delete("/:postId", postDelete);
 
 router.delete("/del/:postId", postDeletee);
 
+router.delete("/delfoldernivii/:postId", delfoldernivII);
+
 router.delete("/deletesfile/:postId", deleteSfile);
 
 router.delete("/deletesfiles/:postId", deleteFilePostList);
+
+router.delete("/delfilesniviii/:postId", deleteFilesNivIII);
 
 module.exports = router;

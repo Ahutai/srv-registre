@@ -15,10 +15,43 @@ html(lang='en')
         .container-fluid
             block content         
         script(src="/javascripts/posts/post.js")
+        script(src="/javascripts/posts/new.js")
         script(src="/javascripts/posts/pointe.js")
         script(src="/javascripts/posts/chevron.js")
-        script(src="/javascripts/posts/reload.js")
-        script(src="/javascripts/posts/modal.js")
-        script(src="/javascripts/posts/mod.js")
+        script(src="/javascripts/posts/general.js")
+        if modalFind 
+          each post in modalFind
+            if post.type === "application/pdf"
+              script(src="/javascripts/posts/modal.js")
+              script(src="/javascripts/posts/mod.js")
+            else
+              script(src="/javascripts/posts/divdow.js")
+              script(src="/javascripts/posts/modal.js")
+        if modalFindd
+          each post in modalFindd
+            if post.type === "application/pdf"
+              script(src="/javascripts/posts/modal.js")
+              script(src="/javascripts/posts/mod.js")
+            else
+              script(src="/javascripts/posts/divdow.js")
+              script(src="/javascripts/posts/modal.js")
+        if modalFinddd
+          each post in modalFinddd
+            if post.type === "application/pdf"
+              script(src="/javascripts/posts/modal.js")
+              script(src="/javascripts/posts/mod.js")
+            else
+              script(src="/javascripts/posts/divdow.js")
+              script(src="/javascripts/posts/modal.js")
+        if content && editable === true && findd
+          script(src="/javascripts/posts/reload.js")
+        if content && editable === true && listfolderiii
+          script(src="/javascripts/posts/reload.js")
+        if content && editable === false
+          script(src="/javascripts/posts/reload.js")
+          
+
+          
+
 
 

@@ -5,8 +5,8 @@ window.addEventListener("DOMContentLoaded", () => {
   bindPosttt();
   deletesfile();
   deletesfiles();
-  msfile();
-  modalfilefolder();
+  delfoldernivii();
+  delfilesniviii();
   // bindPosttt();
 });
 
@@ -161,6 +161,70 @@ function deletesfiles() {
       axios.get("/posts/sfiledell/" + postsfile).then((response) => {
         postCc.innerHTML = response.data;
         deletesfiles();
+      });
+    });
+  });
+}
+
+function delfoldernivii() {
+  const elementss = document.querySelectorAll(".delfoldernivii");
+  const loaderr = document.querySelector(".loader");
+  const postContainerr = document.querySelector("#postlistcontainerr");
+
+  const listan = document.querySelectorAll(".divlist3");
+
+  elementss.forEach((e) => {
+    e.addEventListener("click", ($event) => {
+      loaderr.classList.add("active");
+      $event.target.classList.add("active");
+      const postId = $event.target.getAttribute("postid");
+      const postIdd = $event.target.getAttribute("postidd");
+
+      axios
+        .delete("/posts/delfoldernivii/" + postId)
+        .then(function (response) {
+          postContainerr.innerHTML = response.data;
+          loaderr.classList.remove("active");
+          delfoldernivii();
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+      axios.get("/posts/delfoldernivii/" + postIdd).then((response) => {
+        postContainerr.innerHTML = response.data;
+        delfoldernivii();
+      });
+    });
+  });
+}
+
+function delfilesniviii() {
+  const elementss = document.querySelectorAll(".deletesfiless");
+  const loaderr = document.querySelector(".loader");
+  const postContainerr = document.querySelector("#postlistcontainerr");
+
+  const listan = document.querySelectorAll(".divlist3");
+
+  elementss.forEach((e) => {
+    e.addEventListener("click", ($event) => {
+      loaderr.classList.add("active");
+      $event.target.classList.add("active");
+      const postId = $event.target.getAttribute("postid");
+      const postIdd = $event.target.getAttribute("postidd");
+
+      axios
+        .delete("/posts/delfilesniviii/" + postId)
+        .then(function (response) {
+          postContainerr.innerHTML = response.data;
+          loaderr.classList.remove("active");
+          delfilesniviii();
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+      axios.get("/posts/getfilesniviii/" + postIdd).then((response) => {
+        postContainerr.innerHTML = response.data;
+        delfilesniviii();
       });
     });
   });
