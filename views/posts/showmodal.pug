@@ -1,0 +1,21 @@
+extends ../layouti.pug 
+
+block content 
+  script(src="/javascripts/posts/loaderr.js")
+  div(class="newmodal")
+    div(class="newmodall")
+      include ../includes/create
+    div(class="divfold")
+      form(class="formmuser" method="post" enctype="multipart/form-data" action= "/posts/addfiles/" + post._id) 
+        div(class="divc3formuser") 
+          div(class="divinputfolders")
+            input(class="inputfolders" type="text" name="name" placeholder="Name")
+          div(class="divinputfolder")
+            input(class="inputfolder" type="file" name="addfiles")
+          div(class="divc5form") 
+            input(type="submit" value="Valider" class="inputmform")
+            div(class="loaderr")
+            if errored
+              ul(class="ulerrorform")
+                each error in errored
+                  li(class="lierrorform")= error

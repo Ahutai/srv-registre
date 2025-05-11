@@ -3,4 +3,22 @@ if modalFind
     div(class="loaderedd")
       div(class='loaderd active')
     div(class="modal")
-      embed(class="embed" src=`/upload/${post.addfile}`, alt="" width="800" height="1000" type="application/pdf")
+      if post.type === "application/pdf"
+        embed(class="embed" src=`/upload/${post.addfile}`, alt="" width="800" height="1000")
+      else 
+        div(class="divdow")
+          a(class="adow" href=`/upload/${post.addfile}` download)
+            p download this file
+          img(src="/images/pdfvv.png" class="adddede")  
+if modalFindd
+  each post in modalFindd 
+    div(class="loaderedd")
+      div(class='loaderd active')
+    div(class="modal")
+      if post.type === "application/pdf"
+        embed(class="embed" src=`/upload/${post.addfiles}`, alt="" width="800" height="1000")
+      else 
+        div(class="divdow")
+          a(class="adow" href=`/upload/${post.addfiles}` download)
+            p download this file
+          img(src="/images/pdfvv.png" class="adddede") 

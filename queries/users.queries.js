@@ -27,3 +27,14 @@ exports.findUserPerId = (id) => {
 exports.getUserByUsername = (username) => {
   return User.findOne({ username }).exec();
 };
+
+exports.findAllUser = () => {
+  return User.find(
+    {},
+    {
+      username: 1,
+    }
+  )
+    .sort({ username: 1 })
+    .exec();
+};

@@ -3,6 +3,7 @@ module.exports = {
     {
       name: "nodejs",
       script: "./bin/www",
+      exp_backoff_restart_delay: 500,
       instances: "max",
       autorestart: true,
       watch: true,

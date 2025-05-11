@@ -1,8 +1,44 @@
+if finddss 
+  each post in finddss
+    div(class="divlist3s")
+      //- if post.updown === "UP"
+      //- div(class="up-down active")
+      img(src="/images/folderrrr.png", alt="" class="folder")
+      //- else 
+      //-   div(class="up-down")
+      if editable === false
+        div(class="divlist4")
+          a(class="divlist5" href="/users/sposts/" + post._id)= post.name     
+      else 
+        div(class="divlist4")
+          a(class="divlist5" href="/posts/listfolderiii/" + post._id)= post.name
+      div(class="divlist4")
+        a(class="divlist54") 1 Mo
+      div(class="divlist4")
+        a(class="divlist555")= post.date
+      div(class="divlist4")
+        p(class="divlist5555") FOLDER
+      if editable === false
+        div(class="divbutton")
+          a(href="#") 
+            a(src="", alt="" class="ajout")
+          a(src="", alt="" class="del" )
+          a(src="", alt="" class="trs")
+      else
+        div(class="divbutton")
+          a( href="/posts/createlistniviii/" + post._id) 
+            img(src="/images/add2d.svg", alt="" class="addd")
+          a(href="/posts/modfoldernivii/" + post._id) 
+            img(src="/images/troisd.svg", alt="" class="buttonmod")
+          img(src="/images/deleted.svg", alt="" class="buttonmlistt" postid=post._id postidd=post.author)
 if findd 
   each post in findd
     div(class="divlist3s")
       //- if post.updown === "UP"
-      img(src="/images/filed.svg", alt="" class="folder")
+      if post.type === "application/pdf"
+        img(src="/images/pdfv.png", alt="" class="folder")
+      else
+        img(src="/images/pdfvv.png", alt="" class="folder")
       //- else 
       //-   div(class="up-down")
       div(class="divlist4")
@@ -10,11 +46,24 @@ if findd
       div(class="divlist4")
         a(class="divlist54")= post.size 
       div(class="divlist4")
-        a(class="divlist55" href=`/upload/${post.addfile}` download)= post.addfile
-      div(class="divbutton")
-        a(href="/posts/spost/" + post._id) 
-          a(href="#" class="adddd") 
-        a(href="/posts/msfile/" + post._id) 
-          img(src="/images/troisd.svg", alt="" class="trois")
-        img(src="/images/deleted.svg", alt="" class="deletesfile" postid=post._id postidd=post.author)
+        p(class="divlist555")= post.date
+      if post.type === "application/pdf"
+        div(class="divlist4")
+          p(class="divlist5555") format PDF
+      else 
+        div(class="divlist4")
+          p(class="divlist5555") format DOCX
+      if editable === false
+        div(class="divbutton")
+          a(src="", alt="" class="del" )
+          a(src="", alt="" class="trs")
+          a(href=`/upload/${post.addfile}` download)
+            img(src="/images/download.svg" class="addd") 
+      else
+        div(class="divbutton")
+          a(href=`/upload/${post.addfile}` download)
+            img(src="/images/download.svg" class="addd") 
+          a(href="/posts/msfile/" + post._id) 
+            img(src="/images/troisd.svg", alt="" class="trois")
+          img(src="/images/deleted.svg", alt="" class="deletesfile" postid=post._id postidd=post.author)
 

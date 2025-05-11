@@ -4,26 +4,69 @@ block content
   div(class="divlist1")
     div(class="divlistm1")
       div(class="folder-container")
-        if content
+        if content && find && findds
           each post in content   
             a(class='content')= post.content
             div(class='loadered')
               div(class='loader')
-        if content
+            a(href="/posts/neww/" + post._id class="filed")
+              img(src="/images/folderd.svg", alt="" class="addded")
+            a(href="/posts/showmodal/" + post._id class="filed") 
+              img(src="/images/filed.svg", alt="" class="addd")
+        if content && editable === true && findd
           each post in content   
             a(class='contentt' href="/posts/finded/" + post.author)= post.name
-        if postId
-          a(href="/posts/spost/" + postId class="aded")
-            img(src="/images/add2d.svg", alt="" class="addd")
-          img(src="/images/chevrons.svg", alt="" class="chevron-left")
-          img(src="/images/chevron.svg", alt="" class="chevron-right")
+            div(class='loadered')
+              div(class='loader')
+            a(href="/posts/foldernivii/" + post._id class="filed")
+              img(src="/images/folderd.svg", alt="" class="addded")
+            a(href="/posts/spost/" + post._id class="filed") 
+              img(src="/images/filed.svg", alt="" class="addd")
+        if content && editable === true && listfolderiii
+          each post in content   
+            a(class='contentt' href="/posts/findeddd/" + post.author)= post.name
+            div(class='loadered')
+              div(class='loader')
+            a( href="/posts/createlistniviii/" + post._id class="filed") 
+              img(src="/images/folderd.svg", alt="" class="addded")
+            a(href="/posts/spost/" + post._id class="filed") 
+              img(src="/images/filed.svg", alt="" class="addd")
+        if content && editable === false
+          each post in content   
+            a(class='contentt' href="/users/spost/" + post.author)= post.name
+            div(class='loadered')
+              div(class='loader')
+            a(href="/posts/foldernivii/" + post._id class="filed")
+              img(src="/images/folderd.svg", alt="" class="addded")
+            a(href="/posts/spost/" + postId class="aded")
+              img(src="/images/filed.svg", alt="" class="addd")
+        //- if postId
+        //-   a(href="/posts/spost/" + postId class="aded")
+        //-     img(src="/images/add2d.svg", alt="" class="addd")
+        //-   img(src="/images/chevrons.svg", alt="" class="chevron-left")
+        //-   img(src="/images/chevron.svg", alt="" class="chevron-right")
       div(class="divlist2 text" id="postlistcontainer") 
-        include post-list.pug 
+        include post-list.pug
+        //- include post-formmmm.pug 
+        div(class="reloader")
+          div(class="loadereded")
     div(class="divlistm2")
       div(class="profile-containerr")
         include ../includes/name.pug
       div(class="divlist2v2 text" id="postlistcontainerr")
         include list-server.pug 
         include listserverII.pug
+        include listserverIII.pug
+
+        //- div(class="showmodal")
+        //-   div(class="divmodall")
+        //-     a(href="/posts/neww/" + postIdFileFolderPostList)
+        //-       img(src="/images/folderd.svg", alt="")
+        //-         p dossier
+           div(class="divmodal")
+              a(href="/posts/showmodal/" + postIdFileFolderPostList) 
+                img(src="/images/filed.svg", alt="")
+              p fichier
         div(class="reload")
           div(class="loadereded")
+        div(class="reloade")

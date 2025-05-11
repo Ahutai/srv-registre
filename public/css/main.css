@@ -49,6 +49,29 @@ body {
   align-items: center;
 }
 
+.usernames {
+  color: rgb(243, 243, 243);
+  text-decoration: none;
+  transition: all 0.2s;
+  background-color: rgb(25, 135, 186);
+  padding: 3px 12.5px 3px 12.5px;
+  border-radius: 5px;
+  margin-left: 15px;
+  opacity: 1;
+  transition: all 0.2s;
+  overflow: visible;
+}
+
+.username {
+  color: rgb(243, 243, 243);
+  text-decoration: none;
+  transition: all 0.2s;
+  background-color: rgb(25, 135, 186);
+  padding: 1px 12.5px 3px 12.5px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
 .a1 {
   color: rgb(243, 243, 243);
   text-decoration: none;
@@ -58,6 +81,17 @@ body {
   border-radius: 5px;
 }
 
+.a22 {
+  color: rgb(224, 224, 224);
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .a2 {
   margin-right: 20px;
   margin-left: 18px;
@@ -65,6 +99,10 @@ body {
   text-decoration: none;
   transition: all 0.2s;
   cursor: pointer;
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .a2:hover {
@@ -76,7 +114,7 @@ body {
 }
 
 .a2c:hover {
-  color: rgb(0, 142, 31);
+  color: rgb(21, 120, 167);
 }
 
 .a2cc:hover {
@@ -86,6 +124,10 @@ body {
 .a1:hover {
   background-color: rgb(84, 84, 84);
 }
+
+/* .username:hover {
+  background-color: rgb(0, 106, 151);
+} */
 
 .text {
   color: white;
@@ -238,16 +280,27 @@ body {
 }
 
 .status {
-  margin-left: 103px;
+  margin-left: 90px;
   margin-right: 7px;
 }
 
+.name {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .options {
-  margin-left: 50px;
+  margin-left: 32px;
+  margin-right: 17px;
+}
+
+.adresses {
+  margin-left: 40px;
+  margin-right: 30px;
 }
 
 .adresse {
-  margin-left: 80px;
+  margin-left: 40px;
   margin-right: 20px;
 }
 
@@ -414,6 +467,70 @@ body {
   align-items: center;
 }
 
+.divdow a p {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 120ms;
+}
+
+.adow {
+  list-style: none;
+  text-decoration: none;
+}
+
+.divdow {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 200px;
+  background-color: #525252;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 3;
+  top: 40%;
+  left: 43.5%;
+  border: 2px solid rgb(151, 151, 151);
+}
+
+.adow p:hover {
+  color: #d3d3d3;
+}
+
+.addded {
+  margin-left: 10px;
+  margin-right: 5px;
+  height: 22.5px;
+  width: 25px;
+  border-radius: 5px;
+  border: 0px;
+  padding: 2px 0px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  /* flex: 1; */
+  cursor: pointer;
+  transition: all 120ms;
+  font-size: 12px;
+}
+
+.adddede {
+  margin-left: 10px;
+  height: 22.5px;
+  width: 25px;
+  border-radius: 5px;
+  border: 0px;
+  padding: 2px 0px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  /* flex: 1; */
+  cursor: default;
+  transition: all 120ms;
+  font-size: 12px;
+}
+
 .addd {
   margin-left: 10px;
   margin-right: 10px;
@@ -442,19 +559,45 @@ body {
   cursor: default;
 }
 
-.reloader {
+.filed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ajout {
   margin-left: 10px;
   margin-right: 10px;
   height: 22.5px;
   width: 25px;
   padding: 2px 0px;
   border-radius: 5px;
+  border: 0px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
   /* flex: 1; */
+  transition: all 120ms;
   font-size: 12px;
-  cursor: default;
 }
 
 .add {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 22.5px;
+  width: 25px;
+  padding: 2px 0px;
+  border-radius: 5px;
+  border: 0px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  /* flex: 1; */
+  cursor: pointer;
+  transition: all 120ms;
+  font-size: 12px;
+}
+
+.deletesfiles {
   margin-left: 10px;
   margin-right: 10px;
   height: 22.5px;
@@ -486,6 +629,21 @@ body {
   font-size: 12px;
 }
 
+.trs {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 22.5px;
+  width: 25px;
+  padding: 2px 0px;
+  border-radius: 5px;
+  border: 0px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  /* flex: 1; */
+  transition: all 120ms;
+  font-size: 12px;
+}
+
 .buttonmlistt {
   margin-left: 10px;
   margin-right: 10px;
@@ -502,6 +660,10 @@ body {
   font-size: 12px;
 }
 
+.deletesfiles:hover {
+  background-color: rgba(199, 3, 3, 0.646);
+}
+
 .deletesfile:hover {
   background-color: rgba(199, 3, 3, 0.646);
 }
@@ -511,6 +673,10 @@ body {
 }
 
 .addd:hover {
+  background-color: rgba(132, 132, 132, 0.646);
+}
+
+.addded:hover {
   background-color: rgba(132, 132, 132, 0.646);
 }
 
@@ -534,8 +700,21 @@ body {
   background-color: rgba(132, 132, 132, 0.646);
 }
 
+.addusers:hover {
+  background-color: rgba(151, 151, 151, 0.646);
+}
+
 .buttonmodd:hover {
   background-color: rgba(151, 151, 151, 0.646);
+}
+
+.modalfilefolder:hover {
+  background-color: rgba(151, 151, 151, 0.646);
+}
+
+.userp {
+  color: rgb(188, 188, 188);
+  margin-left: 10px;
 }
 
 .divlist5s {
@@ -550,6 +729,20 @@ body {
   list-style: none;
   text-decoration: none;
   color: white;
+}
+
+.divlistuser {
+  margin-left: 10px;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+.divlistuserr {
+  margin-left: 10px;
+  list-style: none;
+  text-decoration: none;
+  color: rgb(188, 188, 188);
 }
 
 .contentt {
@@ -570,6 +763,23 @@ body {
   text-decoration: none;
 }
 
+.divlist5555 {
+  margin-left: 30px;
+  list-style: none;
+  text-decoration: none;
+  color: rgb(174, 174, 174);
+  font-size: 12px;
+  transition: all 150ms;
+}
+
+.divlist555 {
+  list-style: none;
+  text-decoration: none;
+  color: rgb(174, 174, 174);
+  font-size: 12px;
+  transition: all 150ms;
+}
+
 .divlist55 {
   margin-left: 10px;
   list-style: none;
@@ -585,7 +795,7 @@ body {
 }
 
 .divlist54 {
-  margin-left: 10px;
+  margin-left: 30px;
   list-style: none;
   text-decoration: none;
   color: rgb(174, 174, 174);
@@ -649,6 +859,118 @@ body {
   font-size: 12px;
 }
 
+.buttonmoddde {
+  margin-right: 10px;
+  height: 22.5px;
+  width: 25px;
+  padding: 2px 0px;
+  border-radius: 5px;
+  border: 0px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  /* flex: 1; */
+  transition: all 120ms;
+  font-size: 12px;
+}
+
+.addusers {
+  margin-left: 10px;
+  height: 22.5px;
+  width: 25px;
+  padding: 2px 0px;
+  border-radius: 5px;
+  border: 0px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  /* flex: 1; */
+  cursor: pointer;
+  transition: all 120ms;
+  font-size: 12px;
+}
+
+.showmodal {
+  position: relative;
+  height: 72;
+  width: 120px;
+  border-radius: 5px;
+  background-color: hsl(0, 0%, 45%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  transition: all 120ms ease;
+  /* border: 2px solid rgb(106, 106, 106); */
+}
+
+.showmodal.active {
+  visibility: visible;
+  opacity: 1;
+  transition: all 120ms ease;
+}
+
+.divmodal {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 120ms;
+  padding: 2.5px 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.divmodall {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 120ms;
+  padding: 2.5px 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.divmodal:hover {
+  background-color: #555555;
+}
+
+.divmodall:hover {
+  background-color: #555555;
+}
+
+.divmodal p {
+  font-size: 15px;
+  min-width: 50px;
+  max-width: 50px;
+  margin-left: 7px;
+}
+
+.divmodall p {
+  font-size: 15px;
+  min-width: 50px;
+  max-width: 50px;
+  margin-left: 7px;
+}
+
+.modalfilefolder {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 22.5px;
+  width: 25px;
+  padding: 2px 0px;
+  border-radius: 5px;
+  border: 0px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  /* flex: 1; */
+  cursor: pointer;
+  transition: all 120ms;
+  font-size: 12px;
+}
+
 .buttonmodd {
   margin-left: 10px;
   margin-right: 10px;
@@ -671,6 +993,21 @@ body {
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
+  transition: all 120ms;
+  text-decoration: none;
+  border: 0px;
+  font-size: 12.5px;
+  color: rgb(255, 255, 255);
+  border: 0px;
+  font-weight: bold;
+  padding: 2px 0px;
+}
+
+.del {
+  height: 22px;
+  width: 25px;
+  border-radius: 5px;
+  text-align: center;
   transition: all 120ms;
   text-decoration: none;
   border: 0px;
@@ -909,7 +1246,7 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
   border: 2px solid white;
-  background-color: rgb(0, 172, 37);
+  background-color: rgb(25, 135, 186);
   color: rgb(255, 255, 255);
   cursor: pointer;
   transition: all 120ms;
@@ -917,7 +1254,7 @@ body {
 
 .inputmformuser:hover {
   /* background-color: rgb(0, 148, 201); */
-  background-color: rgba(0, 172, 37, 0.725);
+  background-color: rgb(16, 115, 161);
 }
 
 .inputmforms {
@@ -961,7 +1298,7 @@ body {
 .a2c {
   margin-right: 20px;
   margin-left: 18px;
-  color: rgb(0, 172, 37);
+  color: rgb(25, 135, 186);
   text-decoration: none;
   transition: all 0.2s;
   cursor: pointer;
@@ -1345,6 +1682,30 @@ body {
 .folder {
   margin-left: 15px;
   margin-right: 4px;
+  max-width: 25px;
+  max-height: 25px;
+}
+
+.modalll {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background-color: #00000059;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 300ms;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.modalll.active {
+  overflow: visible;
+  opacity: 1;
+  transition: all 300ms;
 }
 
 .modal {
@@ -1397,6 +1758,7 @@ body {
   border-radius: 5px;
   transition: all 120ms;
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .partage p {
@@ -1412,9 +1774,39 @@ body {
   text-decoration: none;
 }
 
+.reloader {
+  position: absolute;
+  height: 630px;
+  width: 28%;
+  background-color: rgb(50, 50, 50);
+  display: FLEX;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 120ms;
+}
+
+.reloade {
+  position: absolute;
+  height: 630px;
+  width: 64%;
+  background-color: rgb(50, 50, 50);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 120ms;
+}
+
 .reload {
   position: absolute;
-  height: 75vh;
+  height: 630px;
   width: 64%;
   background-color: rgb(50, 50, 50);
   display: FLEX;
@@ -1431,4 +1823,23 @@ body {
   visibility: visible;
   opacity: 1;
   transition: all 120ms;
+}
+
+.reloade.active {
+  visibility: visible;
+  opacity: 1;
+  transition: all 120ms;
+}
+
+.reloader.active {
+  visibility: visible;
+  opacity: 1;
+  transition: all 120ms;
+}
+
+.lii {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
 }

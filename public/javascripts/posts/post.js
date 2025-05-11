@@ -4,7 +4,9 @@ window.addEventListener("DOMContentLoaded", () => {
   bindPost();
   bindPosttt();
   deletesfile();
+  deletesfiles();
   msfile();
+  modalfilefolder();
   // bindPosttt();
 });
 
@@ -131,3 +133,67 @@ function deletesfile() {
     });
   });
 }
+
+function deletesfiles() {
+  const ssfile = document.querySelectorAll(".deletesfiles");
+  const loadingg = document.querySelector(".loader");
+  const postCc = document.querySelector("#postlistcontainerr");
+
+  const listan = document.querySelectorAll(".divlist3");
+
+  ssfile.forEach((e) => {
+    e.addEventListener("click", ($event) => {
+      loadingg.classList.add("active");
+      $event.target.classList.add("active");
+      const postSfile = $event.target.getAttribute("postid");
+      const postsfile = $event.target.getAttribute("postidd");
+
+      axios
+        .delete("/posts/deletesfiles/" + postSfile)
+        .then(function (response) {
+          postCc.innerHTML = response.data;
+          loadingg.classList.remove("active");
+          deletesfiles();
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+      axios.get("/posts/sfiledell/" + postsfile).then((response) => {
+        postCc.innerHTML = response.data;
+        deletesfiles();
+      });
+    });
+  });
+}
+
+// function modalfilefolder() {
+//   const elementsss = document.querySelectorAll(".modalfilefolder");
+//   const loaderr = document.querySelector(".loader");
+//   const postContainerrr = document.querySelector("#postlistcontainerr");
+//   const modal = document.querySelector(".showmodal");
+//   // const inputname = document.querySelectorAll(".inputusername");
+
+//   const listan = document.querySelectorAll(".divlist3");
+
+//   elementsss.forEach((e) => {
+//     e.addEventListener("click", async ($event) => {
+//       // loaderr.classList.add("active");
+//       // const postId = $event.target.getAttribute("postid");
+//       // const author = $event.target.getAttribute("postidd");
+//       // const postname = $event.target.getAttribute("postt");
+//       modal.classList.add("active");
+
+//       // axios
+//       //   .get("/posts/showmodalfilefolderpostlist/" + postId)
+//       //   .then(function (response) {
+//       //     postContainerrr.innerHTML = response.data;
+//       //     // inputname.value = postname;
+//       //     loaderr.classList.remove("active");
+//       //     modalfilefolder();
+//       //   })
+//       //   .catch(function (err) {
+//       //     console.log(err);
+//       //   });
+//     });
+//   });
+// }
