@@ -12,6 +12,9 @@ html(lang='en')
         include includes/modal.pug
         include includes/load.pug
         include includes/topbarc.pug
+        include includes/modalusername.pug
+        include includes/modallocker.pug
+
         .container-fluid
             block content         
         script(src="/javascripts/posts/post.js")
@@ -19,6 +22,15 @@ html(lang='en')
         script(src="/javascripts/posts/pointe.js")
         script(src="/javascripts/posts/chevron.js")
         script(src="/javascripts/posts/general.js")
+        if user 
+          script(src="/javascripts/posts/validepassword.js")
+          script(src="/javascripts/posts/closemodaluser.js")
+        if editable === true && niv === "0"
+          script(src="/javascripts/posts/modallock.js")
+        if editable === true && niv === "1"
+          script(src="/javascripts/posts/modallock.js")
+        if editable === true && niv === "2"
+          script(src="/javascripts/posts/modallock.js")
         if modalFind 
           each post in modalFind
             if post.type === "application/pdf"

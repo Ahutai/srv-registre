@@ -16,6 +16,39 @@ exports.createUser = async (user) => {
   }
 };
 
+// exports.updateUsername = async (postId, user) => {
+//   const hashedPassword = await User.hashPassword(user.password);
+//   return User.findByIdAndUpdate(
+//     postId,
+//     {
+//       username: user.username,
+//       "local.password": hashedPassword,
+//     },
+//     { runValidators: true }
+//   );
+// }; update username and password
+
+// exports.updatesUsername = async (postId, user) => {
+//   return User.findByIdAndUpdate(
+//     postId,
+//     {
+//       username: user.username,
+//     },
+//     { runValidators: true }
+//   );
+// }; update username only
+
+exports.updatesPassword = async (postId, user) => {
+  const hashedPassword = await User.hashPassword(user.password);
+  return User.findByIdAndUpdate(
+    postId,
+    {
+      "local.password": hashedPassword,
+    },
+    { runValidators: true }
+  );
+};
+
 exports.findUserPerEmail = (user) => {
   return User.findOne({ username: user }).exec();
 };

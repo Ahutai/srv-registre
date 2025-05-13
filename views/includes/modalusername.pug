@@ -1,0 +1,9 @@
+if user
+  div(class="modaluser")
+    form(class="formmuser" method="post" action= "/users/updateusername/" + user._id ) 
+      div(class="passwordinput")
+        input(name="password" type="text" placeholder="New password")
+      div(class="valideinput") 
+        input(type="submit" value="Valider" class="validepassword")
+        div(class='loadpassword')
+          div(class='loaderpassword')

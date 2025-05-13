@@ -501,7 +501,7 @@ body {
 }
 
 .adddeddd {
-  margin-left: 70px;
+  margin-left: 10px;
   height: 22.5px;
   width: 25px;
   border-radius: 5px;
@@ -536,7 +536,7 @@ body {
   flex-direction: row nowrap;
   justify-content: center;
   align-items: center;
-  margin-left: 70px;
+  margin-left: 10px;
 }
 
 .addded {
@@ -732,7 +732,7 @@ body {
 }
 
 .divniv {
-  margin-left: 15px;
+  margin-left: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1327,6 +1327,19 @@ body {
   animation-name: fadeIn;
 }
 
+.divc2formuserr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(50, 50, 50);
+  height: 270px;
+  width: 550px;
+  border-radius: 5px;
+  border: 2px solid rgb(120, 120, 120);
+  box-shadow: 0px 0px 5px black;
+}
+
 .divc2formuser {
   display: flex;
   flex-direction: column;
@@ -1562,7 +1575,65 @@ body {
 }
 
 .loadered {
-  margin-left: 285px;
+  margin-left: 345px;
+}
+
+.loadnivi {
+  margin-left: 320px;
+}
+
+.lockerr {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 22.5px;
+  width: 22.5px;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: all 120ms;
+  cursor: default;
+}
+
+.locker {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 22.5px;
+  width: 22.5px;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: all 120ms;
+  cursor: pointer;
+}
+
+.locker:hover {
+  background-color: #767676;
+}
+
+.loaderpassword {
+  margin-left: 15px;
+  height: 12px;
+  width: 12px;
+  padding: 4px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #60959b;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+  visibility: hidden;
+  /* transition: all 0.2s; */
+  opacity: 0;
+}
+
+.loaderpassword.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .loaderedd {
@@ -1590,6 +1661,51 @@ body {
   animation: l3 1s infinite linear;
   /* transition: all 0.2s; */
   margin-bottom: 130px;
+}
+
+.loadernivi {
+  height: 12px;
+  width: 12px;
+  padding: 4px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #60959b;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+  visibility: hidden;
+  /* transition: all 0.2s; */
+  opacity: 0;
+}
+
+.loadernivi.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.loaderlock {
+  margin-left: 10px;
+}
+
+.loadlock {
+  height: 12px;
+  width: 12px;
+  padding: 4px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #60959b;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+  visibility: hidden;
+  /* transition: all 0.2s; */
+  opacity: 0;
 }
 
 .loader {
@@ -1632,6 +1748,11 @@ body {
   visibility: visible;
   opacity: 1;
   transition: all 0.2s;
+}
+
+.loadlock.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 .loader.active {
@@ -1968,4 +2089,145 @@ body {
 
 .h3foler {
   color: white;
+}
+
+.modaluser {
+  position: absolute;
+  background-color: #464646;
+  border: 2px solid #afafaf;
+  height: 100px;
+  width: 250px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  right: 85px;
+  top: 70px;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 120ms ease;
+  pointer-events: none;
+}
+
+.modaluser.active {
+  transition: all 120ms ease;
+  overflow: visible;
+  pointer-events: all;
+  opacity: 1;
+}
+
+.passwordinput input {
+  background-color: #4d4d4d;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 180px;
+  height: 20px;
+  padding: 5px 5px;
+  border: 2px solid #afafaf;
+  color: white;
+}
+
+.valideinput {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: start;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.valideinput input {
+  background-color: #878787;
+  height: 20px;
+  width: 50px;
+  border: 0px;
+  border-radius: 5px;
+  color: white;
+  /* margin-top: 15px; */
+  cursor: pointer;
+  transition: all 120ms;
+  font-weight: bold;
+}
+
+.valideinput input:hover {
+  background-color: #757575;
+}
+
+.divlocki {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #777777;
+  padding: 2.5px 7px 2.5px 3.5px;
+  border-radius: 5px;
+  width: 137px;
+  transition: all 120ms;
+  cursor: pointer;
+}
+
+.divlocki:hover {
+  background-color: #66756b;
+}
+
+.divlockii:hover {
+  background-color: #7c6969;
+}
+
+.modallocker div img {
+  margin-right: 7px;
+}
+
+.divlocki p {
+  color: white;
+}
+
+.divlockii p {
+  color: white;
+}
+
+.divlockii {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #777777;
+  padding: 2.5px 7px 2.5px 3.5px;
+  border-radius: 5px;
+  width: 137px;
+  transition: all 120ms;
+  cursor: pointer;
+}
+
+.modallocker a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.modallocker {
+  position: absolute;
+  background-color: #464646;
+  border: 2px solid #afafaf;
+  height: 100px;
+  width: 180px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 160px;
+  top: 60px;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 120ms ease;
+  /* pointer-events: none; */
+  z-index: 4;
+  pointer-events: none;
+}
+
+.modallocker.active {
+  opacity: 1;
+  overflow: visible;
+  pointer-events: all;
 }

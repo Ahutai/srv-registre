@@ -37,7 +37,7 @@ const {
   modForFilePostList,
   filepostlistupdate,
   showmodalfilefolderpostlist,
-  folderNivII,
+  ffolderNivII,
   addFolderNivII,
   modFolderNivII,
   folderUpdateNivII,
@@ -54,6 +54,12 @@ const {
   modFileNivIII,
   fileniviiiupdate,
   folderfind,
+  addAccess,
+  doneAccess,
+  doneAccessNivI,
+  addAccessNivI,
+  addAccessNivII,
+  doneAccessNivII,
 } = require("../controllers/posts.controller");
 
 router.post("/addfile/:postId", ensureAuthenticated, AddFile);
@@ -70,7 +76,7 @@ router.get("/new", postNew);
 
 router.get("/neww/:postId", postNeww);
 
-router.get("/foldernivii/:postId", folderNivII);
+router.get("/foldernivii/:postId", ffolderNivII);
 
 router.get("/showmodal/:postId", postListFile);
 
@@ -141,6 +147,18 @@ router.post("/updatefoldernivii/:postId", folderUpdateNivII);
 router.post("/postedfile/:postId", findposted);
 
 router.post("/updatee/:postId", postUpdatee);
+
+router.get("/addaccess/:postId", addAccess);
+
+router.get("/addaccessnivii/:postId", addAccessNivII);
+
+router.get("/addaccessnivi/:postId", addAccessNivI);
+
+router.get("/doneaccess/:postId", doneAccess);
+
+router.get("/doneaccessnivii/:postId", doneAccessNivII);
+
+router.get("/doneaccessnivi/:postId", doneAccessNivI);
 
 router.post("/supdate/:postId", sUpdate);
 

@@ -9,7 +9,7 @@ block content
       form(class="formm" method="post" action= "/posts/postedfile/" + postfile._id)
         div(class="divc3form")
           div(class="divc4form")
-            textarea(type="text" class="inputformr" name="content" placeholder="Name")= postfile.content
+            input(type="text" class="inputformr" value=postfile.content name="content" placeholder="Name")
           div(class="divc5form") 
             input(type="submit" value="Added" class="inputmform")
             div(class="loaderrss")

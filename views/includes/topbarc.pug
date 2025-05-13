@@ -12,6 +12,40 @@ nav(class="nav")
     div(class="cote")
       img(src="/images/chevrons.svg", alt="" class="cotei")
       img(src="/images/chevron.svg", alt="" class="coteii")
+    if content 
+      each post in content
+        div(class="divniv")
+          p(class="nivp")= post.niv 
+    if content && editable === true && niv === "0"
+      each post in content    
+        if findaccessnivzero.access === "access"
+          a(href="#" class='locker')
+            img(src="/images/lockeradd.svg", alt="")
+        if findaccessnivzero.access === "default"
+          a(href="#" class='locker')
+            img(src="/images/lock.svg", alt="")
+    if content && editable === true && niv === "1"
+      each post in content    
+        if findaccessnivi.access === "access"
+          a(href="#" class='locker')
+            img(src="/images/lockeradd.svg", alt="")
+        if findaccessnivi.access === "default"
+          a(href="#" class='locker')
+            img(src="/images/lock.svg", alt="")   
+    div(class='loaderlock')
+      div(class='loadlock') 
+      //- if accessnivi === "access"
+      //-   a(href="#" class='locker')
+      //-     img(src="/images/lockeradd.svg", alt="") 
+      //- if accessnivi === "default" 
+      //-   a(href="#" class='locker')
+      //-     img(src="/images/lock.svg", alt="")
+      //- if accessnivii === "access" 
+      //-   a(href="#" class='locker')
+      //-     img(src="/images/lockeradd.svg", alt="")
+      //- if accessnivii === "default" 
+      //-   a(href="#" class='locker')
+      //-     img(src="/images/lock.svg", alt="")
   ul(class="ul") 
     if currentUser.username === "administrateur"
       li(class="lii")

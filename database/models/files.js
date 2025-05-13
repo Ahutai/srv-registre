@@ -8,6 +8,7 @@ const posttSchema = schema({
   username: { type: String, required: true },
   date: { type: String, required: true },
   niv: { type: String, required: true },
+  access: { type: String, required: true },
 });
 
 const postt = mongoose.model("postt", posttSchema);

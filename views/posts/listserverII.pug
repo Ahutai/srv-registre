@@ -6,9 +6,9 @@ if finddss
       img(src="/images/folderrrr.png", alt="" class="folder")
       //- else 
       //-   div(class="up-down")
-      if editable === false
+      if editable === false && sfile === false
         div(class="divlist4")
-          a(class="divlist5" href="/users/sposts/" + post._id)= post.name     
+          a(class="divlist5" href="/users/findfolderniviii/" + post._id)= post.name     
       else 
         div(class="divlist4")
           a(class="divlist5" href="/posts/listfolderiii/" + post._id)= post.name
@@ -18,7 +18,7 @@ if finddss
         a(class="divlist555")= post.date
       div(class="divlist4")
         p(class="divlist5555") FOLDER
-      if editable === false
+      if editable === false && sfile === false
         div(class="divbutton")
           a(href="#") 
             a(src="", alt="" class="ajout")
@@ -53,7 +53,7 @@ if findd
       else 
         div(class="divlist4")
           p(class="divlist5555") format DOCX
-      if editable === false
+      if editable === false && findd
         div(class="divbutton")
           a(src="", alt="" class="del" )
           a(src="", alt="" class="trs")

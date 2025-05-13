@@ -9,7 +9,7 @@ block content
       form(class="formmuser" method="post" action= "/posts/updatefilesniviii/" + modfileniviii._id) 
         div(class="divc3formuser") 
           div(class="divinputfolders")
-            textarea(class="inputfolders" type="text" name="name" placeholder="Name")= modfileniviii.name
+            input(class="inputfolders" type="text" name="name" value=modfileniviii.name placeholder="Name")
           div(class="divc5forms") 
             input(type="submit" value="Valider" class="inputmforms")
             div(class="loaderr")

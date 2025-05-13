@@ -31,6 +31,12 @@ if postes
           a(href="/posts/listpost/" + post._id) 
             img(src="/images/troisd.svg", alt="" class="buttonmods")
           img(src="/images/deleted.svg", alt="" class="buttonmlist" postid=post._id)
+      else
+        div(class="divbutton")
+          a(src="", alt="" class="del" )
+          a(src="", alt="" class="trs")
+          a(href=`/upload/${post.addfiless}` download)
+            a(href="#") 
       //- if editable === false 
       //-   div(class="divbutton")
       //-     a(href="#" class="astorage") 

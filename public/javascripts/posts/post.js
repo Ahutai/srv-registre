@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function bindPosttt() {
   const elementsss = document.querySelectorAll(".buttonmod");
-  const loaderr = document.querySelector(".loader");
+  const loaderr = document.querySelector(".loadernivi");
   const postContainerrr = document.querySelector("#postlistcontainerr");
   // const inputname = document.querySelectorAll(".inputusername");
 
@@ -42,7 +42,7 @@ function bindPosttt() {
 
 function bindPostt() {
   const elementss = document.querySelectorAll(".buttonmlistt");
-  const loaderr = document.querySelector(".loader");
+  const loaderr = document.querySelector(".loadernivi");
   const postContainerr = document.querySelector("#postlistcontainerr");
 
   const listan = document.querySelectorAll(".divlist3");
@@ -74,7 +74,7 @@ function bindPostt() {
 
 function bindPost() {
   const elements = document.querySelectorAll(".buttonmlist");
-  const loader = document.querySelector(".loader");
+  const loader = document.querySelector(".loadernivi");
   const postContainer = document.querySelector("#postlistcontainer");
   const postContainerr = document.querySelector("#postlistcontainerr");
 
@@ -104,7 +104,7 @@ function bindPost() {
 
 function deletesfile() {
   const sfile = document.querySelectorAll(".deletesfile");
-  const loading = document.querySelector(".loader");
+  const loading = document.querySelector(".loadernivi");
   const postC = document.querySelector("#postlistcontainerr");
 
   const listan = document.querySelectorAll(".divlist3");
@@ -136,7 +136,7 @@ function deletesfile() {
 
 function deletesfiles() {
   const ssfile = document.querySelectorAll(".deletesfiles");
-  const loadingg = document.querySelector(".loader");
+  const loadingg = document.querySelector(".loadernivi");
   const postCc = document.querySelector("#postlistcontainerr");
 
   const listan = document.querySelectorAll(".divlist3");
@@ -168,7 +168,7 @@ function deletesfiles() {
 
 function delfoldernivii() {
   const elementss = document.querySelectorAll(".delfoldernivii");
-  const loaderr = document.querySelector(".loader");
+  const loaderr = document.querySelector(".loadernivi");
   const postContainerr = document.querySelector("#postlistcontainerr");
 
   const listan = document.querySelectorAll(".divlist3");
@@ -200,7 +200,7 @@ function delfoldernivii() {
 
 function delfilesniviii() {
   const elementss = document.querySelectorAll(".deletesfiless");
-  const loaderr = document.querySelector(".loader");
+  const loaderr = document.querySelector(".loadernivi");
   const postContainerr = document.querySelector("#postlistcontainerr");
 
   const listan = document.querySelectorAll(".divlist3");

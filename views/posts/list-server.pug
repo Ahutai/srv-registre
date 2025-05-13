@@ -6,9 +6,9 @@ if find
       img(src="/images/folderrrr.png", alt="" class="folder")
       //- else 
       //-   div(class="up-down")
-      if editable === false
+      if editable === false && findfoldernivzero === false
         div(class="divlist4")
-          a(class="divlist5" href="/users/sposts/" + post._id)= post.name     
+          a(class="divlist5" href="/users/sposts/" + post._id)= post.name   
       else 
         div(class="divlist4")
           a(class="divlist5" href="/posts/findeddd/" + post._id)= post.name
@@ -18,18 +18,31 @@ if find
         a(class="divlist555")= post.date
       div(class="divlist4")
         p(class="divlist5555") FOLDER
-      if editable === false
+      //- if editable === false && findfoldernivzero === false
+      //-   div(class="divbutton")
+      //-     a(href="#") 
+      //-       a(src="", alt="" class="ajout")
+      //-     a(src="", alt="" class="del" )
+      //-     a(src="", alt="" class="trs")
+      //- else
+      //-   div(class="divbutton")
+      //-     a( href="/posts/spost/" + post._id) 
+      //-       img(src="/images/add2d.svg", alt="" class="addd")
+      //-     img(src="/images/troisd.svg", alt="" class="buttonmod" posted=post._id postt=post.name)
+      //-     img(src="/images/deleted.svg", alt="" class="buttonmlistt" postid=post._id postidd=post.author)
+      if editable === false 
         div(class="divbutton")
           a(href="#") 
             a(src="", alt="" class="ajout")
           a(src="", alt="" class="del" )
           a(src="", alt="" class="trs")
-      else
+      if editable === true && find && niv === "0"
         div(class="divbutton")
-          a( href="/posts/spost/" + post._id) 
-            img(src="/images/add2d.svg", alt="" class="addd")
-          img(src="/images/troisd.svg", alt="" class="buttonmod" posted=post._id postt=post.name)
-          img(src="/images/deleted.svg", alt="" class="buttonmlistt" postid=post._id postidd=post.author)
+            a( href="/posts/spost/" + post._id) 
+              img(src="/images/add2d.svg", alt="" class="addd")
+            img(src="/images/troisd.svg", alt="" class="buttonmod" posted=post._id postt=post.name)
+            img(src="/images/deleted.svg", alt="" class="buttonmlistt" postid=post._id postidd=post.author)
+
 if findds 
   each post in findds
     div(class="divlist3s")
@@ -52,7 +65,7 @@ if findds
       else 
         div(class="divlist4")
           p(class="divlist5555") format DOCX
-      if editable === false
+      if editable === false && findfoldernivzero === false
         div(class="divbutton")
           a(src="", alt="" class="del" )
           a(src="", alt="" class="trs")

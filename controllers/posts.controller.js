@@ -68,6 +68,16 @@ const {
   modFilesNivIII,
   updateFileNivIII,
   updatesFileNivIII,
+  AddAccess,
+  DoneAccess,
+  AddAccessNivI,
+  DoneAccessNivI,
+  getaccessfoldernivi,
+  findFolderAccessNivII,
+  AddAccessNivII,
+  DoneAccessNivII,
+  findAccessNivZERO,
+  findAccessNivI,
 } = require("../queries/posts.queries");
 
 const util = require("util");
@@ -284,19 +294,28 @@ exports.folderfind = async (req, res, next) => {
 exports.postFind = async (req, res, next) => {
   try {
     const postId = req.params.postId;
+    let accesss;
     const postes = await getFolderByUser(req.user);
+    postes.forEach((e) => {
+      accesss = e.access;
+    });
     const content = await getposted(postId);
     const find = await getPostedd(postId);
     const updown = await getUpdown(postId);
     const findds = await sfiles(postId);
     const authorgett = await getauthorr(postId);
+    const findaccessnivzero = await findAccessNivZERO(postId);
     res.render("posts/post", {
       updown,
+      accesss,
       content,
+      findaccessnivzero,
       find,
       postes,
+      niv: "0",
       findds,
       authorgett,
+      postId,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
       user: req.user,
@@ -324,17 +343,21 @@ exports.fed = async (req, res, next) => {
 exports.sfiles = async (req, res, next) => {
   try {
     const postId = req.params.postId;
+    let accessnivi;
+    const findaccessfoldernivi = await getaccessfoldernivi(postId);
+    accessnivi = findaccessfoldernivi.access;
     const postes = await getFolderByUser(req.user);
     const content = await getfilee(postId);
-    const findd = await sfile(postId);
     const authorget = await getauthor(postId);
     const updown = await getUpdown(postId);
     const finddss = await findfoldernivII(postId);
+    const findaccessnivi = await findAccessNivI(postId);
     res.render("posts/post", {
       authorget,
       updown,
       content,
-      findd,
+      accessnivi,
+      findaccessnivi,
       finddss,
       postes,
       postId,
@@ -342,6 +365,7 @@ exports.sfiles = async (req, res, next) => {
       currentUser: req.user,
       user: req.user,
       editable: true,
+      niv: "1",
     });
   } catch (e) {
     next(e);
@@ -351,6 +375,9 @@ exports.sfiles = async (req, res, next) => {
 exports.listFolderNivIII = async (req, res, next) => {
   try {
     const postId = req.params.postId;
+    let accessnivii;
+    const accessfoldernivii = await findFolderAccessNivII(postId);
+    accessnivii = accessfoldernivii.access;
     const postes = await getFolderByUser(req.user);
     const content = await getContentFoldernivII(postId);
     const listfolderiii = await listfolderniviii(postId);
@@ -359,6 +386,7 @@ exports.listFolderNivIII = async (req, res, next) => {
     const fileniviii = await findfileniviii(postId);
     res.render("posts/post", {
       authorget,
+      accessnivii,
       updown,
       content,
       listfolderiii,
@@ -369,6 +397,7 @@ exports.listFolderNivIII = async (req, res, next) => {
       currentUser: req.user,
       user: req.user,
       editable: true,
+      niv: "2",
     });
   } catch (e) {
     next(e);
@@ -527,9 +556,9 @@ exports.postNeww = async (req, res, next) => {
   });
 };
 
-exports.folderNivII = async (req, res, next) => {
+exports.ffolderNivII = async (req, res, next) => {
   const postId = req.params.postId;
-  const post = await getidlistserver(postId);
+  const post = await sposts(postId);
   res.render("posts/foldernivii", {
     post,
     isAuthenticated: req.isAuthenticated(),
@@ -589,6 +618,7 @@ exports.postCreate = async (req, res, next) => {
       author: req.user._id,
       username: req.user.username,
       niv: "1",
+      access: "default",
     });
     res.redirect("/posts");
   } catch (e) {
@@ -634,6 +664,7 @@ exports.addFolderNivII = async (req, res, next) => {
       username: usered,
       date: datered,
       niv: "3",
+      access: "default",
     });
     res.redirect("/posts/findeddd/" + req.params.postId);
   } catch (e) {
@@ -668,6 +699,7 @@ exports.createfolderListNivIII = async (req, res, next) => {
       username: usered,
       date: datered,
       niv: "4",
+      access: "default",
     });
     res.redirect("/posts/listfolderiii/" + req.params.postId);
   } catch (e) {
@@ -702,6 +734,7 @@ exports.postModd = async (req, res, next) => {
       username: usered,
       date: datered,
       niv: "2",
+      access: "default",
     });
     res.redirect("/posts/finded/" + req.params.postId);
   } catch (e) {
@@ -919,6 +952,114 @@ exports.folderUpdateNivII = async (req, res, next) => {
   } catch (e) {
     const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
     const post = await getPost(postId);
+    res.status(400).render("posts/post-form", {
+      errors,
+      post,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  }
+};
+
+exports.addAccess = async (req, res, next) => {
+  const postIded = req.params.postId;
+  const access = "access";
+  try {
+    await AddAccess(postIded, access);
+    res.redirect("/posts/finded/" + postIded);
+  } catch (e) {
+    const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
+    const post = await getPost(postIded);
+    res.status(400).render("posts/post-form", {
+      errors,
+      post,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  }
+};
+
+exports.addAccessNivII = async (req, res, next) => {
+  const postIded = req.params.postId;
+  const access = "access";
+  try {
+    await AddAccessNivII(postIded, access);
+    res.redirect("/posts/listfolderiii/" + postIded);
+  } catch (e) {
+    const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
+    const post = await getPost(postIded);
+    res.status(400).render("posts/post-form", {
+      errors,
+      post,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  }
+};
+
+exports.addAccessNivI = async (req, res, next) => {
+  const postIded = req.params.postId;
+  const access = "access";
+  try {
+    await AddAccessNivI(postIded, access);
+    res.redirect("/posts/findeddd/" + postIded);
+  } catch (e) {
+    const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
+    const post = await getPost(postIded);
+    res.status(400).render("posts/post-form", {
+      errors,
+      post,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  }
+};
+
+exports.doneAccessNivII = async (req, res, next) => {
+  const postIded = req.params.postId;
+  const access = "default";
+  try {
+    await DoneAccessNivII(postIded, access);
+    res.redirect("/posts/listfolderiii/" + postIded);
+  } catch (e) {
+    const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
+    const post = await getPost(postIded);
+    res.status(400).render("posts/post-form", {
+      errors,
+      post,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  }
+};
+
+exports.doneAccessNivI = async (req, res, next) => {
+  const postIded = req.params.postId;
+  const access = "default";
+  try {
+    await DoneAccessNivI(postIded, access);
+    res.redirect("/posts/findeddd/" + postIded);
+  } catch (e) {
+    const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
+    const post = await getPost(postIded);
+    res.status(400).render("posts/post-form", {
+      errors,
+      post,
+      isAuthenticated: req.isAuthenticated(),
+      currentUser: req.user,
+    });
+  }
+};
+
+exports.doneAccess = async (req, res, next) => {
+  const postIded = req.params.postId;
+  const access = "default";
+  try {
+    await DoneAccess(postIded, access);
+    res.redirect("/posts/finded/" + postIded);
+  } catch (e) {
+    const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
+    const post = await getPost(postIded);
     res.status(400).render("posts/post-form", {
       errors,
       post,
