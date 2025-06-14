@@ -17,7 +17,6 @@ const {
   postFindd,
   postModed,
   sfiles,
-  spost,
   findSpost,
   deleteSfile,
   sfiledel,
@@ -42,7 +41,6 @@ const {
   modFolderNivII,
   folderUpdateNivII,
   listFolderNivIII,
-  createListNivIII,
   createfolderListNivIII,
   fileniviii,
   createFileNivIII,
@@ -60,6 +58,7 @@ const {
   addAccessNivI,
   addAccessNivII,
   doneAccessNivII,
+  spost,
 } = require("../controllers/posts.controller");
 
 router.post("/addfile/:postId", ensureAuthenticated, AddFile);
@@ -72,6 +71,8 @@ router.post(
   createFileNivIII
 );
 
+router.get("/newfilenivii/:postId", spost);
+
 router.get("/new", postNew);
 
 router.get("/neww/:postId", postNeww);
@@ -81,10 +82,6 @@ router.get("/foldernivii/:postId", ffolderNivII);
 router.get("/showmodal/:postId", postListFile);
 
 router.get("/createfileniviii/:postId", fileniviii);
-
-router.get("/spost/:postId", spost);
-
-router.get("/createlistniviii/:postId", createListNivIII);
 
 router.get("/", folderfind);
 

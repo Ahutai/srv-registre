@@ -1,5 +1,7 @@
 const dive = document.querySelectorAll(".divlist5");
 
+const dives = document.querySelectorAll(".inputaddddd");
+
 const sfiledive = document.querySelectorAll(".divlist5s");
 
 const recharge = document.querySelector(".loader");
@@ -14,15 +16,24 @@ const loadeder = document.querySelector(".reloade");
 
 const loadedd = document.querySelector(".reloader");
 
-const diverr = document.querySelector(".partagea");
+// const diverr = document.querySelector(".partagea");
 
-diverr.addEventListener("click", ($event) => {
-  loadedd.classList.add("active");
-  loadeder.classList.add("active");
-  setTimeout(() => {
-    loadedd.classList.remove("active");
-    loadeder.classList.remove("active");
-  }, 100);
+// diverr.addEventListener("click", ($event) => {
+//   loadedd.classList.add("active");
+//   loadeder.classList.add("active");
+//   setTimeout(() => {
+//     loadedd.classList.remove("active");
+//     loadeder.classList.remove("active");
+//   }, 100);
+// });
+
+dives.forEach((e) => {
+  e.addEventListener("click", async ($event) => {
+    loaded.classList.add("active");
+    setTimeout(() => {
+      loaded.classList.remove("active");
+    }, 100);
+  });
 });
 
 dive.forEach((e) => {

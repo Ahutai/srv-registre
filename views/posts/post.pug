@@ -29,8 +29,6 @@ block content
           h3(class='content') D O S S I E R
           div(class='loadered')
             div(class='loader')
-          a(href="/posts/new/" class="foldera")
-            img(src="/images/folderd.svg", alt="" class="adddedd")
         if users 
           h4(class='content') P A R T A G E
           div(class='loadered')
@@ -45,7 +43,7 @@ block content
             //-   p(class="nivp")= post.niv 
             a(href="/posts/foldernivii/" + post._id class="filed")
               img(src="/images/folderd.svg", alt="" class="addded")
-            a(href="/posts/spost/" + post._id class="filed") 
+            a(href="/posts/newfilenivii/" + post._id class="filed") 
               img(src="/images/filed.svg", alt="" class="addd")
         if content && editable === true && listfolderiii
           each post in content   
@@ -58,6 +56,23 @@ block content
               img(src="/images/folderd.svg", alt="" class="addded")
             a(href="/posts/createfileniviii/" + post._id class="filed") 
               img(src="/images/filed.svg", alt="" class="addd")
+        if editable === false && nivuserr === "0"
+          each post in awaitcommm 
+            a(class='contentt')= post.commandename
+            div(class='loadnivi')
+              div(class='loadernivi')
+            //- div(class="divniv")
+            //-   p(class="nivp")= post.niv 
+            if findaccessnivzero.access === "access"
+              a(href="/shared/showmodcreatefoldernivi/" + post._id class="filed")
+                img(src="/images/folderd.svg", alt="" class="addded")
+              a(href="#" + postId class="aded")
+                img(src="/images/filed.svg", alt="" class="addd")
+            if findaccessnivzero.access === "default"
+              a(href="#" class="filed")
+                a(href="#" class="addded")
+              a(href="#" class="aded")
+                a(href="#" class="addd")
         if editable === false && nivuser === "0"
           each post in content 
             a(class='contentt')= post.content
@@ -66,9 +81,9 @@ block content
             //- div(class="divniv")
             //-   p(class="nivp")= post.niv 
             if findaccessnivzero.access === "access"
-              a(href="/posts/foldernivii/" + post._id class="filed")
+              a(href="/shared/showmodcreatefoldernivi/" + post._id class="filed")
                 img(src="/images/folderd.svg", alt="" class="addded")
-              a(href="/posts/spost/" + postId class="aded")
+              a(href="#" + postId class="aded")
                 img(src="/images/filed.svg", alt="" class="addd")
             if findaccessnivzero.access === "default"
               a(href="#" class="filed")
@@ -77,7 +92,7 @@ block content
                 a(href="#" class="addd")
         if content && nivuser === "1" && editable === false && findaccessnivi
           each post in content 
-            a(class='contentt' href="/users/spost/" + post.author)= post.name
+            a(class='contentt' href="/shared/spost/" + post.author)= post.name
             div(class='loadnivi')
               div(class='loadernivi')
             //- div(class="divniv")
@@ -85,7 +100,7 @@ block content
             if findaccessnivi.access === "access"
               a(href="/posts/foldernivii/" + post._id class="filed")
                 img(src="/images/folderd.svg", alt="" class="addded")
-              a(href="/posts/spost/" + postId class="aded")
+              a(href="#" + postId class="aded")
                 img(src="/images/filed.svg", alt="" class="addd")
             if findaccessnivi.access === "default"
               a(href="#" class="filed")
@@ -94,14 +109,14 @@ block content
                 a(href="#" class="addd")
         if content && listniviii === false
           each post in content 
-            a(class='contentt' href="/users/sposts/" + post.author)= post.name
+            a(class='contentt' href="/shared/sposts/" + post.author)= post.name
             div(class='loadnivi')
               div(class='loadernivi')
             //- div(class="divniv")
             //-   p(class="nivp")= post.niv 
             a(href="/posts/foldernivii/" + post._id class="filed")
               img(src="/images/folderd.svg", alt="" class="addded")
-            a(href="/posts/spost/" + postId class="aded")
+            a(href="#" + postId class="aded")
               img(src="/images/filed.svg", alt="" class="addd")
         //- if postId
         //-   a(href="/posts/spost/" + postId class="aded")
@@ -115,7 +130,14 @@ block content
           div(class="loadereded")
     div(class="divlistm2")
       div(class="profile-containerr")
-        include ../includes/name.pug
+        if awaitcomm && editable === false
+          include ../includes/namee.pug
+        if awaitcommm && editable === false 
+          include ../includes/nameee.pug
+        if produits === true && editable === false
+          include ../includes/name.pug
+        if editable === false && panier
+          include ../includes/nameeee.pug
       div(class="divlist2v2 text" id="postlistcontainerr")
         include list-server.pug 
         include listserverII.pug

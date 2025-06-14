@@ -23,12 +23,6 @@ exports.getPosts = () => {
   return Post.find({}).exec();
 };
 
-exports.getFolderByUser = (user) => {
-  return Post.find({ author: { $in: [...user.author, user._id] } })
-    .populate("author")
-    .exec();
-};
-
 exports.findUsernameFolderNivII = (postId) => {
   return file
     .find(
@@ -49,41 +43,6 @@ exports.findUsernameFolderListII = (postId) => {
       }
     )
     .exec();
-};
-
-exports.findUsername = (postId) => {
-  return Post.find(
-    { _id: postId },
-    {
-      username: 1,
-    }
-  ).exec();
-};
-
-exports.findUsernames = (postId) => {
-  return file
-    .find(
-      { _id: postId },
-      {
-        username: 1,
-      }
-    )
-    .exec();
-};
-
-exports.findUsernamess = (postId) => {
-  return foldernivii
-    .find(
-      { _id: postId },
-      {
-        username: 1,
-      }
-    )
-    .exec();
-};
-
-exports.getFolderToUser = (authorId) => {
-  return Post.find({ author: authorId }).populate("author").exec();
 };
 
 exports.getFolder = (authorId) => {
@@ -108,26 +67,6 @@ exports.findfoldernivII = (postId) => {
 
 exports.findfileniviii = (postId) => {
   return fileniviii.find({ author: postId }).sort({ updown: -1 }).exec();
-};
-
-exports.sfile = (postId) => {
-  return sfile.find({ author: postId }).sort({ sort: 1 }).exec();
-};
-
-exports.getFileNivI = (postId) => {
-  return files.find({ author: postId }).sort({ sort: 1 }).exec();
-};
-
-exports.listfoldernivii = (postId) => {
-  return foldernivii.find({ author: postId }).sort({ sort: 1 }).exec();
-};
-
-exports.listnivIII = (postId) => {
-  return folderniviii.find({ author: postId }).sort({ sort: 1 }).exec();
-};
-
-exports.listfilenivIII = (postId) => {
-  return fileniviii.find({ author: postId }).sort({ sort: 1 }).exec();
 };
 
 exports.getauthorr = (postId) => {
@@ -185,10 +124,6 @@ exports.findByAuthorFolderNivII = (postId) => {
     .exec();
 };
 
-exports.getPostedd = (postId) => {
-  return file.find({ author: postId }).sort({ updown: -1 }).exec();
-};
-
 exports.getaccessfoldernivi = (postId) => {
   return file
     .findOne(
@@ -222,45 +157,6 @@ exports.fedd = (postId) => {
       }
     )
     .sort({ updown: -1 })
-    .exec();
-};
-
-exports.getposted = (postId) => {
-  return Post.find(
-    { _id: postId },
-    {
-      _id: 1,
-      content: 1,
-      niv: 1,
-    }
-  ).exec();
-};
-
-exports.getfilee = (postId) => {
-  return file
-    .find(
-      { _id: postId },
-      {
-        _id: 1,
-        name: 1,
-        author: 1,
-        niv: 1,
-      }
-    )
-    .exec();
-};
-
-exports.getcontentnivii = (postId) => {
-  return file
-    .find(
-      { _id: postId },
-      {
-        _id: 1,
-        name: 1,
-        author: 1,
-        niv: 1,
-      }
-    )
     .exec();
 };
 
@@ -448,11 +344,6 @@ exports.createPost = (post) => {
   return newPost.save();
 };
 
-exports.createsPost = (post) => {
-  const newSpost = new sfile(post);
-  return newSpost.save();
-};
-
 exports.createFileForPostList = (post) => {
   const newFilePostList = new files(post);
   return newFilePostList.save();
@@ -518,31 +409,13 @@ exports.sposts = (postId) => {
   return file.findOne({ _id: postId }).exec();
 };
 
-exports.idListPostNivII = (postId) => {
-  return foldernivii.findOne({ _id: postId }).exec();
-};
-
 exports.getPosted = (postId) => {
   return file.findOne({ _id: postId }).exec();
 };
 
-exports.findAccessNivZERO = (postId) => {
-  return Post.findOne(
-    { _id: postId },
-    {
-      access: 1,
-    }
-  ).exec();
-};
-
-exports.FindAccessNivI = (postId) => {
-  return file
-    .findOne(
-      { _id: postId },
-      {
-        access: 1,
-      }
-    )
+exports.getFolderByUser = (user) => {
+  return Post.find({ author: { $in: [...user.author, user._id] } })
+    .populate("author")
     .exec();
 };
 

@@ -1,5 +1,6 @@
 const {
   getPosts,
+  sposts,
   getFolderByUser,
   getPostsss,
   getPost,
@@ -10,18 +11,14 @@ const {
   updatePost,
   addToFolder,
   deletePostt,
-  getPostedd,
   getPosted,
   awaitedd,
-  getposted,
   getUpdown,
   deleteAll,
   sfile,
-  sposts,
   createsPost,
   sfileDelete,
   getsfile,
-  getfilee,
   nbrSfile,
   sFile,
   findmodal,
@@ -37,7 +34,6 @@ const {
   addedToFile,
   findByAuthor,
   findAusername,
-  findUsername,
   createFileForPostList,
   sfiles,
   getauthorr,
@@ -53,7 +49,6 @@ const {
   modFoldernivii,
   updatesFolderNivII,
   updatesfoldernivii,
-  idListPostNivII,
   findAuthorFolderListII,
   findUsernameFolderListII,
   createFolderListnivIII,
@@ -76,9 +71,16 @@ const {
   findFolderAccessNivII,
   AddAccessNivII,
   DoneAccessNivII,
-  findAccessNivZERO,
   findAccessNivI,
 } = require("../queries/posts.queries");
+
+const {
+  getposted,
+  getPostedd,
+  findAccessNivZERO,
+  getfilee,
+  findUsername,
+} = require("../queries/shared.queries");
 
 const util = require("util");
 
@@ -133,6 +135,17 @@ const upload = multer({
 //     next(e);
 //   }
 // };
+
+exports.spost = async (req, res, next) => {
+  const postId = req.params.postId;
+  const postt = await sposts(postId);
+  res.render("posts/spost", {
+    postt,
+    isAuthenticated: req.isAuthenticated(),
+    currentUser: req.user,
+    editable: false,
+  });
+};
 
 exports.createFileNivIII = [
   upload.single("addfiless"),
@@ -494,6 +507,8 @@ exports.sfiledell = async (req, res, next) => {
       postes,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
+      niv: "0",
+      editable: true,
     });
   } catch (e) {
     next(e);
@@ -536,6 +551,8 @@ exports.postFindd = async (req, res, next) => {
       findds,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
+      editable: true,
+      niv: "0",
     });
   } catch (e) {
     next(e);
@@ -586,27 +603,6 @@ exports.fileniviii = async (req, res, next) => {
   });
 };
 
-exports.createListNivIII = async (req, res, next) => {
-  const postId = req.params.postId;
-  const post = await idListPostNivII(postId);
-  res.render("posts/createlistfolderniviii", {
-    post,
-    isAuthenticated: req.isAuthenticated(),
-    currentUser: req.user,
-    editable: false,
-  });
-};
-
-exports.spost = async (req, res, next) => {
-  const postId = req.params.postId;
-  const post = await sposts(postId);
-  res.render("posts/spost", {
-    post,
-    isAuthenticated: req.isAuthenticated(),
-    currentUser: req.user,
-    editable: false,
-  });
-};
 // exports.postNeww = (req, res, next) => {
 //   res.render("posts/post-formmm", { post: {} });
 // };

@@ -7,6 +7,8 @@ const userSchema = schema({
   local: {
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
+    nom: { type: String, required: true },
+    tel: { type: String, required: true },
   },
   author: { type: [schema.Types.ObjectId], ref: "user" },
 });

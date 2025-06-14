@@ -1,11 +1,12 @@
 nav(class="nav") 
   ul(class="ulp") 
-    a(href="/posts" class="am1") 
+    a(href="/users" class="am1") 
       img(class="img" src="/images/logss.png")
-    a(href="/users/users" class="partagea")
-      div(class='partage')
-        p(class="partagep") partage
-    if username 
+    if currentUser.username === "administrateur"
+      a(href="/users/users" class="partagea")
+        div(class='partage')
+          p(class="partagep") partage
+    if username && currentUser === "administrateur"
       li(class="lii")
         a(class="usernames" href="/users/finduser/" + username)= username
         img(src="/images/foldershared.svg", alt="" class="folder")
@@ -46,22 +47,23 @@ nav(class="nav")
       //- if accessnivii === "default" 
       //-   a(href="#" class='locker')
       //-     img(src="/images/lock.svg", alt="")
-  ul(class="ul") 
-    if currentUser.username === "administrateur"
+  ul(class="ul")
+    if postes 
+      if currentUser.username === "administrateur"
+        li(class="lii")
+          a(class="a22" href="/users/signup/form")
+            img(src="/images/adduser.svg", alt="" class="addusers")
+          img(src="/images/user.svg", alt="" class="buttonmoddde")
+          a(class="username" href="#")= currentUser.username  
+      else
+        li(class="lii")
+          img(src="/images/user.svg", alt="" class="buttonmoddde")
+          a(class="username" href="#")= currentUser.username  
       li(class="lii")
-        a(class="a22" href="/users/signup/form")
-          img(src="/images/adduser.svg", alt="" class="addusers")
-        img(src="/images/user.svg", alt="" class="buttonmoddde")
-        a(class="username" href="#")= currentUser.username  
-    else
+        a(class="a1" href="/posts/new") create
+      //- li(class="liii")
+      //-   a(class="a2c" href="#") connexion
       li(class="lii")
-        img(src="/images/user.svg", alt="" class="buttonmoddde")
-        a(class="username" href="#")= currentUser.username  
-    li(class="lii")
-      a(class="a1" href="/posts/new") create
-    //- li(class="liii")
-    //-   a(class="a2c" href="#") connexion
-    li(class="lii")
-      a(class="a2" href="/auth/signout") logout
+        a(class="a2" href="/auth/signout") logout
     
     

@@ -8,6 +8,8 @@ exports.createUser = async (user) => {
       local: {
         email: user.email,
         password: hashedPassword,
+        nom: user.nom,
+        tel: user.tel,
       },
     });
     return newUser.save();

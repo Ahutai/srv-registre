@@ -1,23 +1,42 @@
 if find 
   each post in find
-    div(class="divlist3s")
+    form(class="divlist3s" method="post" action="/shared/createpanier/" + "684b0f6b4205045b1df1d6da" )
       //- if post.updown === "UP"
       //- div(class="up-down active")
-      img(src="/images/folderrrr.png", alt="" class="folder")
+      if post.name === "TORTUE"
+        img(src="/images/tortue-6.png", alt="" class="folder")
+      if post.name === "BALEINE"
+        img(src="/images/baleine.png", alt="" class="folder")
+      if post.name === "RAIE"
+        img(src="/images/raie.png", alt="" class="folder")
+      if post.name === "TIKI"
+        img(src="/images/tiki-6.png", alt="" class="folder")
       //- else 
       //-   div(class="up-down")
       if editable === false && findfoldernivzero === false
         div(class="divlist4")
-          a(class="divlist5" href="/users/sposts/" + post._id)= post.name   
+          input(class="divlist5a" type="text" value=post.name name="title")  
       else 
         div(class="divlist4")
-          a(class="divlist5" href="/posts/findeddd/" + post._id)= post.name
+          input(class="divlist5a" type="text" value=post.name name="title") 
       div(class="divlist4")
-        a(class="divlist54") 1 Mo
+        if post.name === "TORTUE"
+          input(class="inputprix" type="text" name="prix" value="1000")
+          p(class="divlist555") 1000 F
+        if post.name === "BALEINE"
+          input(class="inputprix" type="text" name="prix" value="2000")
+          p(class="divlist555") 2000 F
+        if post.name === "RAIE"
+          input(class="inputprix" type="text" name="prix" value="2000")
+          p(class="divlist555") 2000 F
+        if post.name === "TIKI"
+          input(class="inputprix" type="text" name="prix" value="1500")
+          p(class="divlist555") 1500 F
       div(class="divlist4")
-        a(class="divlist555")= post.date
+        input(class="divlist544" value="0" type="text" name="quantité")
       div(class="divlist4")
-        p(class="divlist5555") FOLDER
+        input(class="inputprix" type="text" value="10x15cm" name="format")
+        p(class="divlist55555") 10x15cm
       //- if editable === false && findfoldernivzero === false
       //-   div(class="divbutton")
       //-     a(href="#") 
@@ -30,18 +49,128 @@ if find
       //-       img(src="/images/add2d.svg", alt="" class="addd")
       //-     img(src="/images/troisd.svg", alt="" class="buttonmod" posted=post._id postt=post.name)
       //-     img(src="/images/deleted.svg", alt="" class="buttonmlistt" postid=post._id postidd=post.author)
-      if editable === false 
-        div(class="divbutton")
-          a(href="#") 
-            a(src="", alt="" class="ajout")
-          a(src="", alt="" class="del" )
-          a(src="", alt="" class="trs")
+      if editable === false && nivuser === "0" 
+        div(class="divbuttonn")
+          input(class="inputadd" type="submit" value="ajouter")
       if editable === true && find && niv === "0"
         div(class="divbutton")
-            a( href="/posts/spost/" + post._id) 
+            a(href="/posts/foldernivii/" + post._id)
               img(src="/images/add2d.svg", alt="" class="addd")
             img(src="/images/troisd.svg", alt="" class="buttonmod" posted=post._id postt=post.name)
             img(src="/images/deleted.svg", alt="" class="buttonmlistt" postid=post._id postidd=post.author)
+if awaitcommfind
+  form(class="divlist3ss")
+    if awaitcomm 
+      each post in awaitcomm 
+        if post.username === currentUser.username
+          div(class="divlist3sc")
+            img(src="/images/folderrrr.png", alt="" class="folder")
+            div(class="divlist4l" id="tested")
+              a(class="divlist5" href="/shared/findawaitcommm/" + post._id)= post.commandename
+            div(class="divlist4ll")
+              p(class="divlist555sr")= post.datered
+            div(class="divlist4ll")
+              if post.status === "en attente..."
+                p(class="divlist555lm") commande en attente 
+              if post.status === "en cours..."
+                p(class="divlist555lm") en cours de préparation 
+              if post.status === "terminé..."
+                p(class="divlist555lmm") commande terminé
+              if post.status === "expédition..."
+                p(class="divlist555lmm") commande en expédition 
+              if post.status === "livrée ..."
+                p(class="divlist555lmmm") commande livrée 
+            div(class="divlist4ll")
+              p(class="divlist555")= post.username
+            div(class="divlist4l")
+              p(class="divlist555")
+if awaitcommfind && currentUser.username === "administrateur"
+  form(class="divlist3ss")
+    if awaitcomm 
+      each post in awaitcomm 
+        div(class="divlist3sc")
+          img(src="/images/folderrrr.png", alt="" class="folder")
+          div(class="divlist4l" id="tested")
+            a(class="divlist5" href="/shared/findawaitcommm/" + post._id)= post.commandename
+          div(class="divlist4ll")
+            p(class="divlist555sr")= post.datered
+          div(class="divlist4ll")
+            if post.status === "en attente..."
+              p(class="divlist555lm") commande en attente 
+            if post.status === "en cours..."
+              p(class="divlist555lm") en cours de préparation 
+            if post.status === "terminé..."
+              p(class="divlist555lmm") commande terminé
+            if post.status === "expédition..."
+              p(class="divlist555lmm") commande en expédition 
+            if post.status === "livrée ..."
+              p(class="divlist555lmmm") commande livrée 
+          div(class="divlist4ll")
+            p(class="divlist555")= post.username
+          div(class="divlist4l")
+            p(class="divlist555")
+
+            
+
+if panierlock
+  form(class="divlist3ss" method="post" action="/shared/awaitcommande/" + "684b8a55ab41d7225206b9ad" )
+    if panier 
+      each post in panier 
+        if post.username === currentUser.username
+          div(class="divlist3s")
+            if post.title === "TORTUE"
+              img(src="/images/tortue-6.png", alt="" class="folder")
+            if post.title === "BALEINE"
+              img(src="/images/baleine.png", alt="" class="folder")
+            if post.title === "RAIE"
+              img(src="/images/raie.png", alt="" class="folder")
+            if post.title === "TIKI"
+              img(src="/images/tiki-6.png", alt="" class="folder")
+            if editable === false && findfoldernivzero === false
+              div(class="divlist4")
+                input(class="divlist5a" type="text" value=post.title)
+                input(class="inputprix" type="text" value=post.title name="title")
+            else 
+              div(class="divlist4")
+                input(class="divlist5a" type="text" value=post.title)
+                input(class="inputprix" type="text" value=post.title name="title")
+            div(class="divlist4")
+              input(class="inputprix" type="text" value=post.result name="result")
+              p(class="divlist555")= post.result
+            div(class="divlist4")
+              input(class="divlist544a" value=post.quantité type="text" name="quantiter")
+            div(class="divlist4")
+              input(class="inputprix" value=post.format type="text" name="format")
+              p(class="divlist55555")= post.format   
+    if result 
+      div(class="divlist3s")
+        div(class="divlist4")
+          input(class="divlist5a" type="text" value="TOTAL")
+        div(class="divlist4")
+          input(class="inputprix" type="text" value=resultat name="total")
+          p(class="divlist555m")= resultat
+        div(class="divlist4")
+          input(class="inputprix" type="text" value=resultatttt name="quant")
+          p(class="divlist555l")= resultatttt
+        div(class="divlist4")
+          input(class="divlist5af" type="text" placeholder="nom de la commande" name="commandename")
+    if resultatttt 
+      div(class="divlist3s")
+        div(class="divlist4")
+          input(class="divlist5a" type="text" value="EXPÉDITION" name="exp")
+        div(class="divlist4")
+          input(class="divlist544av" placeholder="ÎLES" name="ile")
+        div(class="divlist4")
+          input(class="divlist544av" placeholder="NOM" name="nom")
+        div(class="divlist4l")
+          input(class="divlist5ap" type="checkbox" id="bateau" name="bateau") 
+          label(for="bateau" class="labeli") BATEAU
+          input(class="divlist5ap" type="checkbox" id="avion" name="avion") 
+          label(for="avion" class="labeli") AVION
+        div(class="divlist4")
+          input(class="divlist544avv" type="date" name="date")
+        div(class="divbuttonn")
+          input(class="inputaddd" type="submit" value="commander")
 
 if findds 
   each post in findds
@@ -65,13 +194,22 @@ if findds
       else 
         div(class="divlist4")
           p(class="divlist5555") format DOCX
-      if editable === false && findfoldernivzero === false
-        div(class="divbutton")
-          a(src="", alt="" class="del" )
-          a(src="", alt="" class="trs")
-          a( href=`/upload/${post.addfiles}` download)
-            img(src="/images/download.svg" class="addd") 
-      else
+      if editable === false && nivuser === "0"
+        each post in content 
+          if findaccessnivzero.access === "access"
+            div(class="divbutton")
+              a( href=`/upload/${post.addfiles}` download)
+                img(src="/images/download.svg" class="addd") 
+              a(href="/posts/msfiles/" + post._id) 
+                img(src="/images/troisd.svg", alt="" class="trois")
+              img(src="/images/deleted.svg", alt="" class="deletesfiles" postid=post._id postidd=post.author)
+          else 
+            div(class="divbutton")
+              a(src="", alt="" class="del" )
+              a(src="", alt="" class="trs")
+              a( href=`/upload/${post.addfiles}` download)
+                img(src="/images/download.svg" class="addd") 
+      if editable === true && find && niv === "0"
         div(class="divbutton")
           a( href=`/upload/${post.addfiles}` download)
             img(src="/images/download.svg" class="addd") 

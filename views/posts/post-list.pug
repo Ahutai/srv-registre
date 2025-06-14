@@ -5,15 +5,23 @@ if postes
         img(src="/images/foldershared.svg", alt="" class="folder")
         div(class="divlist4" id="tested")
           a(class="divlistuser" href="/users/finduser/" + post.username)= post.username
-      if editable === false  
+      if editable === false && post.content === "PANIER"
         img(src="/images/folderrrr.png", alt="" class="folder")
         div(class="divlist4" id="tested")
-          a(class="divlist5" href="/users/spost/" + post._id)= post.content
-      if editable && post.author._id.toString() === currentUser._id.toString()   
+          a(class="divlist5" href="/shared/findpanier/" + "684b0f6b4205045b1df1d6da")= post.content
+      if editable === false && post.content === "COMMANDE"
+        img(src="/images/folderrrr.png", alt="" class="folder")
+        div(class="divlist4" id="tested")
+          a(class="divlist5" href="/shared/findawaitcomm/" + post._id)= post.content
+      if editable === false && post.content === "PRODUITS"
+        img(src="/images/folderrrr.png", alt="" class="folder")
+        div(class="divlist4" id="tested")
+          a(class="divlist5" href="/shared/spost/" + post._id)= post.content
+      if editable === true && post.author._id.toString() === currentUser._id.toString()   
         img(src="/images/folderrrr.png", alt="" class="folder")
         div(class="divlist4" id="tested")
           a(class="divlist5" href="/posts/finded/" + post._id)= post.content
-      if editable && post.author._id.toString() === currentUser._id.toString()   
+      if editable === true && post.author._id.toString() === currentUser._id.toString()   
         div(class="divbutton")
           //- a(href="/posts/showmodal/" + post._id) 
           //-   img(src="/images/add2d.svg", alt="" class="buttonmodd")
@@ -26,19 +34,19 @@ if postes
           //-     a(href="/posts/showmodal/" + postIdFileFolderPostList) 
           //-       img(src="/images/filed.svg", alt="")
           //-     p fichier
-          a(href="/posts/neww/" + post._id)
-            img(src="/images/add2d.svg", alt="" class="addd")
-          a(href="/posts/listpost/" + post._id) 
-            img(src="/images/troisd.svg", alt="" class="buttonmods")
-          img(src="/images/deleted.svg", alt="" class="buttonmlist" postid=post._id)
+          img(src="/images/notifications.svg", alt="" class="buttonmlist" postid=post._id)
       else
         div(class="divbutton")
-          a(src="", alt="" class="del" )
-          a(src="", alt="" class="trs")
-          a(href=`/upload/${post.addfiless}` download)
-            a(href="#") 
-      //- if editable === false 
-      //-   div(class="divbutton")
-      //-     a(href="#" class="astorage") 
-      //-       img(src="/images/shar.svg", alt="" class="storage")
-            
+          //- a(href="/posts/showmodal/" + post._id) 
+          //-   img(src="/images/add2d.svg", alt="" class="buttonmodd")
+          //- div(class="showmodal")
+          //-   div(class="divmodall")
+          //-     a(href="/posts/neww/" + postIdFileFolderPostList)
+          //-       img(src="/images/folderd.svg", alt="")
+          //-     p dossier
+          //-   div(class="divmodal")
+          //-     a(href="/posts/showmodal/" + postIdFileFolderPostList) 
+          //-       img(src="/images/filed.svg", alt="")
+          //-     p fichier
+          img(src="/images/notifications.svg", alt="" class="buttonmlist" postid=post._id)
+        
