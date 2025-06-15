@@ -9,6 +9,105 @@ body {
   background-color: #494949;
 }
 
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(50, 50, 50);
+  border-bottom: 2px solid rgb(111, 111, 111);
+  /* box-shadow: 0px 0px 5px black; */
+}
+
+.ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-between;
+  font-size: 17px;
+  color: white;
+}
+
+.divlistm1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divlist2 {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 90%;
+  padding: 10px 0px;
+  border-radius: 5px;
+  background-color: rgb(50, 50, 50);
+  /* background-color: rgb(107, 107, 107); */
+  box-shadow: inset 0px 0px 5px black;
+  max-height: 182px;
+  min-height: 182px;
+  transition: all 0.2s;
+  overflow: scroll;
+}
+
+.folder-container {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row nowrap;
+  padding: 10px 0px;
+  border-radius: 5px;
+  height: 40px;
+  width: 90%;
+  box-shadow: inset 0px 0px 5px black;
+  /* background-color: rgb(107, 107, 107); */
+  background-color: rgb(50, 50, 50);
+  /* box-shadow: 0px 0px 5px black; */
+  max-height: 19px;
+}
+
+.content {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  position: fixed;
+  list-style: none;
+  text-decoration: none;
+}
+
+.img {
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
+  height: 2px;
+  width: 2px;
+}
+
+.ulp {
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
+}
+
+.cote {
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
+}
+
+.a1 {
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
+}
+
 .labelii {
   font-size: 12.5px;
   margin-left: 7px;
@@ -37,46 +136,6 @@ body {
 
 .divlist544av::placeholder {
   color: #d6d6d6;
-}
-
-.nav {
-  display: flex;
-  flex-direction: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
-  background-color: rgb(50, 50, 50);
-  width: 100%;
-  border-bottom: 2px solid rgb(111, 111, 111);
-  /* box-shadow: 0px 0px 5px black; */
-}
-
-.ul {
-  list-style: none;
-  display: flex;
-  flex-direction: row nowrap;
-  justify-content: space-between;
-  font-size: 17px;
-  color: white;
-}
-
-.img {
-  height: 35px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.ulp {
-  display: flex;
-  flex-direction: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.am1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .usernames {
@@ -156,8 +215,8 @@ body {
 }
 
 /* .username:hover {
-  background-color: rgb(0, 106, 151);
-} */
+    background-color: rgb(0, 106, 151);
+  } */
 
 .text {
   color: white;
@@ -219,7 +278,7 @@ body {
 
 .divc1form {
   background-color: rgb(50, 50, 50);
-  width: 550px;
+  width: 320px;
   text-align: center;
   padding: 15px 0px;
   margin: 30px 0px 20px 0px;
@@ -308,7 +367,7 @@ body {
 }
 
 .divlist3sw {
-  width: 95%;
+  width: 90%;
   background-color: rgb(80, 80, 80);
   margin: 10px 0px;
   padding: 10px 0px;
@@ -321,14 +380,15 @@ body {
   animation-name: fadeIn;
   animation-duration: 0.2s;
   opacity: 1;
+  height: 25px;
 }
 
-.divlist3st {
-  width: 95%;
+.divlist3stt {
+  width: 90%;
   background-color: rgb(80, 80, 80);
   margin: 10px 0px;
-  min-height: 40px;
-  max-height: 40px;
+  min-height: 125px;
+  max-height: 125px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -349,6 +409,87 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  transition: all 0.2s;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  opacity: 1;
+}
+
+.partone {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  transition: all 0.2s;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  opacity: 1;
+  margin-bottom: 25px;
+}
+
+.parttwo {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  transition: all 0.2s;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  opacity: 1;
+}
+
+.divlist3snw {
+  width: 90%;
+  background-color: rgb(80, 80, 80);
+  margin: 10px 0px;
+  min-height: 40px;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: row nowrap;
+  justify-content: start;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  transition: all 0.2s;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  opacity: 1;
+}
+
+.divlist3sn {
+  width: 90%;
+  background-color: rgb(80, 80, 80);
+  margin: 10px 0px;
+  min-height: 50px;
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: row nowrap;
+  justify-content: space-around;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  transition: all 0.2s;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  opacity: 1;
+}
+
+.divlist3dl {
+  width: 90%;
+  background-color: rgb(80, 80, 80);
+  margin: 10px 0px;
+  min-height: 220px;
+  max-height: 220px;
+  display: flex;
+  align-items: center;
+  flex-direction: row nowrap;
+  justify-content: center;
   border-radius: 5px;
   box-shadow: 0px 0px 5px black;
   transition: all 0.2s;
@@ -358,14 +499,15 @@ body {
 }
 
 .divlist3s {
-  width: 95%;
+  width: 90%;
   background-color: rgb(80, 80, 80);
   margin: 10px 0px;
-  min-height: 40px;
-  max-height: 40px;
+  min-height: 170px;
+  max-height: 170px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  flex-direction: row nowrap;
+  justify-content: center;
   border-radius: 5px;
   box-shadow: 0px 0px 5px black;
   transition: all 0.2s;
@@ -374,8 +516,12 @@ body {
   opacity: 1;
 }
 
+.nom {
+  margin-left: 30px;
+}
+
 .prix {
-  margin-left: 70px;
+  margin-left: 40px;
 }
 
 .prixx {
@@ -388,6 +534,10 @@ body {
 
 .status {
   margin-left: 14px;
+}
+
+.name {
+  margin-left: 20px;
 }
 
 .options {
@@ -409,8 +559,12 @@ body {
   margin-left: 18px;
 }
 
+.nomn {
+  margin-right: 200px;
+  margin-left: 18px;
+}
+
 .adresses {
-  margin-right: 150px;
   margin-left: 18px;
 }
 
@@ -451,13 +605,12 @@ body {
 .divlist3sc {
   width: 95%;
   background-color: rgb(80, 80, 80);
-
   margin: 10px 0px;
-  min-height: 40px;
-  max-height: 40px;
+  min-height: 140px;
+  max-height: 140px;
   display: flex;
   align-items: center;
-  justify-content: cente;
+  justify-content: center;
   border-radius: 5px;
   box-shadow: 0px 0px 5px black;
   transition: all 0.2s;
@@ -511,25 +664,21 @@ body {
 }
 
 .divlist1 {
-  margin-top: 30px;
+  margin-top: 10px;
   display: flex;
-  flex-direction: row nowrap;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   /* width: 100%; */
   /* border: 2px solid white; */
 }
 
-.divlistm1 {
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.product {
+  color: rgb(221, 221, 221);
 }
 
 .divlistm2 {
-  width: 65%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -537,55 +686,35 @@ body {
 }
 
 .profile-containerr {
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row nowrap;
   padding: 10px 0px;
   border-radius: 5px;
-  width: 100%;
+  width: 90%;
   /* background-color: rgb(107, 107, 107); */
   background-color: rgb(50, 50, 50);
   box-shadow: inset 0px 0px 5px black;
-  margin-right: 50px;
   height: 18px;
 }
 
-.divlist2 {
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  flex-direction: column;
-  border-radius: 5px;
-  width: 85%;
-  padding: 10px 0px;
-  border-radius: 5px;
-  background-color: rgb(50, 50, 50);
-  /* background-color: rgb(107, 107, 107); */
-  box-shadow: inset 0px 0px 5px black;
-  max-height: 630px;
-  min-height: 630px;
-  transition: all 0.2s;
-  margin-right: 25px;
-  overflow: scroll;
-}
-
 .divlist2v2 {
-  margin-right: 50px;
   display: flex;
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   border-radius: 5px;
-  width: 100%;
+  width: 90%;
   padding: 10px 0px;
   border-radius: 5px;
   background-color: rgb(50, 50, 50);
   /* background-color: rgb(107, 107, 107); */
   box-shadow: inset 0px 0px 5px black;
-  min-height: 630px;
-  max-height: 630px;
+  min-height: 444px;
+  max-height: 444px;
   transition: all 0.2s;
   overflow: scroll;
 }
@@ -994,9 +1123,9 @@ body {
   background-color: rgb(80, 80, 80);
   color: white;
   border: 0px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
-  width: 150px;
+  width: 60px;
   pointer-events: none;
   margin: 10px 0px 10px 10px;
   border-bottom: 2px dashed rgb(152, 152, 152);
@@ -1026,17 +1155,46 @@ body {
   text-transform: uppercase;
 }
 
-.divlist5a {
-  margin-left: 10px;
+.divlist5ay {
   list-style: none;
   text-decoration: none;
   background-color: rgb(80, 80, 80);
   color: white;
   border: 0px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
-  width: 150px;
+  width: 90px;
   pointer-events: none;
+  text-align: center;
+  height: 15px;
+}
+
+.divlist5al {
+  list-style: none;
+  text-decoration: none;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  border: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 80px;
+  pointer-events: none;
+  text-align: center;
+  height: 15px;
+}
+
+.divlist5a {
+  list-style: none;
+  text-decoration: none;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  border: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 50px;
+  pointer-events: none;
+  text-align: center;
+  height: 15px;
 }
 
 .divlist5c {
@@ -1055,7 +1213,6 @@ body {
 }
 
 .divlist5 {
-  margin-left: 10px;
   list-style: none;
   text-decoration: none;
   color: white;
@@ -1127,7 +1284,6 @@ body {
   color: white;
   font-size: 12px;
   text-align: center;
-  margin-right: 10px;
   padding: 2px 0px;
   cursor: pointer;
   transition: all 120ms;
@@ -1144,7 +1300,6 @@ body {
   color: white;
   font-size: 12px;
   text-align: center;
-  margin-right: 10px;
   padding: 2px 0px;
   cursor: pointer;
   transition: all 120ms;
@@ -1161,7 +1316,6 @@ body {
   color: white;
   font-size: 12px;
   text-align: center;
-  margin-right: 10px;
   padding: 2px 0px;
   cursor: pointer;
   transition: all 120ms;
@@ -1178,7 +1332,6 @@ body {
   color: white;
   font-size: 12px;
   text-align: center;
-  margin-right: 10px;
   padding: 2px 0px;
   cursor: pointer;
   transition: all 120ms;
@@ -1190,7 +1343,8 @@ body {
 
 .inputadd {
   height: 23px;
-  width: 55px;
+  width: 70px;
+  margin-top: 5px;
   font-weight: bold;
   background-color: #2799c6;
   border: 2px solid rgb(255, 255, 255);
@@ -1198,21 +1352,20 @@ body {
   color: white;
   font-size: 12px;
   text-align: center;
-  margin-right: 10px;
   padding: 2px 0px;
   cursor: pointer;
   transition: all 120ms;
+  margin-bottom: 10px;
 }
 
 .divlist55555 {
-  margin-right: 120px;
   list-style: none;
   text-decoration: none;
   color: rgb(234, 234, 234);
   font-size: 12px;
   transition: all 120ms;
   height: 15px;
-  width: 70px;
+  width: 55px;
   background-color: #6e6e6e;
   text-align: center;
   /* padding-top: 5px; */
@@ -1263,7 +1416,6 @@ body {
   color: rgb(174, 174, 174);
   font-size: 15px;
   transition: all 150ms;
-  margin-left: 10px;
   /* padding-bottom: 5px; */
   /* border-bottom: 2px solid rgb(34, 175, 15); */
 }
@@ -1334,7 +1486,6 @@ body {
   text-align: center;
   padding: 5px 5px 0px 5px;
   border-radius: 5px;
-  margin-left: 80px;
 }
 
 .divlist555m {
@@ -1348,7 +1499,6 @@ body {
   text-align: center;
   padding: 5px 5px 0px 5px;
   border-radius: 5px;
-  margin-left: 22.5px;
 }
 
 .divlist555ll {
@@ -1408,7 +1558,6 @@ body {
   text-transform: uppercase;
   max-width: 80px;
   font-weight: bold;
-  margin-left: 20px;
   pointer-events: none;
 }
 
@@ -1424,7 +1573,6 @@ body {
   text-transform: uppercase;
   max-width: 80px;
   font-weight: bold;
-  margin-left: 20px;
 }
 
 .divlist544avw {
@@ -1452,7 +1600,7 @@ body {
   padding: 2.5px 2.5px;
   text-align: center;
   text-transform: uppercase;
-  max-width: 80px;
+  max-width: 130px;
   font-weight: bold;
 }
 
@@ -1474,7 +1622,7 @@ body {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: 12px;
-  max-width: 20px;
+  max-width: 60px;
   border-radius: 5px;
   background-color: #828282;
   padding: 2.5px 2.5px;
@@ -1505,12 +1653,47 @@ body {
   width: 100%;
 }
 
+.divlist4llr {
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin: 5px 0px;
+  border-bottom: 2px solid rgb(165, 165, 165);
+  padding-bottom: 5px;
+}
+
+.divlist4llrr {
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin: 5px 0px;
+}
+
+.divlist4lr {
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin: 5px 0px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgb(165, 165, 165);
+}
+
 .divlist4l {
   display: flex;
   flex-direction: row nowrap;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   width: 100%;
+  margin: 5px;
 }
 
 .divlist4r {
@@ -1524,13 +1707,19 @@ body {
 .divlist4zz {
   display: flex;
   flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  margin: 5px;
 }
 
 .divlist4z {
   display: flex;
   flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  margin: 5px 0px;
 }
 
 .divlist4zd {
@@ -1551,11 +1740,41 @@ body {
   text-align: center;
 }
 
+.divlist4se {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  width: 100%;
+  margin: 5px;
+  border-bottom: 2px solid rgb(146, 146, 146);
+  padding-bottom: 5px;
+}
+
 .divlist4 {
   display: flex;
   flex-direction: row nowrap;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
+  margin: 5px;
+}
+
+.divlist4j {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  width: 100%;
+  margin: 5px;
+  /* border-bottom: 2px solid rgb(174, 174, 174); */
+  padding-bottom: 5px;
+}
+
+.divlist4n {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  width: 100%;
+  margin: 5px;
+  border-bottom: 2px solid rgb(162, 162, 162);
 }
 
 .inputformr {
@@ -1812,25 +2031,25 @@ body {
 /* user-form */
 
 /* .divc3formuser {
-  height: 500px;
-  width: 500px;
-} */
+    height: 500px;
+    width: 500px;
+  } */
 
 /* .formmuser {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 150px;
-} */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+  } */
 
 .textarea {
   /* font-size: 18px;
-  width: 400px;
-  margin-top: 0px;
-  border-radius: 3px;
-  border: 0px;
-  padding: 5px 5px; */
+    width: 400px;
+    margin-top: 0px;
+    border-radius: 3px;
+    border: 0px;
+    padding: 5px 5px; */
   font-size: 18px;
   width: 440px;
   border-radius: 2.5px;
@@ -1844,11 +2063,11 @@ body {
 
 .inputusername {
   /* font-size: 18px;
-  width: 400px;
-  margin-top: 0px;
-  border-radius: 3px;
-  border: 0px;
-  padding: 5px 5px; */
+    width: 400px;
+    margin-top: 0px;
+    border-radius: 3px;
+    border: 0px;
+    padding: 5px 5px; */
   font-size: 18px;
   width: 425px;
   border-radius: 2.5px;
@@ -1861,13 +2080,13 @@ body {
 
 .inputemail {
   /* font-size: 18px;
-  width: 400px;
-  border-radius: 3px;
-  border: 0px;
-  padding: 5px 5px; */
+    width: 400px;
+    border-radius: 3px;
+    border: 0px;
+    padding: 5px 5px; */
   margin: 20px 0px;
   font-size: 18px;
-  width: 425px;
+  width: 280px;
   border-radius: 2.5px;
   height: 35px;
   padding: 0px 10px;
@@ -1911,10 +2130,10 @@ body {
 
 .inputpassword {
   /* font-size: 18px;
-  width: 400px;
-  border-radius: 3px;
-  border: 0px;
-  padding: 5px 5px; */
+    width: 400px;
+    border-radius: 3px;
+    border: 0px;
+    padding: 5px 5px; */
   font-size: 18px;
   width: 425px;
   border-radius: 2.5px;
@@ -2101,7 +2320,7 @@ body {
   background-color: rgb(50, 50, 50);
 
   height: 220px;
-  width: 550px;
+  width: 320px;
   border-radius: 5px;
   border: 2px solid rgb(112, 112, 112);
   box-shadow: 0px 0px 5px black;
@@ -2109,7 +2328,7 @@ body {
 
 .divc4formc input {
   font-size: 18px;
-  width: 425px;
+  width: 230px;
   border-radius: 2.5px;
   height: 35px;
   padding: 0px 10px;
@@ -2131,18 +2350,18 @@ body {
 /* topbar */
 
 /* .liiic {
-  padding: 2.5px 0px;
-  margin-left: 10px;
-  background-color: rgb(0, 174, 237);
-  color: white;
-  border-radius: 5px;
-  border: 2px solid white;
-  margin-right: 10px;
-} */
+    padding: 2.5px 0px;
+    margin-left: 10px;
+    background-color: rgb(0, 174, 237);
+    color: white;
+    border-radius: 5px;
+    border: 2px solid white;
+    margin-right: 10px;
+  } */
 
 /* .a2 {
-  color: white;
-} */
+    color: white;
+  } */
 
 .loaderrrs {
   margin-left: 25px;
@@ -2445,25 +2664,6 @@ body {
 /* folder */
 /* folder */
 
-.folder-container {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row nowrap;
-  padding: 10px 0px;
-  border-radius: 5px;
-  height: 40px;
-  width: 85%;
-  box-shadow: inset 0px 0px 5px black;
-  /* background-color: rgb(107, 107, 107); */
-  background-color: rgb(50, 50, 50);
-
-  /* box-shadow: 0px 0px 5px black; */
-  margin-right: 25px;
-  max-height: 19px;
-}
-
 .divlist5 {
   cursor: pointer;
 }
@@ -2548,7 +2748,14 @@ body {
 }
 
 .folderd {
-  margin-left: 15px;
+  position: absolute;
+  visibility: hidden;
+  height: 2px;
+  width: 2px;
+}
+
+.folderrd {
+  margin-left: 10px;
   margin-right: 4px;
   max-width: 25px;
   max-height: 25px;
@@ -2661,7 +2868,7 @@ body {
 
 .reloade {
   position: absolute;
-  height: 630px;
+  height: 400px;
   width: 64%;
   background-color: rgb(50, 50, 50);
   display: flex;
@@ -2676,8 +2883,8 @@ body {
 
 .reload {
   position: absolute;
-  height: 630px;
-  width: 64%;
+  height: 453.5px;
+  width: 88%;
   background-color: rgb(50, 50, 50);
   display: FLEX;
   flex-direction: column;

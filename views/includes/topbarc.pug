@@ -1,12 +1,6 @@
 nav(class="nav") 
   ul(class="ulp") 
-    a(href="/users" class="am1") 
-      img(class="img" src="/images/logss.png")
-    if currentUser.username === "administrateur"
-      a(href="/users/users" class="partagea")
-        div(class='partage')
-          p(class="partagep") partage
-    if username && currentUser === "administrateur"
+    if username && currentUser.username === "administrateur"
       li(class="lii")
         a(class="usernames" href="/users/finduser/" + username)= username
         img(src="/images/foldershared.svg", alt="" class="folder")

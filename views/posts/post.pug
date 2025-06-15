@@ -74,8 +74,8 @@ block content
               a(href="#" class="aded")
                 a(href="#" class="addd")
         if editable === false && nivuser === "0"
-          each post in content 
-            a(class='contentt')= post.content
+          each post in content
+            a(class='contentt') M E N U
             div(class='loadnivi')
               div(class='loadernivi')
             //- div(class="divniv")
@@ -131,13 +131,16 @@ block content
     div(class="divlistm2")
       div(class="profile-containerr")
         if awaitcomm && editable === false
-          include ../includes/namee.pug
+          each post in content    
+            a(class='content')= post.content
         if awaitcommm && editable === false 
           include ../includes/nameee.pug
-        if produits === true && editable === false
-          include ../includes/name.pug
+        if produits === true && editable === false && content && find && findds 
+          each post in content    
+            a(class='content')= post.content
         if editable === false && panier
-          include ../includes/nameeee.pug
+          each post in content    
+            a(class='content')= post.content
       div(class="divlist2v2 text" id="postlistcontainerr")
         include list-server.pug 
         include listserverII.pug
