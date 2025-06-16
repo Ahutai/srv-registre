@@ -2988,12 +2988,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  right: 85px;
+  right: 9vh;
   top: 70px;
   overflow: hidden;
   opacity: 0;
   transition: all 120ms ease;
   pointer-events: none;
+  z-index: 2;
 }
 
 .modaluser.active {
