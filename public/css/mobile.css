@@ -717,8 +717,7 @@ body {
   background-color: rgb(50, 50, 50);
   /* background-color: rgb(107, 107, 107); */
   box-shadow: inset 0px 0px 5px black;
-  min-height: 444px;
-  max-height: 444px;
+  height: 65vh;
   transition: all 0.2s;
   overflow: scroll;
 }
