@@ -6,6 +6,8 @@ const divess = document.querySelectorAll(".inputaddd");
 
 const divesss = document.querySelectorAll(".inputadd");
 
+const loadernivi = document.querySelector(".loadernivi");
+
 const sfiledive = document.querySelectorAll(".divlist5s");
 
 const recharge = document.querySelector(".loader");
@@ -42,9 +44,9 @@ dives.forEach((e) => {
 
 divesss.forEach((e) => {
   e.addEventListener("click", async ($event) => {
-    loaded.classList.add("active");
+    loadernivi.classList.add("active");
     setTimeout(() => {
-      loaded.classList.remove("active");
+      loadernivi.classList.remove("active");
     }, 10000);
   });
 });
