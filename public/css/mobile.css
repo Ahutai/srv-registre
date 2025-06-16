@@ -1302,6 +1302,22 @@ body {
   pointer-events: none;
 }
 
+.inputaddddssr {
+  height: 23px;
+  width: 82px;
+  font-weight: bold;
+  background-color: #982cb0;
+  /* border: 2px solid rgb(255, 255, 255); */
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding: 2px 0px;
+  cursor: pointer;
+  transition: all 120ms;
+  pointer-events: none;
+}
+
 .inputadddds {
   height: 23px;
   width: 82px;
@@ -1452,6 +1468,15 @@ body {
   letter-spacing: 2px;
 }
 
+.divlist555lmmr {
+  list-style: none;
+  text-decoration: none;
+  color: rgb(174, 174, 174);
+  font-size: 12px;
+  transition: all 150ms;
+  border-bottom: 2px solid #982cb0;
+}
+
 .divlist555lmm {
   list-style: none;
   text-decoration: none;
@@ -1468,6 +1493,15 @@ body {
   font-size: 12px;
   transition: all 150ms;
   border-bottom: 2px solid #d34945;
+}
+
+.divlist555lml {
+  list-style: none;
+  text-decoration: none;
+  color: rgb(174, 174, 174);
+  font-size: 12px;
+  transition: all 150ms;
+  border-bottom: 2px solid #2799c6;
 }
 
 .divlist555lm {
@@ -1741,6 +1775,18 @@ body {
   align-items: center;
   text-align: center;
   width: 100%;
+  margin: 5px 0px;
+  padding-bottom: 2.5px;
+  border-bottom: 2px solid rgb(156, 156, 156);
+}
+
+.divlist4zzdr {
+  display: flex;
+  flex-direction: row nowrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin: 5px 0px;
   padding-bottom: 2.5px;
   border-bottom: 2px solid rgb(156, 156, 156);

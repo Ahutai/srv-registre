@@ -32,7 +32,7 @@ dives.forEach((e) => {
     loaded.classList.add("active");
     setTimeout(() => {
       loaded.classList.remove("active");
-    }, 100);
+    }, 10000);
   });
 });
 
@@ -41,7 +41,7 @@ dive.forEach((e) => {
     loaded.classList.add("active");
     setTimeout(() => {
       loaded.classList.remove("active");
-    }, 100);
+    }, 10000);
   });
 });
 
@@ -52,7 +52,7 @@ sfiledive.forEach((e) => {
     setTimeout(() => {
       // recharge.classList.remove("active");
       modalll.classList.remove("active");
-    }, 100);
+    }, 10000);
   });
 });
 
@@ -61,6 +61,6 @@ divered.forEach((e) => {
     loadedd.classList.add("active");
     setTimeout(() => {
       loadedd.classList.remove("active");
-    }, 100);
+    }, 10000);
   });
 });
