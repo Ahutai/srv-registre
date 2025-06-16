@@ -392,8 +392,7 @@ body {
   width: 90%;
   background-color: rgb(80, 80, 80);
   margin: 10px 0px;
-  min-height: 165px;
-  max-height: 165px;
+  height: 165px;
   display: flex;
   align-items: center;
   justify-content: space-around;
