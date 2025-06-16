@@ -2896,6 +2896,7 @@ body {
   position: absolute;
   height: 68.2vh;
   width: 90%;
+  top: 111px;
   background-color: rgb(50, 50, 50);
   display: flex;
   flex-direction: column;
