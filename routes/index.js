@@ -6,8 +6,8 @@ const shared = require("./shared.routes");
 const connexion = require("./auth.routes");
 
 router.use("/posts", ensureAuthenticated, posts);
-router.use("/shared", shared);
-router.use("/users", users);
+router.use("/shared", ensureAuthenticated, shared);
+router.use("/users", ensureAuthenticated, users);
 router.use("/auth", connexion);
 router.get("/", (req, res) => {
   res.redirect("/users");
