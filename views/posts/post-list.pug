@@ -7,13 +7,13 @@ if postes
           a(class="divlistuser" href="/users/finduser/" + post.username)= post.username
       if editable === false && post.content === "PANIER"
         a(class="divlist5" href="/shared/findpanier/" + "684b0f6b4205045b1df1d6da")
-          img(src="/images/folderrrr.png", alt="" class="folderw")
+          img(src="/images/panier.png", alt="" class="folderw")
       if editable === false && post.content === "COMMANDE"
         a(class="divlist5" href="/shared/findawaitcomm/" + post._id)
-          img(src="/images/folderrrr.png", alt="" class="folderw")
+          img(src="/images/orderr.png", alt="" class="folderw")
       if editable === false && post.content === "PRODUITS"
         a(class="divlist5" href="/shared/spost/" + post._id)
-          img(src="/images/folderrrr.png", alt="" class="folderw")
+          img(src="/images/shoppings.png", alt="" class="folderw")
       if editable === true && post.author._id.toString() === currentUser._id.toString()   
         img(src="/images/folderrrr.png", alt="" class="folderw")
         div(class="divlist4" id="tested")

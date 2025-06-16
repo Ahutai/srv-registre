@@ -94,26 +94,24 @@ if awaitcommfind && currentUser.username === "administrateur"
     if awaitcomm 
       each post in awaitcomm 
         div(class="divlist3sc")
-          img(src="/images/folderrrr.png", alt="" class="folder")
-          div(class="divlist4l" id="tested")
-            a(class="divlist5" href="/shared/findawaitcommm/" + post._id)= post.commandename
-          div(class="divlist4ll")
-            p(class="divlist555sr")= post.datered
-          div(class="divlist4ll")
-            if post.status === "en attente..."
-              p(class="divlist555lm") commande en attente 
-            if post.status === "en cours..."
-              p(class="divlist555lm") en cours de préparation 
-            if post.status === "terminé..."
-              p(class="divlist555lmm") commande terminé
-            if post.status === "expédition..."
-              p(class="divlist555lmm") commande en expédition 
-            if post.status === "livrée ..."
-              p(class="divlist555lmmm") commande livrée 
-          div(class="divlist4ll")
-            p(class="divlist555")= post.username
-          div(class="divlist4l")
-            p(class="divlist555")
+            div(class="parttwo")
+              div(class="divlist4lr" id="tested")
+                a(class="divlist5" href="/shared/findawaitcommm/" + post._id)= post.commandename
+              div(class="divlist4llrr")
+                p(class="divlist555sr")= post.datered
+              div(class="divlist4llrr")
+                if post.status === "en attente..."
+                  p(class="divlist555lm") commande en attente 
+                if post.status === "en cours..."
+                  p(class="divlist555lm") en cours de préparation 
+                if post.status === "terminé..."
+                  p(class="divlist555lmm") commande terminé
+                if post.status === "expédition..."
+                  p(class="divlist555lmm") commande en expédition 
+                if post.status === "livrée ..."
+                  p(class="divlist555lmmm") commande livrée 
+              div(class="divlist4llr")
+                p(class="divlist555")= post.username
 if panierlock
   form(class="divlist3ss" method="post" action="/shared/awaitcommande/" + "684b8a55ab41d7225206b9ad" )
     if panier 

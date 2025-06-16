@@ -51,8 +51,7 @@ body {
   background-color: rgb(50, 50, 50);
   /* background-color: rgb(107, 107, 107); */
   box-shadow: inset 0px 0px 5px black;
-  max-height: 45px;
-  min-height: 45px;
+  height: 6.7vh;
   transition: all 0.2s;
   margin-top: 15px;
 }
@@ -407,11 +406,10 @@ body {
 }
 
 .divlist3st {
-  width: 95%;
+  width: 90%;
   background-color: rgb(80, 80, 80);
   margin: 10px 0px;
-  min-height: 40px;
-  max-height: 40px;
+  height: 30vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -608,7 +606,7 @@ body {
 } */
 
 .divlist3sc {
-  width: 95%;
+  width: 90%;
   background-color: rgb(80, 80, 80);
   margin: 10px 0px;
   min-height: 140px;
@@ -1733,6 +1731,9 @@ body {
   align-items: center;
   text-align: center;
   width: 100%;
+  margin: 5px 0px;
+  padding-bottom: 2.5px;
+  border-bottom: 2px solid rgb(156, 156, 156);
 }
 
 .divlist4zzd {
@@ -1742,6 +1743,9 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 5px 0px;
+  padding-bottom: 2.5px;
+  border-bottom: 2px solid rgb(156, 156, 156);
 }
 
 .divlist4se {
@@ -2021,6 +2025,12 @@ body {
   border: 0px;
   font-weight: bold;
   padding: 2px 0px;
+}
+
+.divbuttonnns {
+  display: flex;
+  flex-direction: row nowrap;
+  margin-top: 5px;
 }
 
 .divbuttonn {
