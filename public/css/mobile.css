@@ -2140,8 +2140,8 @@ body {
 }
 
 .containere {
-  height: 94vh;
-  max-height: 94vh;
+  height: 92vh;
+  max-height: 92vh;
   width: 100%;
   background-image: url(../images/info.png);
   /* Center and scale the image nicely */
