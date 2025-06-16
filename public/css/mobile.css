@@ -2101,7 +2101,7 @@ body {
     border: 0px;
     padding: 5px 5px; */
   font-size: 18px;
-  width: 425px;
+  width: 240px;
   border-radius: 2.5px;
   height: 35px;
   padding: 0px 10px;
@@ -2118,7 +2118,7 @@ body {
     padding: 5px 5px; */
   margin: 20px 0px;
   font-size: 18px;
-  width: 280px;
+  width: 240px;
   border-radius: 2.5px;
   height: 35px;
   padding: 0px 10px;
@@ -2167,7 +2167,7 @@ body {
     border: 0px;
     padding: 5px 5px; */
   font-size: 18px;
-  width: 425px;
+  width: 240px;
   border-radius: 2.5px;
   height: 35px;
   padding: 0px 10px;
@@ -2233,7 +2233,7 @@ body {
   justify-content: center;
   background-color: rgb(50, 50, 50);
   height: 360px;
-  width: 550px;
+  width: 320px;
   border-radius: 5px;
   border: 2px solid rgb(120, 120, 120);
   box-shadow: 0px 0px 5px black;
