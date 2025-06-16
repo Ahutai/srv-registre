@@ -9,7 +9,7 @@ const {
   updateUsernameOrPassword,
 } = require("../controllers/users.controller");
 
-router.get("/administrateur", userProfile);
+router.get("/vaihere", userProfile);
 
 router.get("/users", userToFind);
 

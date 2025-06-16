@@ -169,19 +169,22 @@ if awaitcommfindd
         if post.username === currentUser.username       
           div(class="divlist3stt")
             div(class="parttwo")
+              div(class="divlist5dl")
+                p(class="divlist555rl") 
+                p(class="divlist5d") CONTACT ARTISANT
               div(class="divlist4z")
-                p(class="divlist555rl") nom 
-                p(class="divlist5d")= post.nom
+                p(class="divlist555rl") nom
+                p(class="divlist5d") oconor
               div(class="divlist4z")
                 p(class="divlist555rl") prénom
-                p(class="divlist5d")= post.username
+                p(class="divlist5d") vaihere
               div(class="divlist4z")
                 p(class="divlist555rl") téléphone
-                p(class="divlist5d")= post.tel
+                p(class="divlist5d")  87 27 56 87
               div(class="divlist4zz")
                 p(class="divlist555rl") mail
-                p(class="divlist5c")= post.email
-if awaitcommfindd && currentUser.username === "administrateur"
+                p(class="divlist5c") vaihere.oconor@gmail.com
+if awaitcommfindd && currentUser.username === "vaihere"
   div(class="divlist3ss")
     if awaitcommm 
       each post in awaitcommm 
@@ -306,9 +309,11 @@ if awaitcommfindd && currentUser.username === "administrateur"
                 input(class="inputaddddss" type="submit" value="livrée ...")
     if awaitcommm 
       each post in awaitcommm
-        if post.username === currentUser.username       
           div(class="divlist3stt")
             div(class="parttwo")
+              div(class="divlist5dl")
+                p(class="divlist555rl")  
+                p(class="divlist5d") CONTACT CLIENT
               div(class="divlist4z")
                 p(class="divlist555rl") nom 
                 p(class="divlist5d")= post.nom

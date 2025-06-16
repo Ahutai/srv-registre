@@ -1,6 +1,6 @@
 nav(class="nav") 
   ul(class="ulp") 
-    if username && currentUser.username === "administrateur"
+    if username && currentUser.username === "vaihere"
       li(class="lii")
         a(class="usernames" href="/users/finduser/" + username)= username
         img(src="/images/foldershared.svg", alt="" class="folder")
@@ -43,7 +43,7 @@ nav(class="nav")
       //-     img(src="/images/lock.svg", alt="")
   ul(class="ul")
     if postes 
-      if currentUser.username === "administrateur"
+      if currentUser.username === "vaihere"
         li(class="lii")
           a(class="a22" href="/users/signup/form")
             img(src="/images/adduser.svg", alt="" class="addusers")

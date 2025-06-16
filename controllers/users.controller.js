@@ -56,7 +56,7 @@ exports.updateUsernameOrPassword = async (req, res, next) => {
 exports.userProfile = async (req, res, next) => {
   try {
     // const username = req.params.username;
-    const username = "administrateur";
+    const username = "vaihere";
     const user = await getUserByUsername(username);
     const postes = await getFolderToUser(user._id);
     res.render("posts/post", {
@@ -91,7 +91,7 @@ exports.userFinded = async (req, res, next) => {
   try {
     // const username = req.params.username;
     // const username = req.params.username;
-    const user = await getUserByUsername("administrateur");
+    const user = await getUserByUsername("vaihere");
     const postes = await getFolderToUser(user._id);
     res.render("posts/post", {
       postes,
