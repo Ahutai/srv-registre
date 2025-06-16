@@ -1,17 +1,17 @@
 if find 
   each post in find
-    form(class="divlist3s" method="post" action="/shared/createpanier/" + "684b0f6b4205045b1df1d6da" )
+    form(class="divlist3s" method="post" action="/shared/createpanier/" + "684b0f6b4205045b1df1d6da")
       //- if post.updown === "UP"
       //- div(class="up-down active")
-      if post.name === "TORTUE"
-        img(src="/images/tortue-6.png", alt="" class="folderd")
-      if post.name === "BALEINE"
-        img(src="/images/baleine.png", alt="" class="folderd")
-      if post.name === "RAIE"
-        img(src="/images/raie.png", alt="" class="folderd")
-      if post.name === "TIKI"
-        img(src="/images/tiki-6.png", alt="" class="folderd")
-      //- else 
+      //- if post.name === "TORTUE"
+      //-   img(src="/images/tortue-6.png", alt="" class="folderd")
+      //- if post.name === "BALEINE"
+      //-   img(src="/images/baleine.png", alt="" class="folderd")
+      //- if post.name === "RAIE"
+      //-   img(src="/images/raie.png", alt="" class="folderd")
+      //- if post.name === "TIKI"
+      //-   img(src="/images/tiki-6.png", alt="" class="folderd")
+      //- //- else 
       //-   div(class="up-down")
       div(class="partone")
         div(class="divlist4n") 
@@ -25,13 +25,8 @@ if find
         div(class="divlist4") 
           p(class="product")
       div(class="parttwo")
-        if editable === false && findfoldernivzero === false
-          div(class="divlist4")
-          input(class="divlist5a" type="text" value=post.name name="title")  
-        else 
-          div(class="divlist4")
-          input(class="divlist5a" type="text" value=post.name name="title") 
-        div(class="divlist4")
+        input(class="divlist5a" type="text" value=post.name name="title")  
+        div(class="divlist4b")
           if post.name === "TORTUE"
             input(class="inputprix" type="text" name="prix" value="1000")
             p(class="divlist555") 1000 F
@@ -44,9 +39,9 @@ if find
           if post.name === "TIKI"
             input(class="inputprix" type="text" name="prix" value="1500")
             p(class="divlist555") 1500 F
-        div(class="divlist4")
+        div(class="divlist4b")
           input(class="divlist544" value="0" type="text" name="quantité")
-        div(class="divlist4")
+        div(class="divlist4b")
           input(class="inputprix" type="text" value="10x15cm" name="format")
           p(class="divlist55555") 10x15cm
         //- if editable === false && findfoldernivzero === false
@@ -182,49 +177,49 @@ if panierlock
           div(class="divbuttonn")
             input(class="inputaddd" type="submit" value="commander")
 
-if findds 
-  each post in findds
-    div(class="divlist3s")
-      //- if post.updown === "UP"
-      if post.type === "application/pdf"
-        img(src="/images/pdfv.png", alt="" class="folder")
-      else
-        img(src="/images/pdfvv.png", alt="" class="folder")
-      //- else 
-      //-   div(class="up-down")
-      div(class="divlist4")
-        a(class="divlist5s" href="/posts/modall/" + post._id)= post.name
-      div(class="divlist4")
-        a(class="divlist54")= post.size 
-      div(class="divlist4")
-        p(class="divlist555")= post.date
-      if post.type === "application/pdf"
-        div(class="divlist4")
-          p(class="divlist5555") format PDF
-      else 
-        div(class="divlist4")
-          p(class="divlist5555") format DOCX
-      if editable === false && nivuser === "0"
-        each post in content 
-          if findaccessnivzero.access === "access"
-            div(class="divbutton")
-              a( href=`/upload/${post.addfiles}` download)
-                img(src="/images/download.svg" class="addd") 
-              a(href="/posts/msfiles/" + post._id) 
-                img(src="/images/troisd.svg", alt="" class="trois")
-              img(src="/images/deleted.svg", alt="" class="deletesfiles" postid=post._id postidd=post.author)
-          else 
-            div(class="divbutton")
-              a(src="", alt="" class="del" )
-              a(src="", alt="" class="trs")
-              a( href=`/upload/${post.addfiles}` download)
-                img(src="/images/download.svg" class="addd") 
-      if editable === true && find && niv === "0"
-        div(class="divbutton")
-          a( href=`/upload/${post.addfiles}` download)
-            img(src="/images/download.svg" class="addd") 
-          a(href="/posts/msfiles/" + post._id) 
-            img(src="/images/troisd.svg", alt="" class="trois")
-          img(src="/images/deleted.svg", alt="" class="deletesfiles" postid=post._id postidd=post.author)
+//- if findds 
+//-   each post in findds
+//-     div(class="divlist3s")
+//-       //- if post.updown === "UP"
+//-       if post.type === "application/pdf"
+//-         img(src="/images/pdfv.png", alt="" class="folder")
+//-       else
+//-         img(src="/images/pdfvv.png", alt="" class="folder")
+//-       //- else 
+//-       //-   div(class="up-down")
+//-       div(class="divlist4")
+//-         a(class="divlist5s" href="/posts/modall/" + post._id)= post.name
+//-       div(class="divlist4")
+//-         a(class="divlist54")= post.size 
+//-       div(class="divlist4")
+//-         p(class="divlist555")= post.date
+//-       if post.type === "application/pdf"
+//-         div(class="divlist4")
+//-           p(class="divlist5555") format PDF
+//-       else 
+//-         div(class="divlist4")
+//-           p(class="divlist5555") format DOCX
+//-       if editable === false && nivuser === "0"
+//-         each post in content 
+//-           if findaccessnivzero.access === "access"
+//-             div(class="divbutton")
+//-               a( href=`/upload/${post.addfiles}` download)
+//-                 img(src="/images/download.svg" class="addd") 
+//-               a(href="/posts/msfiles/" + post._id) 
+//-                 img(src="/images/troisd.svg", alt="" class="trois")
+//-               img(src="/images/deleted.svg", alt="" class="deletesfiles" postid=post._id postidd=post.author)
+//-           else 
+//-             div(class="divbutton")
+//-               a(src="", alt="" class="del" )
+//-               a(src="", alt="" class="trs")
+//-               a( href=`/upload/${post.addfiles}` download)
+//-                 img(src="/images/download.svg" class="addd") 
+//-       if editable === true && find && niv === "0"
+//-         div(class="divbutton")
+//-           a( href=`/upload/${post.addfiles}` download)
+//-             img(src="/images/download.svg" class="addd") 
+//-           a(href="/posts/msfiles/" + post._id) 
+//-             img(src="/images/troisd.svg", alt="" class="trois")
+//-           img(src="/images/deleted.svg", alt="" class="deletesfiles" postid=post._id postidd=post.author)
 
 

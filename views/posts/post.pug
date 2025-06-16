@@ -75,9 +75,19 @@ block content
                 a(href="#" class="addd")
         if editable === false && nivuser === "0"
           each post in content
-            //- a(class='contentt') M E N U
-            div(class='loadnivi')
-              div(class='loadernivi')
+            if awaitcomm && editable === false
+              each post in content    
+                a(class='content')= post.content
+            if awaitcommm && editable === false 
+              include ../includes/nameee.pug
+            if produits && editable === false 
+              each post in content    
+                a(class='content')= post.content
+            if editable === false && panier
+              each post in content    
+                a(class='content')= post.content
+                div(class='loadnivi')
+                  div(class='loadernivi')
             //- div(class="divniv")
             //-   p(class="nivp")= post.niv 
             if findaccessnivzero.access === "access"
@@ -123,28 +133,16 @@ block content
         //-     img(src="/images/add2d.svg", alt="" class="addd")
         //-   img(src="/images/chevrons.svg", alt="" class="chevron-left")
         //-   img(src="/images/chevron.svg", alt="" class="chevron-right")
-      div(class="divlist2 text" id="postlistcontainer") 
-        include post-list.pug
-        //- include post-formmmm.pug 
-        div(class="reloader")
-          div(class="loadereded")
-    div(class="divlistm2")
-      div(class="profile-containerr")
-        //- if awaitcomm && editable === false
-          //- each post in content    
-            //- a(class='content')= post.content
-        //- if awaitcommm && editable === false 
-          //- include ../includes/nameee.pug
-        //- if produits === true && editable === false && content && find && findds 
-          //- each post in content    
-            //- a(class='content')= post.content
-        //- if editable === false && panier
-          //- each post in content    
-            //- a(class='content')= post.content
       div(class="divlist2v2 text" id="postlistcontainerr")
         include list-server.pug 
         include listserverII.pug
         include listserverIII.pug
+          //- include post-formmmm.pug 
+        div(class="reload")
+          div(class="loadereded")
+    div(class="divlistm2")
+      div(class="divlist2 text" id="postlistcontainer") 
+        include post-list.pug
 
         //- div(class="showmodal")
         //-   div(class="divmodall")
@@ -155,6 +153,6 @@ block content
               a(href="/posts/showmodal/" + postIdFileFolderPostList) 
                 img(src="/images/filed.svg", alt="")
               p fichier
-        div(class="reload")
-          div(class="loadereded")
-        div(class="reloade")
+        //- div(class="reloader")
+        //-   div(class="loadereded")
+        

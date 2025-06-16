@@ -86,7 +86,6 @@ exports.sfileFind = async (req, res, next) => {
     const content = await getposted(postId);
     const user = await getUserByUsername(username);
     const postes = await getFolderByUser(user);
-    console.log(user);
     const findaccessnivzero = await findAccessNivZERO(postId);
     res.render("posts/post", {
       username,
