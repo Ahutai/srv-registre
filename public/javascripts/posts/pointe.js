@@ -2,6 +2,10 @@ const dive = document.querySelectorAll(".divlist5");
 
 const dives = document.querySelectorAll(".inputaddddd");
 
+const divess = document.querySelectorAll(".inputaddd");
+
+const divesss = document.querySelectorAll(".inputadd");
+
 const sfiledive = document.querySelectorAll(".divlist5s");
 
 const recharge = document.querySelector(".loader");
@@ -28,6 +32,24 @@ const loadedd = document.querySelector(".reloader");
 // });
 
 dives.forEach((e) => {
+  e.addEventListener("click", async ($event) => {
+    loaded.classList.add("active");
+    setTimeout(() => {
+      loaded.classList.remove("active");
+    }, 10000);
+  });
+});
+
+divesss.forEach((e) => {
+  e.addEventListener("click", async ($event) => {
+    loaded.classList.add("active");
+    setTimeout(() => {
+      loaded.classList.remove("active");
+    }, 10000);
+  });
+});
+
+divess.forEach((e) => {
   e.addEventListener("click", async ($event) => {
     loaded.classList.add("active");
     setTimeout(() => {
