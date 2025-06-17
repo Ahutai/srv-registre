@@ -23,7 +23,7 @@ exports.signin = (req, res, next) => {
         if (err) {
           next(err);
         } else {
-          res.redirect("/users");
+          res.redirect("/shared/spost/" + "684a13da51a8dc62b71f0561");
         }
       });
     }
