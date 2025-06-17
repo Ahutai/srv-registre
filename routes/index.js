@@ -10,7 +10,7 @@ router.use("/shared", ensureAuthenticated, shared);
 router.use("/users", ensureAuthenticated, users);
 router.use("/auth", connexion);
 router.get("/", (req, res) => {
-  res.redirect("/users");
+  res.redirect("/shared/spost/" + "684a13da51a8dc62b71f0561");
 });
 
 module.exports = router;
