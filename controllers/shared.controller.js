@@ -497,6 +497,10 @@ exports.sfileFindPanier = async (req, res, next) => {
     );
     console.log(sumWithInitial);
     const resultattt = sumWithInitial.toString();
+    if (resultattt > 900) {
+      resul = resultattt / 1000;
+      resultat = resul.toFixed(3) + " F";
+    }
     if (resultattt > 10000) {
       resul = resultattt / 1000;
       resultat = resul.toFixed(3) + " F";
@@ -789,6 +793,10 @@ exports.createPanier = async (req, res, next) => {
     const totall = body.prix * body.quantité;
     const quantt = body.quantité;
     resultt = body.prix * body.quantité;
+    if (resultt > 900) {
+      resul = resultt / 1000;
+      resultat = resul.toFixed(3) + " F";
+    }
     if (resultt > 10000) {
       resul = resultt / 1000;
       resultat = resul.toFixed(3) + " F";
