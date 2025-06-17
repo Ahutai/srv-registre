@@ -3307,7 +3307,6 @@ body {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transition: all 120ms;
 }
 
 .modalblackk.active {
@@ -3318,7 +3317,6 @@ body {
   visibility: visible;
   opacity: 1;
   pointer-events: all;
-  transition: all 120ms;
 }
 
 .modalblack {
@@ -3329,7 +3327,7 @@ body {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transition: all 120ms;
+  /* transition: all 120ms; */
 }
 
 .modalblack.active {
@@ -3340,7 +3338,7 @@ body {
   visibility: visible;
   opacity: 1;
   pointer-events: all;
-  transition: all 120ms;
+  /* transition: all 120ms; */
 }
 
 .ulcarrousel {
