@@ -1,6 +1,6 @@
 if find 
   each post in find
-    form(class="divlist3s" method="post" action="/shared/createpanier/" + "684b0f6b4205045b1df1d6da")
+    form(class="divlist3srs" method="post" action="/shared/createpanier/" + "684b0f6b4205045b1df1d6da")
       //- if post.updown === "UP"
       //- div(class="up-down active")
       //- if post.name === "TORTUE"
@@ -13,17 +13,16 @@ if find
       //-   img(src="/images/tiki-6.png", alt="" class="folderd")
       //- //- else 
       //-   div(class="up-down")
-      div(class="partone")
+      div(class="partonee")
         div(class="divlist4n") 
-          p(class="product") nom :
-        div(class="divlist4n")   
-          p(class="product") prix :
-        div(class="divlist4n")  
-          p(class="product") quant :
-        div(class="divlist4n") 
-          p(class="product") format :
-        div(class="divlist4") 
-          p(class="product")
+          if post.name === "TORTUE"
+            img(src="/images/tortue-6.png", alt="" class="folderrdd")
+          if post.name === "BALEINE"
+            img(src="/images/baleine.png", alt="" class="folderrdd")
+          if post.name === "RAIE"
+            img(src="/images/raie.png", alt="" class="folderrdd")
+          if post.name === "TIKI"
+            img(src="/images/tiki-6.png", alt="" class="folderrdd")
       div(class="parttwo")
         input(class="divlist5a" type="text" value=post.name name="title")  
         div(class="divlist4b")
