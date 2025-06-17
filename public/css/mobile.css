@@ -1214,6 +1214,19 @@ body {
   height: 15px;
 }
 
+.divlist5alm {
+  list-style: none;
+  text-decoration: none;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  border: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 60px;
+  pointer-events: none;
+  height: 15px;
+}
+
 .divlist5a {
   list-style: none;
   text-decoration: none;
@@ -1842,6 +1855,14 @@ body {
   margin: 5px;
   border-bottom: 2px solid rgb(146, 146, 146);
   padding-bottom: 5px;
+}
+
+.divlist4lo {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: start;
+  width: 100%;
+  margin: 5px;
 }
 
 .divlist4 {
@@ -3261,7 +3282,7 @@ body {
 .carrousel {
   position: absolute;
   width: 100%;
-  background-color: #777777;
+  background-color: #9f9f9f;
   border-top: 2px solid rgb(148, 148, 148);
   border-bottom: 2px solid rgb(148, 148, 148);
   transition: all 120ms;
