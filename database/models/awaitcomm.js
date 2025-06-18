@@ -7,6 +7,7 @@ const awaitcommSchema = schema({
   quantiter: { type: Array, required: true },
   format: { type: Array, required: true },
   exp: { type: String, required: true },
+  pay: { type: String, required: true },
   ile: { type: String, required: true },
   nom: { type: String, required: true },
   avion: { type: String },
@@ -23,6 +24,9 @@ const awaitcommSchema = schema({
   email: { type: String, required: true },
   tel: { type: String, required: true },
   status: { type: String, required: true },
+  threes: { type: String, required: true },
+  one: { type: String },
+  three: { type: String },
 });
 
 const awaitcomm = mongoose.model("awaitcomm", awaitcommSchema);

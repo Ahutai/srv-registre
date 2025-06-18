@@ -74,10 +74,16 @@ if awaitcommfind
               div(class="divlist4lr" id="tested")
                 a(class="divlist5" href="/shared/findawaitcommm/" + post._id)= post.commandename
               div(class="divlist4llrr")
-                p(class="divlist555sr")= post.datered
-              div(class="divlist4llrr")
                 if post.status === "en attente..."
-                  p(class="divlist555lm") commande en attente 
+                  p(class="divlist555lmlm") commande en attente de traitement
+                if post.status === "en attente x1"
+                  p(class="divlist555lmlm") en attente du premier versement
+                if post.status === "en attente x2"
+                  p(class="divlist555lmlm") en attente du deuxième versement
+                if post.status === "en attente x3"
+                  p(class="divlist555lmlm") en attente du troisième versement
+                if post.status === "en attente total"
+                  p(class="divlist555lmlm") en attente du paiement total
                 if post.status === "en cours..."
                   p(class="divlist555lm") en cours de préparation 
                 if post.status === "terminé..."
@@ -86,6 +92,8 @@ if awaitcommfind
                   p(class="divlist555lmmr") commande en expédition 
                 if post.status === "livrée ..."
                   p(class="divlist555lmmm") commande livrée 
+              div(class="divlist4llrr")
+                p(class="divlist555sr")= post.datered
               div(class="divlist4llr")
                 p(class="divlist555")= post.username
 if awaitcommfind && currentUser.username === "vaihere"
@@ -97,10 +105,16 @@ if awaitcommfind && currentUser.username === "vaihere"
               div(class="divlist4lr" id="tested")
                 a(class="divlist5" href="/shared/findawaitcommm/" + post._id)= post.commandename
               div(class="divlist4llrr")
-                p(class="divlist555sr")= post.datered
-              div(class="divlist4llrr")
                 if post.status === "en attente..."
                   p(class="divlist555lml") nouvelle commande
+                if post.status === "en attente x1"
+                  p(class="divlist555lmlm") en attente du premier versement
+                if post.status === "en attente x2"
+                  p(class="divlist555lmlm") en attente du deuxième versement
+                if post.status === "en attente x3"
+                  p(class="divlist555lmlm") en attente du troisième versement
+                if post.status === "en attente total"
+                  p(class="divlist555lmlm") en attente du paiement total
                 if post.status === "en cours..."
                   p(class="divlist555lm") en cours de préparation 
                 if post.status === "terminé..."
@@ -109,6 +123,8 @@ if awaitcommfind && currentUser.username === "vaihere"
                   p(class="divlist555lmmr") commande en expédition 
                 if post.status === "livrée ..."
                   p(class="divlist555lmmm") commande livrée 
+              div(class="divlist4llrr")
+                p(class="divlist555sr")= post.datered
               div(class="divlist4llr")
                 p(class="divlist555")= post.username
 if panierlock
@@ -155,6 +171,38 @@ if panierlock
       div(class="divlist3sn")
         div(class="divlist4")
           input(class="divlist5af" type="text" placeholder="nom de la commande" name="commandename")
+    if panier  
+      div(class="divlist3dlss")
+        div(class="parttwo")
+          div(class="divlist4se")
+            input(class="divlist5aysy" type="text" value="MODE DE PAIEMENT" name="pay")
+            img(src="/images/info.svg", alt="" class="infoimg" id="info")
+          div(class="divlist4l")
+            input(class="divlist5apa" type="checkbox" id="one" name="one") 
+            label(for="bateau" class="labelis") une seul fois
+            input(class="divlist5apa" type="checkbox" id="three" name="three") 
+            label(for="avion" class="labelis") en trois fois
+          div(class="divlist4")
+            p(class="divlist555mwx")= resultat 
+            input(class="inputprix" type="text" value=threee name="threes")
+            p(class="divlist555mwx")= threee
+    if panier  
+      div(class="divlist3stt")
+        div(class="parttwo")
+          div(class="divlist4se")
+            p(class="divlist5ays") INFO BANCAIRE
+          div(class="divlist4z")
+            p(class="divlist555rl") nom
+            p(class="divlist5dv") BROWN VAIHERE
+          div(class="divlist4z")
+            p(class="divlist555rl") rib
+            p(class="divlist5dv") 17469 00001 21971590000 24
+          div(class="divlist4z")
+            p(class="divlist555rl") iban
+            p(class="divlist5dv") FR76 1746 9000 0121 9715 9000 024
+          div(class="divlist4zz")
+            p(class="divlist555rl") téléphone
+            p(class="divlist5dv") 87 27 56 87
     if resultatttt 
       div(class="divlist3dl")
         div(class="parttwo")
@@ -165,9 +213,9 @@ if panierlock
           div(class="divlist4j")
             input(class="divlist544av" placeholder="NOM" name="nom")
           div(class="divlist4l")
-            input(class="divlist5ap" type="checkbox" id="bateau" name="bateau") 
+            input(class="divlist5apa" type="checkbox" id="bateau" name="bateau") 
             label(for="bateau" class="labeli") BATEAU
-            input(class="divlist5ap" type="checkbox" id="avion" name="avion") 
+            input(class="divlist5apa" type="checkbox" id="avion" name="avion") 
             label(for="avion" class="labeli") AVION
           div(class="divlist4j")
             input(class="divlist544avv" type="date" name="date")

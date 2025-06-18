@@ -14,6 +14,7 @@ html(lang='en')
         include includes/topbarc.pug
         include includes/modalusername.pug
         include includes/modallocker.pug
+        include includes/infopaiement.pug
         .container-fluid
             block content         
         script(src="/javascripts/posts/post.js")
@@ -21,7 +22,10 @@ html(lang='en')
         script(src="/javascripts/posts/pointe.js")
         script(src="/javascripts/posts/chevron.js")
         script(src="/javascripts/posts/general.js")
-        script(src="/javascripts/posts/carrousel.js")
+        if find
+          script(src="/javascripts/posts/carrousel.js")
+        if panier
+          script(src="/javascripts/posts/modalinfo.js")
         if user 
           script(src="/javascripts/posts/validepassword.js")
           script(src="/javascripts/posts/closemodaluser.js")

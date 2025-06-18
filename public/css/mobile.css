@@ -121,6 +121,13 @@ body {
   pointer-events: none;
 }
 
+.labelis {
+  font-size: 12.5px;
+  margin-left: 7px;
+  margin-right: 10px;
+  color: rgb(181, 181, 181);
+}
+
 .labeli {
   font-size: 12.5px;
   margin-left: 7px;
@@ -136,8 +143,13 @@ body {
   pointer-events: none;
 }
 
+.divlist5apa {
+  cursor: pointer;
+}
+
 .divlist5ap {
   cursor: pointer;
+  pointer-events: none;
 }
 
 .divlist544av::placeholder {
@@ -388,6 +400,22 @@ body {
   opacity: 1;
 }
 
+.divlist3stst {
+  width: 90%;
+  background-color: rgb(80, 80, 80);
+  margin: 10px 0px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  transition: all 0.2s;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  opacity: 1;
+}
+
 .divlist3stt {
   width: 90%;
   background-color: rgb(80, 80, 80);
@@ -408,7 +436,7 @@ body {
   width: 90%;
   background-color: rgb(80, 80, 80);
   margin: 10px 0px;
-  height: 200px;
+  height: 290px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -488,6 +516,43 @@ body {
   align-items: center;
   flex-direction: row nowrap;
   justify-content: space-around;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  transition: all 0.2s;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  opacity: 1;
+}
+
+.divlist3dlssl {
+  width: 90%;
+  background-color: rgb(80, 80, 80);
+  margin: 10px 0px;
+  min-height: 270px;
+  max-height: 270px;
+  display: flex;
+  align-items: center;
+  flex-direction: row nowrap;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  transition: all 0.2s;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  opacity: 1;
+  border: 2px solid rgb(182, 182, 182);
+}
+
+.divlist3dlss {
+  width: 90%;
+  background-color: rgb(80, 80, 80);
+  margin: 10px 0px;
+  min-height: 110px;
+  max-height: 110px;
+  display: flex;
+  align-items: center;
+  flex-direction: row nowrap;
+  justify-content: center;
   border-radius: 5px;
   box-shadow: 0px 0px 5px black;
   transition: all 0.2s;
@@ -1186,6 +1251,112 @@ body {
   text-transform: uppercase;
 }
 
+.divlist5aysd {
+  list-style: none;
+  text-decoration: none;
+  background-color: rgb(80, 80, 80);
+  color: rgb(255, 255, 255);
+  border: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 280px;
+  pointer-events: none;
+  text-align: center;
+  height: 50px;
+  background-color: #268faa95;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(40, 40, 40);
+  border: 2px solid rgb(200, 200, 200);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  line-height: 14px;
+}
+
+.divlist5aysdd {
+  list-style: none;
+  text-decoration: none;
+  background-color: rgb(80, 80, 80);
+  color: rgb(255, 255, 255);
+  border: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 280px;
+  pointer-events: none;
+  text-align: center;
+  height: 80px;
+  background-color: #268faa95;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(40, 40, 40);
+  border: 2px solid rgb(200, 200, 200);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  line-height: 14px;
+}
+
+.divlist5aysl {
+  list-style: none;
+  text-decoration: none;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  border: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 150px;
+  pointer-events: none;
+  text-align: center;
+  height: 15px;
+  margin-bottom: 10px;
+}
+
+.divlist5aysy {
+  list-style: none;
+  text-decoration: none;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  border: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 150px;
+  pointer-events: none;
+  text-align: center;
+  height: 15px;
+  margin-left: 20px;
+}
+
+.divlist5aysys {
+  list-style: none;
+  text-decoration: none;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  border: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 150px;
+  pointer-events: none;
+  text-align: center;
+  height: 15px;
+  margin-left: 76px;
+}
+
+.divlist5ays {
+  list-style: none;
+  text-decoration: none;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  border: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 150px;
+  pointer-events: none;
+  text-align: center;
+  height: 15px;
+}
+
 .divlist5ay {
   list-style: none;
   text-decoration: none;
@@ -1258,6 +1429,14 @@ body {
   margin: 5px 0px;
   padding-bottom: 5px;
   border-bottom: 2px solid rgb(157, 157, 157);
+}
+
+.divlist5dv {
+  margin-left: 10px;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
 }
 
 .divlist5d {
@@ -1366,6 +1545,22 @@ body {
   width: 82px;
   font-weight: bold;
   background-color: #2cb037;
+  /* border: 2px solid rgb(255, 255, 255); */
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding: 2px 0px;
+  cursor: pointer;
+  transition: all 120ms;
+  pointer-events: none;
+}
+
+.inputadddded {
+  height: 23px;
+  width: 82px;
+  font-weight: bold;
+  background-color: #2794c6;
   /* border: 2px solid rgb(255, 255, 255); */
   border-radius: 5px;
   color: white;
@@ -1547,6 +1742,15 @@ body {
   border-bottom: 2px solid #2799c6;
 }
 
+.divlist555lmlm {
+  list-style: none;
+  text-decoration: none;
+  color: rgb(174, 174, 174);
+  font-size: 12px;
+  transition: all 150ms;
+  border-bottom: 2px solid #c69927;
+}
+
 .divlist555lm {
   list-style: none;
   text-decoration: none;
@@ -1575,6 +1779,21 @@ body {
   text-align: center;
   padding: 5px 5px 0px 5px;
   border-radius: 5px;
+}
+
+.divlist555mwx {
+  list-style: none;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  transition: all 150ms;
+  background-color: #7e7e7e;
+  height: 20px;
+  text-align: center;
+  padding: 5px 5px 0px 5px;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .divlist555m {
@@ -1847,10 +2066,33 @@ body {
   border-bottom: 2px solid rgb(156, 156, 156);
 }
 
+.divlist4ses {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 5px;
+  /* border-bottom: 2px solid rgb(146, 146, 146); */
+  padding-bottom: 5px;
+}
+
+.divlist4sess {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 5px;
+  /* border-bottom: 2px solid rgb(146, 146, 146); */
+  padding-bottom: 5px;
+}
+
 .divlist4se {
   display: flex;
   flex-direction: row nowrap;
   justify-content: center;
+  align-items: center;
   width: 100%;
   margin: 5px;
   border-bottom: 2px solid rgb(146, 146, 146);
@@ -3295,6 +3537,19 @@ body {
   pointer-events: all;
 }
 
+.carrousell {
+  position: absolute;
+  width: 100%;
+  transition: all 120ms;
+  z-index: 4;
+  height: 400px;
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .carrousel {
   position: absolute;
   width: 100%;
@@ -3310,6 +3565,17 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.closer {
+  margin-left: 50px;
+  height: 22px;
+  width: 22px;
+  border-radius: 5px;
+  background-color: rgb(225, 30, 30);
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
 }
 
 .closeeee {
@@ -3418,6 +3684,34 @@ body {
   visibility: visible;
   opacity: 1;
   pointer-events: all;
+}
+
+.modalinfo {
+  width: 100%;
+  height: 92.1vh;
+  position: absolute;
+  background-color: #00000068;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  /* transition: all 120ms; */
+}
+
+.modalinfo.active {
+  width: 100%;
+  height: 92.1vh;
+  position: absolute;
+  background-color: #00000068;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  /* transition: all 120ms; */
+}
+
+.infoimg {
+  height: 17px;
+  width: 17px;
+  cursor: pointer;
 }
 
 .modalblack {

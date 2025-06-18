@@ -457,7 +457,6 @@ exports.sfileFindPanier = async (req, res, next) => {
         username = t.username;
       });
     });
-    const find = await getPostedd(postId);
     const findds = await getFileNivI(postId);
     const content = await getposted(postId);
     const user = await getUserByUsername(username);
@@ -489,7 +488,7 @@ exports.sfileFindPanier = async (req, res, next) => {
     result.forEach((r) => {
       tab.push(r.total);
     });
-    let resul, resultat, resultate;
+    let resul, resultat, three, threee;
     const initialValue = 0;
     const sumWithInitial = tab.reduce(
       (accumulator, currentValue) => accumulator + currentValue,
@@ -497,6 +496,18 @@ exports.sfileFindPanier = async (req, res, next) => {
     );
     console.log(sumWithInitial);
     const resultattt = sumWithInitial.toString();
+    if (resultattt > 900) {
+      three = resultattt / 1000 / 3;
+      threee = three.toFixed(3) + " F";
+    }
+    if (resultattt > 10000) {
+      three = resultattt / 1000 / 3;
+      threee = three.toFixed(3) + " F";
+    }
+    if (resultattt > 100000) {
+      three = resultattt / 1000 / 3;
+      threee = three.toFixed(3) + " F";
+    }
     if (resultattt > 900) {
       resul = resultattt / 1000;
       resultat = resul.toFixed(3) + " F";
@@ -514,9 +525,9 @@ exports.sfileFindPanier = async (req, res, next) => {
     // });
     res.render("posts/post", {
       username,
-      find,
       result,
       resultat,
+      threee,
       panierlock: true,
       resultatttt,
       findaccessnivzero,
@@ -789,10 +800,11 @@ exports.createPanier = async (req, res, next) => {
         usered = t.username;
       });
     });
-    let resultt, resultat, resul;
+    let resultt, resultat, resul, three;
     const totall = body.prix * body.quantité;
     const quantt = body.quantité;
     resultt = body.prix * body.quantité;
+    three = (body.prix * body.quantité) / 3;
     if (resultt > 900) {
       resul = resultt / 1000;
       resultat = resul.toFixed(3) + " F";
@@ -820,7 +832,7 @@ exports.createPanier = async (req, res, next) => {
       quant: quantt,
       auth: req.user._id.toString(),
     });
-    res.redirect("/shared/findpanier/" + "684a13da51a8dc62b71f0561");
+    res.redirect("/shared/spost/" + "684a13da51a8dc62b71f0561");
   } catch (e) {
     const errorss = Object.keys(e.errors).map((key) => e.errors[key].message);
     res.status(400).render("posts/post", { errorss });
@@ -835,7 +847,12 @@ exports.awaitcommande = async (req, res, next) => {
     const quantiter = body.quantiter;
     const prixx = body.prix;
     const resultt = body.result;
+    const pay = body.pay;
     const exp = body.exp;
+    console.log(body);
+    const one = body.one;
+    const three = body.three;
+    const threes = body.threes;
     const ile = body.ile;
     const name = body.nom;
     const datee = body.date;
@@ -900,6 +917,10 @@ exports.awaitcommande = async (req, res, next) => {
       nom: nom,
       tel: tel,
       status: "en attente...",
+      one: one,
+      three: three,
+      threes: threes,
+      pay: pay,
     });
     res.redirect("/shared/findawaitcomm/" + "684b8a55ab41d7225206b9ad");
   } catch (e) {
@@ -913,8 +934,20 @@ exports.statusadd = async (req, res, next) => {
     const postId = req.params.postId;
     const body = req.body;
     let result;
-    if (body.enattente === "on") {
-      result = "en attente...";
+    if (body.enattentex1 === "on") {
+      result = "en attente x1";
+    } else {
+    }
+    if (body.enattentex2 === "on") {
+      result = "en attente x2";
+    } else {
+    }
+    if (body.enattentex3 === "on") {
+      result = "en attente x3";
+    } else {
+    }
+    if (body.enattentetotal === "on") {
+      result = "en attente total";
     } else {
     }
     if (body.encours === "on") {
