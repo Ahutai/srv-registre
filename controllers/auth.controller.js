@@ -8,6 +8,14 @@ exports.signinForm = (req, res, next) => {
   });
 };
 
+exports.signupForm = (req, res, next) => {
+  res.render("users/user-form", {
+    errors: null,
+    isAuthenticated: req.isAuthenticated(),
+    currentUser: req.user,
+  });
+};
+
 exports.signin = (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) {

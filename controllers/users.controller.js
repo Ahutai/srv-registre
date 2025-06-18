@@ -8,19 +8,11 @@ const {
 } = require("../queries/users.queries");
 const { getFolderToUser } = require("../queries/shared.queries");
 
-exports.signupForm = (req, res, next) => {
-  res.render("users/user-form", {
-    errors: null,
-    isAuthenticated: req.isAuthenticated(),
-    currentUser: req.user,
-  });
-};
-
 exports.signup = async (req, res, next) => {
   const body = req.body;
   try {
     const user = await createUser(body);
-    res.redirect("/users");
+    res.redirect("/auth/signin/form");
   } catch (e) {
     res.render("users/user-form", {
       errors: ["champs requis"],

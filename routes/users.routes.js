@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { ensureAuthenticated } = require("../config/gardes.config");
 
 const {
   signup,
@@ -9,18 +10,20 @@ const {
   updateUsernameOrPassword,
 } = require("../controllers/users.controller");
 
-router.get("/vaihere", userProfile);
+router.get("/vaihere", ensureAuthenticated, userProfile);
 
-router.get("/users", userToFind);
+router.get("/users", ensureAuthenticated, userToFind);
 
-router.post("/updateusername/:postId", updateUsernameOrPassword);
+router.post(
+  "/updateusername/:postId",
+  ensureAuthenticated,
+  updateUsernameOrPassword
+);
 
-router.get("/users", userToFind);
-
-router.get("/", userFinded);
-
-router.get("/signup/form", signupForm);
+router.get("/users", ensureAuthenticated, userToFind);
 
 router.post("/signup", signup);
+
+router.get("/", ensureAuthenticated, userFinded);
 
 module.exports = router;

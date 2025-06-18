@@ -7,7 +7,7 @@ const connexion = require("./auth.routes");
 
 router.use("/posts", ensureAuthenticated, posts);
 router.use("/shared", ensureAuthenticated, shared);
-router.use("/users", ensureAuthenticated, users);
+router.use("/users", users);
 router.use("/auth", connexion);
 router.get("/", (req, res) => {
   res.redirect("/shared/spost/" + "684a13da51a8dc62b71f0561");

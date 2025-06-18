@@ -1223,7 +1223,7 @@ body {
   font-weight: bold;
   width: 60px;
   pointer-events: none;
-  margin: 10px 0px 10px 10px;
+  margin: 15px 0px 15px 10px;
   border-bottom: 2px dashed rgb(152, 152, 152);
   padding-bottom: 5px;
 }

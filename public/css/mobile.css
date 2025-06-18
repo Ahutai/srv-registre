@@ -201,7 +201,7 @@ body {
 .a2 {
   margin-right: 20px;
   margin-left: 18px;
-  color: rgb(224, 224, 224);
+  color: rgb(171, 171, 171);
   text-decoration: none;
   transition: all 0.2s;
   cursor: pointer;
@@ -212,7 +212,7 @@ body {
 }
 
 .a2:hover {
-  color: rgb(181, 181, 181);
+  color: rgb(131, 131, 131);
 }
 
 .a2ci:hover {
@@ -1222,7 +1222,7 @@ body {
   font-weight: bold;
   width: 60px;
   pointer-events: none;
-  margin: 10px 0px 10px 10px;
+  margin: 15px 0px 15px 10px;
   border-bottom: 2px dashed rgb(152, 152, 152);
   padding-bottom: 5px;
 }
