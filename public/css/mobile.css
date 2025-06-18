@@ -1225,6 +1225,7 @@ body {
   margin: 15px 0px 15px 10px;
   border-bottom: 2px dashed rgb(152, 152, 152);
   padding-bottom: 5px;
+  border-radius: 0px;
 }
 
 .divlist5af::placeholder {
