@@ -810,7 +810,7 @@ body {
   background-color: rgb(50, 50, 50);
   /* background-color: rgb(107, 107, 107); */
   box-shadow: inset 0px 0px 5px black;
-  height: 66.5vh;
+  height: 68vh;
   transition: all 0.2s;
   overflow: scroll;
 }
