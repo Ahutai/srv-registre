@@ -55,7 +55,7 @@ buttonsss.forEach((button) => {
 
 buttonss.forEach((button) => {
   button.addEventListener("click", (e) => {
-    const calcNextSlide = e.target.id === "next" ? 1 : -1;
+    const calcNextSlide = e.target.id === "nextt" ? 1 : -1;
     const slideActive = document.querySelector(".activedd");
 
     newIndex = calcNextSlide + [...slidess].indexOf(slideActive);
