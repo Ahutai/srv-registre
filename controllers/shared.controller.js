@@ -672,6 +672,8 @@ exports.awaitcommande = async (req, res, next) => {
     //   resul = resultt / 1000;
     //   resultat = resul.toFixed(3) + " F";
     // }
+    const delpanier = await delpanierr(req.user.username);
+    await delpanierrr(delpanier.auth);
     await createawaitcomm({
       ...body,
       title: titlee,
