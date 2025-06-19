@@ -448,7 +448,7 @@ exports.deletePanier = async (req, res, next) => {
     await delpanierrr(delpanier.auth);
     res.redirect("/shared/findpanier/" + "684b0f6b4205045b1df1d6da");
   } catch (e) {
-    next(e);
+    res.redirect("/shared/findpanier/" + "684b0f6b4205045b1df1d6da");
   }
 };
 
@@ -614,8 +614,7 @@ exports.createPanier = async (req, res, next) => {
     });
     res.redirect("/shared/spost/" + "684a13da51a8dc62b71f0561");
   } catch (e) {
-    const errorss = Object.keys(e.errors).map((key) => e.errors[key].message);
-    res.status(400).render("posts/post", { errorss });
+    res.redirect("/shared/spost/" + "684a13da51a8dc62b71f0561");
   }
 };
 
