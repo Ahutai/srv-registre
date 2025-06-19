@@ -156,7 +156,6 @@ exports.sfileFindAwaitCommm = async (req, res, next) => {
       });
     });
     const find = await getPostedd(newid);
-    const findds = await getFileNivI(newid);
     const content = await getposted(newid);
     const user = await getUserByUsername(username);
     const postes = await getFolderByUser(user);
@@ -276,7 +275,6 @@ exports.sfileFindAwaitCommm = async (req, res, next) => {
       formatiii,
       formatiiii,
       formatiiiii,
-      findds,
       awaitcommm,
       awaitcommfindd: true,
       postes,
@@ -306,7 +304,6 @@ exports.sfileFindAwaitComm = async (req, res, next) => {
       });
     });
     const find = await getPostedd(postId);
-    const findds = await getFileNivI(postId);
     const content = await getposted(postId);
     const user = await getUserByUsername(username);
     const postes = await getFolderByUser(user);
@@ -428,7 +425,6 @@ exports.sfileFindAwaitComm = async (req, res, next) => {
       formatiii,
       formatiiii,
       formatiiiii,
-      findds,
       awaitcomm,
       awaitcommfind: true,
       postes,
@@ -545,236 +541,6 @@ exports.sfileFindPanier = async (req, res, next) => {
   } catch (e) {
     next(e);
   }
-};
-
-exports.sfileFindd = async (req, res, next) => {
-  try {
-    const arr = [];
-    let username;
-    const postId = req.params.postId;
-    const users = await findUsernames(postId);
-    arr.push(users);
-    arr.forEach((r) => {
-      r.forEach((t) => {
-        username = t.username;
-      });
-    });
-    const content = await getfilee(postId);
-    const findd = await sfile(postId);
-    const finddss = await listfoldernivii(postId);
-    const user = await getUserByUsername(username);
-    const postes = await getFolderToUser(user._id);
-    const findaccessnivi = await FindAccessNivI(postId);
-    res.render("posts/post", {
-      username,
-      findaccessnivi,
-      findd,
-      finddss,
-      postes,
-      content,
-      isAuthenticated: req.isAuthenticated(),
-      currentUser: req.user,
-      user,
-      editable: false,
-      sfile: false,
-      nivuser: "1",
-    });
-  } catch (e) {
-    next(e);
-  }
-};
-
-exports.findFolderNivIII = async (req, res, next) => {
-  try {
-    const arr = [];
-    let username;
-    const postId = req.params.postId;
-    const users = await findUsernamess(postId);
-    arr.push(users);
-    arr.forEach((r) => {
-      r.forEach((t) => {
-        username = t.username;
-      });
-    });
-    const content = await getcontentnivii(postId);
-    const listfolderiii = await listnivIII(postId);
-    const user = await getUserByUsername(username);
-    const postes = await getFolderToUser(user._id);
-    const fileniviii = await listfilenivIII(postId);
-    res.render("posts/post", {
-      username,
-      listfolderiii,
-      fileniviii,
-      postes,
-      content,
-      isAuthenticated: req.isAuthenticated(),
-      currentUser: req.user,
-      user,
-      editable: false,
-      listniviii: false,
-    });
-  } catch (e) {
-    next(e);
-  }
-};
-
-exports.postFileNivII = async (req, res, next) => {
-  const postId = req.params.postId;
-  const post = await sposts(postId);
-  res.render("posts/addfileniviiusers", {
-    post,
-    isAuthenticated: req.isAuthenticated(),
-    currentUser: req.user,
-    editable: false,
-  });
-};
-
-exports.addFileInNivII = [
-  upload.single("addfile"),
-  async (req, res, next) => {
-    try {
-      const postId = req.params.postId;
-      const dates = new Date();
-      const datenow = dates.toDateString();
-      const ko = " Ko";
-      const mo = " Mo";
-      const go = " Go";
-      let octetr, octet, formats;
-      const format = req.file.mimetype;
-      const sizing = req.file.size;
-      const octets = sizing / 1000;
-      if (octets < 1000) {
-        octet = octets + ko;
-        octetr = octets.toFixed() + ko;
-      }
-      if (octets > 1000) {
-        octet = octets / 1000;
-        octetr = octet.toFixed(1) + mo;
-      }
-      if (format === "application/pdf") {
-        formats = "a";
-      } else {
-        formats = "b";
-      }
-      await createsPost({
-        name: req.body.name,
-        addfile: req.file.filename,
-        size: octetr,
-        author: req.params.postId,
-        date: datenow,
-        type: req.file.mimetype,
-        sort: formats,
-        niv: "3",
-      });
-      res.redirect("/users/sposts/" + postId);
-    } catch (e) {
-      const postId = req.params.postId;
-      const post = await sposts(postId);
-      const errored = Object.keys(e.errors).map((key) => e.errors[key].message);
-      res.render("posts/spost", { errored, post });
-    }
-  },
-];
-
-exports.createFolderNivIIuser = async (req, res, next) => {
-  try {
-    const body = req.body;
-    const postId = req.params.postId;
-    const dates = new Date();
-    const datered = dates.toDateString();
-    const awai = [];
-    const authorss = await findAuthorFolderNivIUser(postId);
-    awai.push(authorss.author);
-    const authors = awai.toString();
-    const arr = [];
-    let usered;
-    const users = await findUsernameFolderNivIUser(postId);
-    arr.push(users);
-    arr.forEach((r) => {
-      r.forEach((t) => {
-        usered = t.username;
-      });
-    });
-    await createFolderUserNivI({
-      ...body,
-      author: postId,
-      authors: authors,
-      username: usered,
-      date: datered,
-      niv: "3",
-      access: "access",
-    });
-    res.redirect("/shared/sposts/" + req.params.postId);
-  } catch (e) {
-    const errorss = Object.keys(e.errors).map((key) => e.errors[key].message);
-    res.status(400).render("posts/formaddfolderusernivii", { errorss });
-  }
-};
-
-exports.createFolderNivIuser = async (req, res, next) => {
-  try {
-    const body = req.body;
-    const postId = req.params.postId;
-    const dates = new Date();
-    const datered = dates.toDateString();
-    const awai = [];
-    const authorss = await findAuthorFolderNivZeroUser(postId);
-    awai.push(authorss.author);
-    const authors = awai.toString();
-    const arr = [];
-    let usered;
-    const users = await findUsernameFolderNivZeroUser(postId);
-    arr.push(users);
-    arr.forEach((r) => {
-      r.forEach((t) => {
-        usered = t.username;
-      });
-    });
-    await createFolderUserNivZero({
-      ...body,
-      author: postId,
-      authors: authors,
-      username: usered,
-      date: datered,
-      niv: "2",
-      access: "access",
-    });
-    res.redirect("/shared/spost/" + req.params.postId);
-  } catch (e) {
-    const errorss = Object.keys(e.errors).map((key) => e.errors[key].message);
-    res.status(400).render("posts/post-formmm", { errorss });
-  }
-};
-
-exports.showModalForCreateFolderUserNivI = async (req, res, next) => {
-  const postId = req.params.postId;
-  const post = await getPostUser(postId);
-  res.render("posts/formaddfolderusernivi", {
-    post,
-    isAuthenticated: req.isAuthenticated(),
-    currentUser: req.user,
-  });
-};
-
-exports.modalCreateFolderNivII = async (req, res, next) => {
-  const postId = req.params.postId;
-  const post = await getFileUser(postId);
-  res.render("posts/formaddfolderusernivii", {
-    post,
-    isAuthenticated: req.isAuthenticated(),
-    currentUser: req.user,
-  });
-};
-
-exports.createListNivIII = async (req, res, next) => {
-  const postId = req.params.postId;
-  const post = await idListPostNivII(postId);
-  res.render("posts/createlistfolderniviii", {
-    post,
-    isAuthenticated: req.isAuthenticated(),
-    currentUser: req.user,
-    editable: false,
-  });
 };
 
 exports.createPanier = async (req, res, next) => {

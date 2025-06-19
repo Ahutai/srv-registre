@@ -20,8 +20,6 @@ router.post(
   updateUsernameOrPassword
 );
 
-router.get("/users", ensureAuthenticated, userToFind);
-
 router.post("/signup", signup);
 
 router.get("/", ensureAuthenticated, userFinded);

@@ -424,39 +424,4 @@ if awaitcommfindd && currentUser.username === "vaihere"
                 div(class="divbuttonnns")
                   input(class="inputaddddd" type="submit" value="valider" ) 
       
-if findd 
-  each post in findd
-    div(class="divlist3s")
-      //- if post.updown === "UP"
-      if post.type === "application/pdf"
-        img(src="/images/pdfv.png", alt="" class="folder")
-      else
-        img(src="/images/pdfvv.png", alt="" class="folder")
-      //- else 
-      //-   div(class="up-down")
-      div(class="divlist4")
-        a(class="divlist5s" href="/posts/modal/" + post._id)= post.name
-      div(class="divlist4")
-        a(class="divlist54")= post.size 
-      div(class="divlist4")
-        p(class="divlist555")= post.date
-      if post.type === "application/pdf"
-        div(class="divlist4")
-          p(class="divlist5555") format PDF
-      else 
-        div(class="divlist4")
-          p(class="divlist5555") format DOCX
-      if editable === false && findd
-        div(class="divbutton")
-          a(src="", alt="" class="del" )
-          a(src="", alt="" class="trs")
-          a(href=`/upload/${post.addfile}` download)
-            img(src="/images/download.svg" class="addd") 
-      else
-        div(class="divbutton")
-          a(href=`/upload/${post.addfile}` download)
-            img(src="/images/download.svg" class="addd") 
-          a(href="/posts/msfile/" + post._id) 
-            img(src="/images/troisd.svg", alt="" class="trois")
-          img(src="/images/deleted.svg", alt="" class="deletesfile" postid=post._id postidd=post.author)
 
