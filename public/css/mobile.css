@@ -1579,6 +1579,22 @@ body {
   pointer-events: none;
 }
 
+.inputadddded {
+  height: 23px;
+  width: 82px;
+  font-weight: bold;
+  background-color: #2794c6;
+  /* border: 2px solid rgb(255, 255, 255); */
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding: 2px 0px;
+  cursor: pointer;
+  transition: all 120ms;
+  pointer-events: none;
+}
+
 .inputadddd {
   height: 23px;
   width: 82px;
