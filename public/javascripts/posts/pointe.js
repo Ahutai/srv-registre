@@ -6,6 +6,8 @@ const divess = document.querySelectorAll(".inputaddd");
 
 const divesss = document.querySelectorAll(".inputadd");
 
+// const addpanier = document.querySelector(".modaladdpanier");
+
 const loadernivi = document.querySelector(".loadernivi");
 
 const sfiledive = document.querySelectorAll(".divlist5s");
@@ -45,6 +47,7 @@ dives.forEach((e) => {
 divesss.forEach((e) => {
   e.addEventListener("click", async ($event) => {
     loadernivi.classList.add("active");
+    // addpanier.classList.add("active");
     setTimeout(() => {
       loadernivi.classList.remove("active");
     }, 10000);

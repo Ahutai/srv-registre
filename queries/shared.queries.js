@@ -42,6 +42,18 @@ exports.findpanier = (postId) => {
   return panier.find({ author: postId }).sort({ sort: 1 }).exec();
 };
 
+exports.findonee = (postId) => {
+  return panier
+    .findOne(
+      { author: postId },
+      {
+        show: 1,
+      }
+    )
+    .sort({ sort: 1 })
+    .exec();
+};
+
 exports.findawaitcommm = (postId) => {
   return awaitcomm.find({ _id: postId }).sort({ sort: 1 }).exec();
 };

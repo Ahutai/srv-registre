@@ -3824,3 +3824,53 @@ body {
   transition: all 120ms;
   margin-top: 40px;
 }
+
+.modaladdpanier {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  width: 67%;
+  background-color: #585858;
+  height: 30px;
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  z-index: 6;
+  box-shadow: 0px 0px 5px black;
+  border: 2px solid rgb(125, 125, 125);
+  top: 7px;
+  left: 55px;
+}
+
+.deletepanier {
+  margin-right: 200px;
+}
+
+.modaladdpanier.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.addpanierp h4 {
+  color: rgb(224, 224, 224);
+}
+
+.addpanierp {
+  height: 25px;
+  padding: 0px 5px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.addpanier {
+  background-color: #37c524;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  margin-right: 5px;
+}

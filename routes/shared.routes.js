@@ -9,6 +9,7 @@ const {
   sfileFindAwaitComm,
   sfileFindAwaitCommm,
   statusadd,
+  deletePanier,
 } = require("../controllers/shared.controller");
 
 router.get("/spost/:postId", sfileFind);
@@ -18,6 +19,8 @@ router.get("/findpanier/:postId", sfileFindPanier);
 router.get("/findawaitcomm/:postId", sfileFindAwaitComm);
 
 router.get("/findawaitcommm/:postId", sfileFindAwaitCommm);
+
+router.get("/deletepanier/:postId", deletePanier);
 
 router.post("/awaitcommande/:postId", awaitcommande);
 

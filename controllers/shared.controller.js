@@ -18,6 +18,7 @@ const {
   findUsernames,
   findUsernamess,
   findUsernamee,
+  findonee,
   listnivIII,
   listfoldernivii,
   getFileNivI,
@@ -441,6 +442,16 @@ exports.sfileFindAwaitComm = async (req, res, next) => {
   }
 };
 
+exports.deletePanier = async (req, res, next) => {
+  try {
+    const delpanier = await delpanierr(req.user.username);
+    await delpanierrr(delpanier.auth);
+    res.redirect("/shared/findpanier/" + "684b0f6b4205045b1df1d6da");
+  } catch (e) {
+    next(e);
+  }
+};
+
 exports.sfileFindPanier = async (req, res, next) => {
   try {
     const arr = [];
@@ -461,6 +472,7 @@ exports.sfileFindPanier = async (req, res, next) => {
     const panier = await findpanier(postId);
     const result = await resultfind(req.user._id.toString());
     const quant = await quantfind(req.user._id.toString());
+    const findone = await findonee(postId);
     let tabb = [];
     quant.forEach((r) => {
       tabb.push(r.quant);
@@ -530,6 +542,7 @@ exports.sfileFindPanier = async (req, res, next) => {
       findds,
       panier,
       postes,
+      findone,
       content,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
@@ -597,6 +610,7 @@ exports.createPanier = async (req, res, next) => {
       total: totall,
       quant: quantt,
       auth: req.user._id.toString(),
+      show: "true",
     });
     res.redirect("/shared/spost/" + "684a13da51a8dc62b71f0561");
   } catch (e) {
@@ -647,8 +661,6 @@ exports.awaitcommande = async (req, res, next) => {
     const nom = req.user.local.nom;
     const email = req.user.local.email;
     const tel = req.user.local.tel;
-    const delpanier = await delpanierr(req.user.username);
-    await delpanierrr(delpanier.auth);
     // let resultt, resultat, resul;
     // const totall = body.prix * bodyy.quantité;
     // const quantt = body.quantité;
