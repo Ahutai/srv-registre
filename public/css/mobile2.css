@@ -355,9 +355,16 @@ body {
   list-style: none;
 }
 
+.ulerrorform.active {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+}
+
 .lierrorform {
   color: red;
   text-shadow: 0px 0px 2px rgb(0, 0, 0);
+  margin-left: 25px;
 }
 
 /* divlist */

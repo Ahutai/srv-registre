@@ -20,6 +20,6 @@ block content
             input(type="submit" value="Valider" class="inputmformuser") 
             div(class="loaderrrs")
             if errors
-              ul(class="ulerrorform")
-                each error in errors
+              each error in errors
+                ul(class="ulerrorform")
                   li(class="lierrorform")= error

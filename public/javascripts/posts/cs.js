@@ -14,8 +14,10 @@ window.addEventListener("DOMContentLoaded", () => {
 function creaTed() {
   const createe = document.querySelector(".inputmformuser");
   const loaderrr = document.querySelector(".loaderrrs");
+  const error = document.querySelector(".ulerrorform");
 
   createe.addEventListener("click", () => {
     loaderrr.classList.add("active");
+    error.classList.add("active");
   });
 }
