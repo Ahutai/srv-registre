@@ -88,7 +88,7 @@ exports.paiement = async (req, res, next) => {
     });
     res.redirect(303, session.url);
   } catch (e) {
-    next(e);
+    res.redirect("/shared/findpanier/" + "684b0f6b4205045b1df1d6da");
   }
 };
 

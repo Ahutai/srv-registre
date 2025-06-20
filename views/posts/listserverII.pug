@@ -292,28 +292,15 @@ if awaitcommfindd && currentUser.username === "vaihere"
                 p(class="divlist555mm")= post.quant
     if resultatttt 
       each post in awaitcommm
-        div(class="divlist3dlss")
-          div(class="parttwo")
-            div(class="divlist4se")
-              input(class="divlist5aysy" type="text" value="MODE DE PAIEMENT" name="pay")
-              img(src="/images/info.svg", alt="" class="infoimg" id="info")
-            div(class="divlist4l")
-              if post.one === "on"
+        if post.username === currentUser.username 
+          div(class="divlist3dlss")
+            div(class="parttwo")
+              div(class="divlist4se")
+                input(class="divlist5aysy" type="text" value="STATUS DU PAIEMENT" name="pay")
+                img(src="/images/info.svg", alt="" class="infoimg" id="info")
+              div(class="divlist4l")
                 input(class="divlist5ap" type="checkbox" id="one" name="one" checked) 
-                label(for="bateau" class="labelis") une seul fois
-              else 
-                input(class="divlist5ap" type="checkbox" id="one" name="one") 
-                label(for="bateau" class="labelis") une seul fois
-              if post.three === "on"
-                input(class="divlist5ap" type="checkbox" id="three" name="three" checked) 
-                label(for="avion" class="labelis") en trois fois
-              else 
-                input(class="divlist5ap" type="checkbox" id="three" name="three") 
-                label(for="avion" class="labelis") en trois fois
-            div(class="divlist4")
-              p(class="divlist555mwx")= post.total 
-              input(class="inputprix" type="text" value=threee name="threes")
-              p(class="divlist555mwx")= post.threes
+                label(for="bateau" class="labelis") Payé
     if resultatttt 
       each post in awaitcommm
         div(class="divlist3dl")
