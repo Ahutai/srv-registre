@@ -31,5 +31,3 @@ if (process.env.NODE_ENV === "development") {
     });
   });
 }
-
-// This is your test secret API key.
