@@ -7,7 +7,10 @@ if postes
           a(class="divlistuser" href="/users/finduser/" + post.username)= post.username
       if editable === false && post.content === "PANIER"
         a(class="divlist5" href="/shared/findpanier/" + "684b0f6b4205045b1df1d6da")
-          img(src="/images/panier.png", alt="" class="folderw")
+          if resulted === false
+            img(src="/images/panier.png", alt="" class="folderw")
+          if resulted === true
+            img(src="/images/panier-3.png", alt="" class="folderws")    
       if editable === false && post.content === "COMMANDE"
         a(class="divlist5" href="/shared/findawaitcomm/" + post._id)
           img(src="/images/orderr.png", alt="" class="folderw")

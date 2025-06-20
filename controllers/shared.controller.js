@@ -19,6 +19,7 @@ const {
   findUsernamess,
   findUsernamee,
   findonee,
+  notifPanier,
   listnivIII,
   listfoldernivii,
   getFileNivI,
@@ -87,13 +88,28 @@ exports.sfileFind = async (req, res, next) => {
     const content = await getposted(postId);
     const user = await getUserByUsername(username);
     const postes = await getFolderByUser(user);
+    const panier = await findpanier("684b0f6b4205045b1df1d6da");
+    console.log(panier);
     const findaccessnivzero = await findAccessNivZERO(postId);
+    let resulted;
+    const tabbs = [];
+    panier.forEach((r) => {
+      tabbs.push(r.username);
+    });
+    tabbs.forEach((r) => {
+      if (r === req.user.username) {
+        resulted = true;
+      } else {
+        resulted = false;
+      }
+    });
     res.render("posts/post", {
       username,
       find,
       findaccessnivzero,
       findds,
       postes,
+      resulted,
       content,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
@@ -160,7 +176,20 @@ exports.sfileFindAwaitCommm = async (req, res, next) => {
     const content = await getposted(newid);
     const user = await getUserByUsername(username);
     const postes = await getFolderByUser(user);
+    const panier = await findpanier("684b0f6b4205045b1df1d6da");
     const findaccessnivzero = await findAccessNivZERO(newid);
+    let resulted;
+    const tabbs = [];
+    panier.forEach((r) => {
+      tabbs.push(r.username);
+    });
+    tabbs.forEach((r) => {
+      if (r === req.user.username) {
+        resulted = true;
+      } else {
+        resulted = false;
+      }
+    });
     let tabs = [];
     awaitcommm.forEach((r) => {
       r.title.forEach((t) => {
@@ -253,6 +282,7 @@ exports.sfileFindAwaitCommm = async (req, res, next) => {
       username,
       find,
       result,
+      resulted,
       resultat,
       resultatttt,
       findaccessnivzero,
@@ -276,6 +306,7 @@ exports.sfileFindAwaitCommm = async (req, res, next) => {
       formatiii,
       formatiiii,
       formatiiiii,
+      notifpaniers: false,
       awaitcommm,
       awaitcommfindd: true,
       postes,
@@ -310,7 +341,19 @@ exports.sfileFindAwaitComm = async (req, res, next) => {
     const postes = await getFolderByUser(user);
     const findaccessnivzero = await findAccessNivZERO(postId);
     const awaitcomm = await findawaitcomm(postId);
-    console.log(awaitcomm);
+    const panier = await findpanier("684b0f6b4205045b1df1d6da");
+    let resulted;
+    const tabbs = [];
+    panier.forEach((r) => {
+      tabbs.push(r.username);
+    });
+    tabbs.forEach((r) => {
+      if (r === req.user.username) {
+        resulted = true;
+      } else {
+        resulted = false;
+      }
+    });
     let tabs = [];
     awaitcomm.forEach((r) => {
       r.title.forEach((t) => {
@@ -405,6 +448,7 @@ exports.sfileFindAwaitComm = async (req, res, next) => {
       result,
       resultat,
       resultatttt,
+      resulted,
       findaccessnivzero,
       nivi,
       nivii,
@@ -427,6 +471,7 @@ exports.sfileFindAwaitComm = async (req, res, next) => {
       formatiiii,
       formatiiiii,
       awaitcomm,
+      notifpaniers: false,
       awaitcommfind: true,
       postes,
       content,
@@ -473,6 +518,21 @@ exports.sfileFindPanier = async (req, res, next) => {
     const result = await resultfind(req.user._id.toString());
     const quant = await quantfind(req.user._id.toString());
     const findone = await findonee(postId);
+    const notifpanier = await notifPanier(req.user.username);
+    let resulted;
+    const tabbs = [];
+    panier.forEach((r) => {
+      tabbs.push(r.username);
+    });
+    tabbs.forEach((r) => {
+      console.log(r);
+      if (r === req.user.username) {
+        console.log(r.username);
+        resulted = true;
+      } else {
+        resulted = false;
+      }
+    });
     let tabb = [];
     quant.forEach((r) => {
       tabb.push(r.quant);
@@ -544,9 +604,11 @@ exports.sfileFindPanier = async (req, res, next) => {
       resultatttt,
       findaccessnivzero,
       findds,
+      resulted,
       panier,
       postes,
       findone,
+      notifpaniers: false,
       content,
       findpaiement: true,
       isAuthenticated: req.isAuthenticated(),

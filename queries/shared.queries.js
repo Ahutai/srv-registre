@@ -42,6 +42,10 @@ exports.findpanier = (postId) => {
   return panier.find({ author: postId }).sort({ sort: 1 }).exec();
 };
 
+exports.notifPanier = (postId) => {
+  return panier.find({ username: postId }).exec();
+};
+
 exports.findonee = (postId) => {
   return panier
     .findOne(
