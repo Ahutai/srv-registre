@@ -219,10 +219,25 @@ exports.cancel = async (req, res, next) => {
     const user = await getUserByUsername(username);
     const postes = await getFolderByUser(user);
     const findaccessnivzero = await findAccessNivZERO(postId);
-    const panier = await findpanier(postId);
+    const panier = await findpanier("684b0f6b4205045b1df1d6da");
     const result = await resultfind(req.user._id.toString());
     const quant = await quantfind(req.user._id.toString());
     const findone = await findonee(postId);
+    let resulteddd;
+    console.log(panier);
+    const tabbs = [];
+    panier.forEach((r) => {
+      tabbs.push(r.username);
+    });
+    tabbs.forEach((r) => {
+      console.log(r);
+      if (r === req.user.username) {
+        console.log(r.username);
+        resulteddd = true;
+      } else {
+        resulteddd = false;
+      }
+    });
     let tabb = [];
     quant.forEach((r) => {
       tabb.push(r.quant);
@@ -298,6 +313,7 @@ exports.cancel = async (req, res, next) => {
       postes,
       findone,
       content,
+      resulteddd,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
       user,
