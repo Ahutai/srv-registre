@@ -54,7 +54,7 @@ const {
 const { getFolderByUser } = require("../queries/posts.queries");
 
 const stripe = require("stripe")(
-  "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"
+  "pk_live_51RbDZeRqHdVR7NJAeLHM3J06qQDtMrnqXMqIKzObTOQpVdyQSmwS2GBU7B3acRZ22T96aPQmIwO72lpQi2OrCOAv00smArsdEt"
 );
 
 exports.paiement = async (req, res, next) => {
