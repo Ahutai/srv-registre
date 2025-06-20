@@ -83,7 +83,7 @@ exports.paiement = async (req, res, next) => {
       },
       mode: "payment",
       success_url: `${domaine}/paiement/success/684b0f6b4205045b1df1d6da`,
-      cancel_url: `${domaine}/paiement/cancel`,
+      cancel_url: `${domaine}/paiement/cancel/684b0f6b4205045b1df1d6da`,
       automatic_tax: { enabled: true },
     });
     res.redirect(303, session.url);

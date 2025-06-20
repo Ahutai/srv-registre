@@ -4010,6 +4010,21 @@ section {
   opacity: 0.5;
 }
 
+.buttonpaiementtt {
+  height: 40px;
+  background-color: rgb(45, 148, 204);
+  color: white;
+  width: 100%;
+  font-size: 14px;
+  border: 0;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.6;
+  border-radius: 0 0 6px 6px;
+  transition: all 120ms ease;
+  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+}
+
 .buttonpaiementt {
   height: 50px;
   background-color: rgb(45, 148, 204);
@@ -4045,6 +4060,10 @@ section {
 }
 
 .buttonpaiementt:hover {
+  background-color: rgb(35, 121, 167);
+}
+
+.buttonpaiementtt:hover {
   background-color: rgb(35, 121, 167);
 }
 
