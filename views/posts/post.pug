@@ -88,8 +88,9 @@ block content
             if editable === false && panier
               each post in content    
                 a(class='content')= post.content
-                a(class='deletepanier' href="/shared/deletepanier/" + "684b0f6b4205045b1df1d6da" )
-                  img(src="/images/deleted.svg", alt="")
+                if resultedd === true
+                  a(class='deletepanier' href="/shared/deletepanier/" + "684b0f6b4205045b1df1d6da" )
+                    img(src="/images/deleted.svg", alt="")
                   
             //- div(class="divniv")
             //-   p(class="nivp")= post.niv 
