@@ -63,7 +63,7 @@ exports.paiement = async (req, res, next) => {
     const euro = value / 120;
     const francs = euro.toFixed(0);
     const result = francs * 100;
-    const domaine = "https://localhost:3001";
+    const domaine = "https://areni-hatiki.com";
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
