@@ -14,7 +14,6 @@ const panierSchema = schema({
   total: { type: Number, required: true },
   quant: { type: Number, required: true },
   auth: { type: String, required: true },
-  show: { type: String, required: true },
 });
 
 const panier = mongoose.model("panier", panierSchema);

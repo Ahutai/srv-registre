@@ -496,7 +496,7 @@ exports.sfileFindPanier = async (req, res, next) => {
     result.forEach((r) => {
       tab.push(r.total);
     });
-    let resul, resultat, three, threee;
+    let resul, resultat, three, threee, pureresult;
     const initialValue = 0;
     const sumWithInitial = tab.reduce(
       (accumulator, currentValue) => accumulator + currentValue,
@@ -518,14 +518,17 @@ exports.sfileFindPanier = async (req, res, next) => {
     }
     if (resultattt > 900) {
       resul = resultattt / 1000;
+      pureresult = resultattt;
       resultat = resul.toFixed(3) + " F";
     }
     if (resultattt > 10000) {
       resul = resultattt / 1000;
+      pureresult = resultattt;
       resultat = resul.toFixed(3) + " F";
     }
     if (resultattt > 100000) {
       resul = resultattt / 1000;
+      pureresult = resultattt;
       resultat = resul.toFixed(3) + " F";
     }
     // tab.forEach((t) => {
@@ -536,6 +539,7 @@ exports.sfileFindPanier = async (req, res, next) => {
       result,
       resultat,
       threee,
+      pureresult,
       panierlock: true,
       resultatttt,
       findaccessnivzero,
@@ -544,6 +548,7 @@ exports.sfileFindPanier = async (req, res, next) => {
       postes,
       findone,
       content,
+      findpaiement: true,
       isAuthenticated: req.isAuthenticated(),
       currentUser: req.user,
       user,
@@ -610,7 +615,6 @@ exports.createPanier = async (req, res, next) => {
       total: totall,
       quant: quantt,
       auth: req.user._id.toString(),
-      show: "true",
     });
     res.redirect("/shared/spost/" + "684a13da51a8dc62b71f0561");
   } catch (e) {
@@ -696,10 +700,10 @@ exports.awaitcommande = async (req, res, next) => {
       nom: nom,
       tel: tel,
       status: "en attente...",
-      one: one,
-      three: three,
-      threes: threes,
-      pay: pay,
+      // one: one,
+      // three: three,
+      // threes: threes,
+      // pay: pay,
     });
     res.redirect("/shared/findawaitcomm/" + "684b8a55ab41d7225206b9ad");
   } catch (e) {

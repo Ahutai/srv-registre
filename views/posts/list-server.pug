@@ -128,7 +128,7 @@ if awaitcommfind && currentUser.username === "vaihere"
               div(class="divlist4llr")
                 p(class="divlist555")= post.username
 if panierlock
-  form(class="divlist3ss" method="post" action="/shared/awaitcommande/" + "684b8a55ab41d7225206b9ad" )
+  form(class="divlist3ss" method="post" action="/shared/awaitcommande/" + "684b8a55ab41d7225206b9ad")
     if panier 
       each post in panier 
         if post.username === currentUser.username
@@ -167,43 +167,43 @@ if panierlock
         div(class="divlist4")
           input(class="inputprix" type="text" value=resultatttt name="quant")
           p(class="divlist555l")= resultatttt 
-    if panier
+    if paiement === true
       div(class="divlist3sn")
         div(class="divlist4")
           input(class="divlist5af" type="text" placeholder="nom de la commande" name="commandename")
-    if panier  
-      div(class="divlist3dlss")
-        div(class="parttwo")
-          div(class="divlist4se")
-            input(class="divlist5aysy" type="text" value="MODE DE PAIEMENT" name="pay")
-            img(src="/images/info.svg", alt="" class="infoimg" id="info")
-          div(class="divlist4l")
-            input(class="divlist5apa" type="checkbox" id="one" name="one") 
-            label(for="bateau" class="labelis") une seul fois
-            input(class="divlist5apa" type="checkbox" id="three" name="three") 
-            label(for="avion" class="labelis") en trois fois
-          div(class="divlist4")
-            p(class="divlist555mwx")= resultat 
-            input(class="inputprix" type="text" value=threee name="threes")
-            p(class="divlist555mwx")= threee
-    if panier  
-      div(class="divlist3stt")
-        div(class="parttwo")
-          div(class="divlist4se")
-            p(class="divlist5ays") INFO BANCAIRE
-          div(class="divlist4z")
-            p(class="divlist555rl") nom
-            p(class="divlist5dv") BROWN VAIHERE
-          div(class="divlist4z")
-            p(class="divlist555rl") rib
-            p(class="divlist5dv") 17469 00001 21971590000 24
-          div(class="divlist4z")
-            p(class="divlist555rl") iban
-            p(class="divlist5dv") FR76 1746 9000 0121 9715 9000 024
-          div(class="divlist4zz")
-            p(class="divlist555rl") téléphone
-            p(class="divlist5dv") 87 27 56 87
-    if resultatttt 
+    //- if panier  
+    //-   div(class="divlist3dlss")
+    //-     div(class="parttwo")
+    //-       div(class="divlist4se")
+    //-         input(class="divlist5aysy" type="text" value="MODE DE PAIEMENT" name="pay")
+    //-         img(src="/images/info.svg", alt="" class="infoimg" id="info")
+    //-       div(class="divlist4l")
+    //-         input(class="divlist5apa" type="checkbox" id="one" name="one") 
+    //-         label(for="bateau" class="labelis") une seul fois
+    //-         input(class="divlist5apa" type="checkbox" id="three" name="three") 
+    //-         label(for="avion" class="labelis") en trois fois
+    //-       div(class="divlist4")
+    //-         p(class="divlist555mwx")= resultat 
+    //-         input(class="inputprix" type="text" value=threee name="threes")
+    //-         p(class="divlist555mwx")= threee
+    //- if panier  
+    //-   div(class="divlist3stt")
+    //-     div(class="parttwo")
+    //-       div(class="divlist4se")
+    //-         p(class="divlist5ays") INFO BANCAIRE
+    //-       div(class="divlist4z")
+    //-         p(class="divlist555rl") nom
+    //-         p(class="divlist5dv") BROWN VAIHERE
+    //-       div(class="divlist4z")
+    //-         p(class="divlist555rl") rib
+    //-         p(class="divlist5dv") 17469 00001 21971590000 24
+    //-       div(class="divlist4z")
+    //-         p(class="divlist555rl") iban
+    //-         p(class="divlist5dv") FR76 1746 9000 0121 9715 9000 024
+    //-       div(class="divlist4zz")
+    //-         p(class="divlist555rl") téléphone
+    //-         p(class="divlist5dv") 87 27 56 87
+    if paiement === true
       div(class="divlist3dl")
         div(class="parttwo")
           div(class="divlist4se")
@@ -219,9 +219,33 @@ if panierlock
             label(for="avion" class="labeli") AVION
           div(class="divlist4j")
             input(class="divlist544avv" type="date" name="date")
-          div(class="divbuttonn")
-            input(class="inputaddd" type="submit" value="commander")
-
+    if paiement === true
+      section
+        div(class="producted")
+          div(class="addpanierrr")
+            img(src="/images/check.svg", alt="") 
+          div(class="descriptionn")
+            h3 paiement réussie
+        input(class="buttonpaiementt" type="submit" value="Confirmer") 
+  if paiement === false
+    section
+      div(class="producted")
+        div(class="addpanierrrr")
+          h3 X
+        div(class="descriptionn")
+          h3 paiement échoué
+      form(action="/shared/findpanier/" + "684b0f6b4205045b1df1d6da") 
+        input(class="buttonpaiementt" type="submit" value="Réassayer") 
+  if findpaiement === true
+    section
+      div(class="product")
+        img(class="imgpaiement" src="/images/panier-2.png"
+          alt="The cover of Stubborn Attachments")   
+        div(class="description")
+          h3 Paiement en ligne
+          h5= resultat
+      form(action="/paiement/createsession/" + pureresult method="POST")
+        button(class="buttonpaiement" type="submit" id="checkout-button") Commander
 //- if findds 
 //-   each post in findds
 //-     div(class="divlist3s")
