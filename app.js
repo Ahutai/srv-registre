@@ -3,9 +3,6 @@ const morgan = require("morgan");
 const path = require("path");
 const index = require("./routes");
 const errorHandler = require("errorhandler");
-const stripe = require("stripe")(
-  "sk_test_51RbDZeRqHdVR7NJAqgzewjBP5nXQ1Nziy3K3cRfKko63n3BpOItGuqtrTHnEhGzDh1Z6v8wNeIGenQHyGxO2wWDW00C8WX3FOq"
-);
 require("./database");
 
 const app = express();
@@ -36,23 +33,3 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // This is your test secret API key.
-
-const YOUR_DOMAIN = "https://localhost:3001";
-
-app.post("/create-checkout-session", async (req, res) => {
-  const session = await stripe.checkout.sessions.create({
-    line_items: [
-      {
-        // Provide the exact Price ID (for example, price_1234) of the product you want to sell
-        price: "price_1RboQlRqHdVR7NJA15z3v2F0",
-        quantity: 1,
-      },
-    ],
-    mode: "payment",
-    success_url: `${YOUR_DOMAIN}/success.html`,
-    cancel_url: `${YOUR_DOMAIN}/cancel.html`,
-    automatic_tax: { enabled: true },
-  });
-
-  res.redirect(303, session.url);
-});
