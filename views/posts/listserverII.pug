@@ -291,16 +291,15 @@ if awaitcommfindd && currentUser.username === "vaihere"
               each post in awaitcommm
                 p(class="divlist555mm")= post.quant
     if resultatttt 
-      each post in awaitcommm
-        if post.username === currentUser.username 
-          div(class="divlist3dlss")
-            div(class="parttwo")
-              div(class="divlist4se")
-                input(class="divlist5aysy" type="text" value="STATUS DU PAIEMENT" name="pay")
-                img(src="/images/info.svg", alt="" class="infoimg" id="info")
-              div(class="divlist4l")
-                input(class="divlist5ap" type="checkbox" id="one" name="one" checked) 
-                label(for="bateau" class="labelis") Payé
+      each post in awaitcommm 
+        div(class="divlist3dlss")
+          div(class="parttwo")
+            div(class="divlist4se")
+              input(class="divlist5aysy" type="text" value="STATUS DU PAIEMENT" name="pay")
+              img(src="/images/info.svg", alt="" class="infoimg" id="info")
+            div(class="divlist4l")
+              input(class="divlist5ap" type="checkbox" id="one" name="one" checked) 
+              label(for="bateau" class="labelis") Payé
     if resultatttt 
       each post in awaitcommm
         div(class="divlist3dl")
