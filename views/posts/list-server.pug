@@ -157,7 +157,7 @@ if panierlock
             div(class="divlist4")
               input(class="inputprix" value=post.format type="text" name="format")
               p(class="divlist55555")= post.format   
-    if result 
+    if resultedd === true
       div(class="divlist3sn")
         div(class="divlist4")
           input(class="divlist5a" type="text" value="TOTAL")
@@ -236,7 +236,7 @@ if panierlock
           h3 paiement échoué
       form(action="/shared/findpanier/" + "684b0f6b4205045b1df1d6da") 
         input(class="buttonpaiementtt" type="submit" value="Réassayer") 
-  if resulted === true
+  if resultedd === true
     section
       div(class="product")
         img(class="imgpaiement" src="/images/panier-2.png"

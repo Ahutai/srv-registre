@@ -519,7 +519,7 @@ exports.sfileFindPanier = async (req, res, next) => {
     const quant = await quantfind(req.user._id.toString());
     const findone = await findonee(postId);
     const notifpanier = await notifPanier(req.user.username);
-    let resulted;
+    let resultedd;
     const tabbs = [];
     panier.forEach((r) => {
       tabbs.push(r.username);
@@ -528,9 +528,9 @@ exports.sfileFindPanier = async (req, res, next) => {
       console.log(r);
       if (r === req.user.username) {
         console.log(r.username);
-        resulted = true;
+        resultedd = true;
       } else {
-        resulted = false;
+        resultedd = false;
       }
     });
     let tabb = [];
@@ -604,7 +604,7 @@ exports.sfileFindPanier = async (req, res, next) => {
       resultatttt,
       findaccessnivzero,
       findds,
-      resulted,
+      resultedd,
       panier,
       postes,
       findone,
